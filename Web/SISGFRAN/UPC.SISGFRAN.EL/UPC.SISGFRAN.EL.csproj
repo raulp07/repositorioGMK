@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{26B1C8BD-EE9A-44B4-843E-EA3CC36B42F6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UPC.SISGFRAN.EL</RootNamespace>
+    <AssemblyName>UPC.SISGFRAN.EL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\BaseEL.cs" />
+    <Compile Include="Comunes\Constantes.cs" />
+    <Compile Include="Helpers\Encriptador.cs" />
+    <Compile Include="Helpers\Exportar.cs" />
+    <Compile Include="Helpers\ExportarImportarExcel.cs" />
+    <Compile Include="Comunes\Funciones.cs" />
+    <Compile Include="Helpers\FTPUtil.cs" />
+    <Compile Include="Helpers\JsonHelper.cs" />
+    <Compile Include="Inherited\AplicacionEL.cs" />
+    <Compile Include="Inherited\DetallePropuestaPublicidadEL.cs" />
+    <Compile Include="Inherited\EncuestaEL.cs" />
+    <Compile Include="Inherited\EntrevistaEL.cs" />
+    <Compile Include="Inherited\LocalEL.cs" />
+    <Compile Include="Inherited\MedioComunicacionEL.cs" />
+    <Compile Include="Inherited\OpcionEL.cs" />
+    <Compile Include="Inherited\OpcionXPerfilEL.cs" />
+    <Compile Include="Inherited\PerfilEL.cs" />
+    <Compile Include="Inherited\PropuestaPublicidadEL.cs" />
+    <Compile Include="Inherited\ReporteEvaluacionEL.cs" />
+    <Compile Include="Inherited\ResultadoEncuestaEL.cs" />
+    <Compile Include="Inherited\SolicitanteEL.cs" />
+    <Compile Include="Inherited\SolicitudEL.cs" />
+    <Compile Include="Inherited\UsuarioEL.cs" />
+    <Compile Include="NonInherited\ArchivoFtpEN.cs" />
+    <Compile Include="NonInherited\ListaPaginada.cs" />
+    <Compile Include="NonInherited\ParametroEL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,309 @@
+﻿@{
+    ViewBag.Title = "Evaluar solicitud";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    var message = TempData["msg"] ?? string.Empty;
+}
+
+<!-- Paneles -->
+<div class="container2">
+    <div class="margenPanelRigth">
+        <fieldset>
+            <legend>Explorador de solicitudes de franquicia registradas</legend>
+            <div class="form-group row OcultarDiv">
+                <div class="col-md-9">
+                    <input type="text" class="form-control" name="txtDesc" id="txtDesc" placeholder="#Solicitud, #documento o Nombres" value="@ViewBag.desc" />
+                </div>
+                <div class="form-group">
+                    <span class="input-group-btn">
+                        <a class="btn btn-primary" href='#' onclick="BuscarSolicitud();" id='btnBuscar' title='Buscar solicitud'>
+                            <span class='glyphicon glyphicon-search'>
+                                Buscar
+                            </span>
+                        </a>
+                    </span>
+                    <input type="hidden" value="" id="hddCodSolicitud" name="hddCodSolicitud">
+                </div>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-table"></i> Listado de solicitudes pendientes</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div id="gridSolicitud">
+                                @Html.Partial("_solicitud")
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="form-group row col-md-3">
+    
+                <span class="input-group-btn" style="padding-left:5px;">
+                    <a class="btn btn-primary" href='#' target="_parent" onclick="EvaluarSolicitud();" id='btnExportar' title='Evaluar Solicitud'>
+                        <span class='glyphicon glyphicon-tasks'>
+                            Evaluar Solicitud
+                        </span>
+                    </a>
+                </span>
+                <span class="input-group-btn" style="padding-left:5px;">
+                    <a class="btn btn-primary" href='#' target="_parent" onclick="Exportar();" id='btnExportar' title='Exportar resultados'>
+                        <span class='glyphicon glyphicon-export'>
+                            Exportar
+                        </span>
+                    </a>
+                </span>
+            </div>
+        </fieldset>
+    </div>
+</div>
+
+
+<!-- modal placeholder-->
+<div id='myModal1' class='modal fade' role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id='myModalContent'>
+                <div class="modal-header">
+                    <h3 class="modal-title">Invitación por Solicitud aprobada</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-body" style="padding:40px 50px;">
+
+                        <div class="form-group">
+                            <label for="usrCorreo"><span class="glyphicon glyphicon-user"></span> Solicitante</label>
+                            <input type="text" class="form-control" id="nomSolicitante" readonly />
+                        </div>
+                        <div class="form-group">
+                            <label for="usrCorreo"><span class="glyphicon glyphicon-book"></span> Correo</label>
+                            <input type="text" class="form-control" id="idCorreo" placeholder="Ingresar Correo">
+                        </div>
+                        <div class="form-group">
+                            <div style="float:left;">
+                                <label for="usrfecha"><span class="glyphicon glyphicon-book"></span> Fecha </label>
+                                <div class='input-group date' id='dtpFecha'>
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                    <input id="fechaModal" type='text' class="form-control" style="width:120px" />
+                                </div>
+                            </div>
+                            <div style="float:left;">
+                                <label for="usrHora"><span class="glyphicon glyphicon-time"></span> Hora </label>
+                                <div class='input-group date' id='dtpHora'>
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-time"></span>
+                                    </span>
+                                    <input id="horaModal" type='text' class="form-control" style="width:120px" />
+                                </div>
+                            </div>
+                            <div style="clear:both"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input class="btn btn-primary" type="submit" value="Aceptar" onclick="EnviarMail()" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/moment-with-locales.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $('#horaModal').datetimepicker({
+                format: 'HH:mm'
+            });
+
+            $('#fechaModal').datetimepicker({
+                format: 'DD/MM/YYYY'
+            });
+
+        });
+
+        function BuscarSolicitud() {
+            var busqueda = "";//$('#txtDesc').val();
+
+            $.ajax({
+                url: "/Solicitud/BuscarSolicitud",
+                type: "GET",
+                data: { desc: busqueda },
+                dataType: "html",
+                traditional: true,
+                cache: false,
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    if (data.status == undefined) {                        
+                        $("#gridSolicitud").html(data);
+                    } else {
+                        if (data.status == false) {
+                            bootbox.alert({
+                                message: data.message,
+                                size: 'small'
+                            });
+                        }
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    bootbox.alert('error', textStatus, 'Error');
+                }
+            });
+        }
+
+        function SolicitudSelected(radio) {
+            if ($(radio).is(':checked')) {
+                var codSol = $(radio).val();
+                $("#hddCodSolicitud").val(codSol);
+                var urlExportar = "/Solicitud/Exportar/" + codSol;
+                var urlInvitacion = "/Solicitud/Invitacion/" + codSol;
+                $("a#btnExportar").attr("href", urlExportar);
+            } else {
+                $("#hddCodSolicitud").val("");
+                $("a#btnExportar").attr("href", "#");
+                $("a#btnEvaluar").attr("href", "#");
+            }
+        }
+
+        function EvaluarSolicitud() {
+            var solicitud = $("#hddCodSolicitud").val();
+
+            if (solicitud == "") {
+                bootbox.alert({
+                    message: "Seleccione solicitud",
+                    size: 'small'
+                });
+                return false;
+            } else {
+
+                $.ajax({
+                    url: "/Solicitud/Evaluar",
+                    type: "GET",
+                    data: { solicitud: solicitud },
+                    dataType: "html",
+                    traditional: true,
+                    cache: false,
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        var datos = jQuery.parseJSON(data);
+                        if (datos.status == true) {
+                            bootbox.alert({
+                                message: datos.message,
+                                size: 'small',
+                                callback: function () {
+                                    $("#nomSolicitante").val(datos.Solicitante);
+                                    $("#idCorreo").val(datos.Email);
+                                    $('#btnExportar span').trigger('click');
+                                    $('#myModal1').modal({
+                                        keyboard: false,
+                                        backdrop: 'static'
+                                    }, 'show');
+                                }
+                            });
+                        } else {
+                            bootbox.alert({
+                                message: datos.message,
+                                size: 'small'
+                            });
+                            return false;
+                        }
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        bootbox.alert('error', textStatus, 'Error');
+                    }
+                });
+
+            };
+        }
+
+        function Exportar() {
+            var solicitud = $("#hddCodSolicitud").val();
+
+            if (solicitud == "") {
+                bootbox.alert({
+                    message: "Seleccione solicitud",
+                    size: 'small'
+                });
+                return;
+            }
+        }
+
+        function EnviarMail()
+        {
+            if ($("#idCorreo").val() === "") {
+                bootbox.alert({
+                    message: "Debe ingresar un correo.",
+                    size: 'small'
+                });
+                return false;
+            }
+
+            if ($("#fechaModal").val() === "") {
+                bootbox.alert({
+                    message: "Debe ingresar una fecha tentativa.",
+                    size: 'small'
+                });
+                return false;
+            }
+
+            if ($("#horaModal").val() === "") {
+                bootbox.alert({
+                    message: "Debe ingresar una hora tentativa.",
+                    size: 'small'
+                });
+                return false;
+            }
+
+            var solicitud = $("#hddCodSolicitud").val();
+            var fecha = $("#fechaModal").val();
+            var hora = $("#horaModal").val();
+            var mail = $("#idCorreo").val();
+
+            $.ajax({
+                url: "/Solicitud/EnviarCorreo",
+                type: "GET",
+                data: { id: solicitud, fecha: fecha, hora: hora, correo: mail },
+                dataType: "html",
+                traditional: true,
+                cache: false,
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    var datos = jQuery.parseJSON(data);
+                    if (datos.status == true) {
+                        bootbox.alert({
+                            message: datos.message,
+                            size: 'small'
+                        });
+                    } else {
+                        bootbox.alert({
+                            message: datos.message,
+                            size: 'small'
+                        });
+                    }
+                    $("#myModal1").modal('toggle');
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    bootbox.alert('error', textStatus, 'Error');
+                }
+            });
+
+            $("#hddCodSolicitud").val("");
+        }
+
+</script>
+<script type="text/javascript">
+    var message = '@message';
+    if (message)
+    bootbox.alert(message);
+</script>
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>dateformat.js</id>
+    <version>1.2.3</version>
+    <title>dateformat.js</title>
+    <authors>Steven Levithan, Scott Trenda, Kris Kowal</authors>
+    <owners>Steven Levithan, Scott Trenda, Kris Kowal</owners>
+    <licenseUrl>https://github.com/xinmyname/dateformatjs/blob/master/licence.txt</licenseUrl>
+    <projectUrl>http://blog.stevenlevithan.com/archives/date-time-format</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Accepts a date, a mask, or a date and a mask. Returns a formatted version of the given date. The date defaults to the current date/time. The mask defaults to dateFormat.masks.default.</description>
+    <summary>Accepts a date, a mask, or a date and a mask. Returns a formatted version of the given date. The date defaults to the current date/time. The mask defaults to dateFormat.masks.default.</summary>
+    <copyright>(c) 2007-2009 Steven Levithan</copyright>
+    <tags>javascript date format</tags>
+  </metadata>
+</package>

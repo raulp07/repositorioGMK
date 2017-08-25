@@ -1,0 +1,36 @@
+﻿@model UPC.SISGFRAN.EL.Inherited.SolicitudEL
+
+<div>
+    @{
+        var grid = new WebGrid(
+                    canPage: true,
+                    rowsPerPage: Model.ListaSolicitudes.PageSize,
+                    canSort: false,
+                    ajaxUpdateContainerId: "gridSolicitud");
+        grid.Bind(Model.ListaSolicitudes.Content, rowCount: Model.ListaSolicitudes.TotalRecords, autoSortAndPage: false);
+        grid.Pager(WebGridPagerModes.All,
+                    firstText: "<<", lastText: ">>",
+                    previousText: "<",
+                    nextText: ">",
+                    numericLinksCount: 15);
+                    @grid.GetHtml(htmlAttributes: new { id = "gridSolicitud1" },
+            tableStyle: "webgrid",
+            headerStyle: "webgrid-header",
+            footerStyle: "webgrid-footer",
+            alternatingRowStyle: "webgrid-alternating-row",
+            selectedRowStyle: "webgrid-selected-row",
+            rowStyle: "webgrid-row-style",
+            fillEmptyRows: false,
+            mode: WebGridPagerModes.All,
+            columns: grid.Columns(
+                grid.Column(format: @<text><input id="idSolicitud" class="chkRbSol" name="idSolicitud" type="radio" value="@item.Id" onclick="javascript: SolicitudSelected(this)" /></text>),
+                grid.Column("NumSolicitud", "# Solicitud", style: "col-md-1"),
+                grid.Column("FechaSolicitud", "Fecha Solicitud", format: @<text>@String.Format("{0:dd-MM-yyyy}", item.FechaSolicitud)</text>, style: "col-md-1"),
+                grid.Column("Solicitante.TipoDocumento.Nombre", "Tipo Documento"),
+                grid.Column("Solicitante.NumeroDocumento", "Nro. Documento"),
+                grid.Column("Solicitante.NombreCompleto", "Solicitante"),
+                grid.Column("Solicitante.Direccion", "Dirección")
+            ));
+    }
+
+</div>

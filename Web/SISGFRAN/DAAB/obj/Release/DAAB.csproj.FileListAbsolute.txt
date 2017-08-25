@@ -1,0 +1,10 @@
+C:\Repositorio\Proyecto_SISMER\SISMERCore\DAAB\bin\Release\DAAB.dll
+C:\Repositorio\Proyecto_SISMER\SISMERCore\DAAB\bin\Release\DAAB.pdb
+C:\Repositorio\Proyecto_SISMER\SISMERCore\DAAB\obj\Release\DAAB.dll
+C:\Repositorio\Proyecto_SISMER\SISMERCore\DAAB\obj\Release\DAAB.pdb
+C:\Repositorio\Proyecto_SISMER\SISMERCore\DAAB\obj\Release\DAAB.csprojResolveAssemblyReference.cache
+E:\PROY-GFRAN-UPC\Fuentes\Web\SISGFRAN\DAAB\bin\Release\DAAB.dll
+E:\PROY-GFRAN-UPC\Fuentes\Web\SISGFRAN\DAAB\bin\Release\DAAB.pdb
+E:\PROY-GFRAN-UPC\Fuentes\Web\SISGFRAN\DAAB\obj\Release\DAAB.csprojResolveAssemblyReference.cache
+E:\PROY-GFRAN-UPC\Fuentes\Web\SISGFRAN\DAAB\obj\Release\DAAB.dll
+E:\PROY-GFRAN-UPC\Fuentes\Web\SISGFRAN\DAAB\obj\Release\DAAB.pdb

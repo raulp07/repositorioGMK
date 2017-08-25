@@ -1,0 +1,38 @@
+﻿@using UPC.SISGFRAN.Web.Helper
+
+@{
+    var usuario = SesionUsuario.Usuario;
+}
+
+@if (@usuario != null)
+{
+    using (Html.BeginForm("LogOut", "Usuario", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+        <ul class="nav navbar-right top-nav" id="menu">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> @usuario.CtaUsuario <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-gear"></i> Cambiar Contrase&ntilde;a</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="javascript:document.getElementById('logoutForm').submit()">
+                            <i class="fa fa-fw fa-power-off"></i> Cerrar Sessi&oacute;n
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-right top-nav" id="menu">
+        <li class="dropdown">
+            <span class="fa-stack fa-lg pull-left"><i class="fa fa-sign-in fa-stack-1x " style="color:#999999"></i></span>
+            @Html.ActionLink("Iniciar Sesión", "Login", "Usuario", routeValues: null, htmlAttributes: new { id = "loginLink" })
+        </li>
+    </ul>
+}

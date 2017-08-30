@@ -1,0 +1,3 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="WCFRest.WCFPardos" CodeBehind="WCFPardos.svc.cs" 
+    Factory="System.ServiceModel.Activation.WebServiceHostFactory"
+    %>

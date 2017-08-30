@@ -44,3 +44,7 @@ D:\UPC\VlV\TP3\Proyecto\PROY-GFRAN-UPC\Fuentes\Web\SISGFRAN\DAAB\bin\Debug\DAAB.
 D:\UPC\VlV\TP3\Proyecto\PROY-GFRAN-UPC\Fuentes\Web\SISGFRAN\DAAB\obj\Debug\DAAB.csprojResolveAssemblyReference.cache
 D:\UPC\VlV\TP3\Proyecto\PROY-GFRAN-UPC\Fuentes\Web\SISGFRAN\DAAB\obj\Debug\DAAB.dll
 D:\UPC\VlV\TP3\Proyecto\PROY-GFRAN-UPC\Fuentes\Web\SISGFRAN\DAAB\obj\Debug\DAAB.pdb
+D:\UPC\VlV\TP3\repositorioGMK\Web\SISGFRAN\DAAB\bin\Debug\DAAB.dll
+D:\UPC\VlV\TP3\repositorioGMK\Web\SISGFRAN\DAAB\bin\Debug\DAAB.pdb
+D:\UPC\VlV\TP3\repositorioGMK\Web\SISGFRAN\DAAB\obj\Debug\DAAB.dll
+D:\UPC\VlV\TP3\repositorioGMK\Web\SISGFRAN\DAAB\obj\Debug\DAAB.pdb

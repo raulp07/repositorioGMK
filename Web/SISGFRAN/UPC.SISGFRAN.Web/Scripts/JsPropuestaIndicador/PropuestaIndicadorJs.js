@@ -138,14 +138,15 @@
                                 var indice = this.zIndex;
                                 $.each(_listaregistro, function (key, value) {
                                     if (value.codLocal == indice) {
+                                        debugger;
                                         $('#rangeConsumo_1').val(value.indicadorConsumo);
                                         $('#rangeSabor_2').val(value.indicadorSabor);
                                         $('#rangeCosto_3').val(value.indicadorCosto);
 
 
-                                        $('#span_1').val(value.indicadorConsumo);
-                                        $('#span_2').val(value.indicadorSabor);
-                                        $('#span_3').val(value.indicadorCosto);
+                                        $('#span_1').text(value.indicadorConsumo > 10 ? 10 : value.indicadorConsumo);
+                                        $('#span_2').text(value.indicadorSabor > 10 ? 10 : value.indicadorSabor);
+                                        $('#span_3').text(value.indicadorCosto > 10 ? 10 : value.indicadorCosto);
                                     }
                                 });
                                 window["infowindow" + indice].open(map, window["marker" + indice]);

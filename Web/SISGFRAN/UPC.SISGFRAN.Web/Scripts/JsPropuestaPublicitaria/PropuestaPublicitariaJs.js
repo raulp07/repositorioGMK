@@ -29,8 +29,8 @@ new Vue({
             $('#span_' + dato).text(valor + '%');
         },
         CargarMapa: function (eval) {
-            
             axios.post('/PropuestaPublicitaria/ListaMedios_X_Local/').then(function (response) {
+
                 this.ListaLocal = response.data.listLocal;
                 var FiltroMedios = [];
                 var _ListaMedios = this.ListaMedios;
@@ -49,16 +49,15 @@ new Vue({
                     alert("La búsqueda no se puede realizar por falta de valores en los filtros");
                     return;
                 }
-
                 this.ListaMedios = _ListaMedios;
                 var cod_ini = 0;
                 var datos = [];
                 $.each(response.data.listLocal, function (key, value) {
-                    if (value.codLocal != cod_ini) {
-                        var list = [value.nombreLocal, parseFloat(value.latitudLocal), parseFloat(value.longitudLocal), value.codLocal];
+                    if (value.id != cod_ini) {
+                        var list = [value.nombre, parseFloat(value.latitud), parseFloat(value.longitud), value.id];
                         datos.push(list);
                     }
-                    cod_ini = value.codLocal;
+                    cod_ini = value.id;
                 });
 
                 this.locales = datos;
@@ -83,10 +82,10 @@ new Vue({
                     var tbLocal = '';
                     var contador = 0;
                     $.each(response.data.listLocal, function (key, value) {
-                        if (value.codLocal == beach[3]) {
+                        if (value.id == beach[3]) {
                             $.each(FiltroMedios, function (key2, value2) {
                                 if ((value2[1] == value.codMedioComunicacion) && (value.Porcentaje >= value2[0])) {
-                                    tbLocal = value.nombreLocal;
+                                    tbLocal = value.nombre;
                                     tbcuerpo += '<tr>' +
                                                '<td>' + value.nombreMedioComunicacion + '</td>' +
                                                '<td>' + value.Porcentaje + '%</td>' +
@@ -98,8 +97,7 @@ new Vue({
                     });
                     if (contador != 0) {
                         _ContadorLocales++;
-
-                        window["marker" + i] = new google.maps.Marker({
+                        window["marker" + beach[3]] = new google.maps.Marker({
                             position: { lat: beach[1], lng: beach[2] },
                             map: map,
                             shape: shape,
@@ -126,11 +124,12 @@ new Vue({
                           '</div>' +
                           '</div>';
 
-                        window["infowindow" + i] = new google.maps.InfoWindow({
+                        window["infowindow" + beach[3]] = new google.maps.InfoWindow({
                             content: contentString
                         });
-                        window["marker" + i].addListener('click', function () {
-                            var indice = this.zIndex - 1;
+                        window["marker" + beach[3]].addListener('click', function () {
+                            debugger;
+                            var indice = this.zIndex;
                             window["infowindow" + indice].open(map, window["marker" + indice]);
                         });
                     }
@@ -155,7 +154,7 @@ new Vue({
         RegistrarPropuesta: function () {
 
 
-            if (this.ContadorLocales ==0) {
+            if (this.ContadorLocales == 0) {
                 alert("No hay locales listados en el mapa");
                 return;
             }
@@ -180,11 +179,11 @@ new Vue({
 
                     $.each(ListaLocal, function (key2, value2) {
                         if ((value2.codMedioComunicacion == value.id.split('_')[1]) && (value2.Porcentaje >= value.valueAsNumber)) {
-                            listaTrazabilidad += value2.nombreLocal + '|';
+                            listaTrazabilidad += value2.nombre + '|';
                             Presupuesto += parseFloat(value.dataset.costo);
                             var parametro = {
                                 codMedioComunicacion: value.id.split('_')[1],
-                                codLocal: value2.codLocal,
+                                codLocal: value2.id,
                                 porcentaje: value2.Porcentaje,
                                 promedio: value.valueAsNumber
                             }
@@ -206,7 +205,7 @@ new Vue({
             this.ListadoDetalle = _ListadoDetalle;
             $('#Presupuesto').val(Presupuesto);
             this.ListaMediosSeleccionados = ListaDinamica;
-            
+
         },
         RegistroPropuesta: function () {
             if ($('#observacion').val().trim().length == 0) {

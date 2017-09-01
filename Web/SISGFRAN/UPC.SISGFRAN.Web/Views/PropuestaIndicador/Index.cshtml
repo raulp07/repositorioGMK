@@ -16,7 +16,7 @@
             </div>
             <br />
             <div class="col-sm-12">
-                <label class="col-sm-4">Producto:</label>
+                <label class="col-sm-4">Combo:</label>
                 <select id="cboProducto" class="col-sm-8 selectpicker" >
                     <option value="0">SELECCIONAR</option>
                     <option v-for="lista in listacombo" v-bind:value="lista.codCombo">{{lista.nombre}}</option>
@@ -67,7 +67,7 @@
                     </div>
                     <div class="col-sm-12">
                         <input type="button" value="SALIR" class="btn btn-primary" />
-                        <input type="button" value="GUARDAR" class="btn btn-primary" />
+                        <input type="button" value="GUARDAR" v-on:click="GuardarProyeccion" class="btn btn-primary" />
                     </div>
                     
                 </div>

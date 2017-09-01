@@ -82,5 +82,11 @@ namespace WCFRest
         {
             return new ComboDA().GetAllCombo(Combo);
         }
+
+
+        public int proyectarPropuestaxIndicadores(proyectarPropuestaIndicadorEL proyectarPropuestaIndicador)
+        {
+            return new PropuestaxIndicadorDA().proyectarPropuestaxIndicadores(proyectarPropuestaIndicador);
+        }
     }
 }

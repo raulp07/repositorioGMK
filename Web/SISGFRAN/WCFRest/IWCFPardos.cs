@@ -62,6 +62,10 @@ namespace WCFRest
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "Combo", ResponseFormat = WebMessageFormat.Json)]
         List<ComboEL> GetAllCombo(ComboEL Combo);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "ProyectarPropuestaIndicador", ResponseFormat = WebMessageFormat.Json)]
+        int proyectarPropuestaxIndicadores(proyectarPropuestaIndicadorEL proyectarPropuestaIndicador);
     }
 
 }

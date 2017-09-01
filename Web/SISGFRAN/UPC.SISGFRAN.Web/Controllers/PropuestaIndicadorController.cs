@@ -59,5 +59,17 @@ namespace UPC.SISGFRAN.Web.Controllers
             return Json(new { listCalcularPropuestaxIndicador = listCalcularPropuestaxIndicador }, JsonRequestBehavior.AllowGet);
         }
 
+        [HttpPost]
+        public JsonResult proyectarPropuestaxIndicadores(List<proyectarPropuestaIndicadorEL> proyectarPropuestaIndicador)
+        {
+            int resultado = 0;
+            foreach (proyectarPropuestaIndicadorEL item in proyectarPropuestaIndicador)
+            {
+                resultado = PropuestaIndicador.proyectarPropuestaxIndicadores(item);
+            }
+            return Json(new { resultado = resultado }, JsonRequestBehavior.AllowGet);
+        }
+        
+
 	}
 }

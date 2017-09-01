@@ -77,6 +77,7 @@
     <Compile Include="Dominio\PerfilEL.cs" />
     <Compile Include="Dominio\PlanMarketingEL.cs" />
     <Compile Include="Dominio\PropuestaPublicidadEL.cs" />
+    <Compile Include="Dominio\proyectarPropuestaIndicadorEL.cs" />
     <Compile Include="Dominio\ResultadoEncuestaEL.cs" />
     <Compile Include="Dominio\UsuarioEL.cs" />
     <Compile Include="Persistencia\ComboDA.cs" />

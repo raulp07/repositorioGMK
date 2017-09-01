@@ -65,6 +65,7 @@
     <Compile Include="Inherited\PerfilEL.cs" />
     <Compile Include="Inherited\PlanMarketingEL.cs" />
     <Compile Include="Inherited\PropuestaPublicidadEL.cs" />
+    <Compile Include="Inherited\proyectarPropuestaIndicadorEL.cs" />
     <Compile Include="Inherited\ReporteEvaluacionEL.cs" />
     <Compile Include="Inherited\ResultadoEncuestaEL.cs" />
     <Compile Include="Inherited\SolicitanteEL.cs" />

@@ -31,7 +31,7 @@ namespace UPC.SISGFRAN.BL.Repositorios
         public List<CalcularPropuestaxIndicadorEL> CalcularPropuestaxIndicadores(CalcularPropuestaxIndicadorEL CalcularPropuestaxIndicador)
         {
             string postdata = js.Serialize(CalcularPropuestaxIndicador);
-            List<CalcularPropuestaxIndicadorEL> listCalcularPropuestaxIndicador = js.Deserialize<List<CalcularPropuestaxIndicadorEL>>(conecRest.ConectREST("locales", "POST", postdata));
+            List<CalcularPropuestaxIndicadorEL> listCalcularPropuestaxIndicador = js.Deserialize<List<CalcularPropuestaxIndicadorEL>>(conecRest.ConectREST("PropuestaxIndicadores", "POST", postdata));
             return listCalcularPropuestaxIndicador;
         }
 
@@ -40,6 +40,13 @@ namespace UPC.SISGFRAN.BL.Repositorios
             string postdata = js.Serialize(Combo);
             List<ComboEL> _Combo = js.Deserialize<List<ComboEL>>(conecRest.ConectREST("Combo", "POST", postdata));
             return _Combo;
+        }
+
+        public int proyectarPropuestaxIndicadores(proyectarPropuestaIndicadorEL proyectarPropuestaIndicador)
+        {
+            string postdata = js.Serialize(proyectarPropuestaIndicador);
+            int respuesta = js.Deserialize<int>(conecRest.ConectREST("ProyectarPropuestaIndicador", "POST", postdata));
+            return respuesta;
         }
     }
 }

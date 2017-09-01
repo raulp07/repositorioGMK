@@ -11,98 +11,159 @@ namespace WCFRest.Dominio
     {
         ///
 
-        /// Gets or Sets codLocal
-        [DataMember]
-        public int codLocal
-        {
-            get { return _codLocal; }
-            set { _codLocal = value; }
-        }
-        private int _codLocal;
-
-        ///
-
-        /// Gets or Sets nombreLocal
+        /// Gets or Sets id
         ///
         [DataMember]
-        public string nombreLocal
+        public int id
         {
-            get { return _nombreLocal; }
-            set { _nombreLocal = value; }
+            get { return _id; }
+            set { _id = value; }
         }
-        private string _nombreLocal;
+        private int _id;
 
         ///
 
-        /// Gets or Sets fechaAperturaLocal
+        /// Gets or Sets franquiciaId
         ///
         [DataMember]
-        public DateTime fechaAperturaLocal
+        public int franquiciaId
         {
-            get { return _fechaAperturaLocal; }
-            set { _fechaAperturaLocal = value; }
+            get { return _franquiciaId; }
+            set { _franquiciaId = value; }
         }
-        private DateTime _fechaAperturaLocal;
+        private int _franquiciaId;
 
         ///
 
-        /// Gets or Sets responsableLocal
+        /// Gets or Sets nombre
         ///
         [DataMember]
-        public string responsableLocal
+        public string nombre
         {
-            get { return _responsableLocal; }
-            set { _responsableLocal = value; }
+            get { return _nombre; }
+            set { _nombre = value; }
         }
-        private string _responsableLocal;
+        private string _nombre;
 
         ///
 
-        /// Gets or Sets distritoLocal
+        /// Gets or Sets fechaApertura
         ///
         [DataMember]
-        public string distritoLocal
+        public DateTime fechaApertura
         {
-            get { return _distritoLocal; }
-            set { _distritoLocal = value; }
+            get { return _fechaApertura; }
+            set { _fechaApertura = value; }
         }
-        private string _distritoLocal;
+        private DateTime _fechaApertura;
 
         ///
 
-        /// Gets or Sets direccionLocal
+        /// Gets or Sets responsable
         ///
         [DataMember]
-        public string direccionLocal
+        public string responsable
         {
-            get { return _direccionLocal; }
-            set { _direccionLocal = value; }
+            get { return _responsable; }
+            set { _responsable = value; }
         }
-        private string _direccionLocal;
+        private string _responsable;
 
         ///
 
-        /// Gets or Sets latitudLocal
+        /// Gets or Sets distrito
         ///
         [DataMember]
-        public string latitudLocal
+        public string distrito
         {
-            get { return _latitudLocal; }
-            set { _latitudLocal = value; }
+            get { return _distrito; }
+            set { _distrito = value; }
         }
-        private string _latitudLocal;
+        private string _distrito;
 
         ///
 
-        /// Gets or Sets longitudLocal
+        /// Gets or Sets direccion
         ///
         [DataMember]
-        public string longitudLocal
+        public string direccion
         {
-            get { return _longitudLocal; }
-            set { _longitudLocal = value; }
+            get { return _direccion; }
+            set { _direccion = value; }
         }
-        private string _longitudLocal;
+        private string _direccion;
+
+        ///
+
+        /// Gets or Sets latitud
+        ///
+        [DataMember]
+        public string latitud
+        {
+            get { return _latitud; }
+            set { _latitud = value; }
+        }
+        private string _latitud;
+
+        ///
+
+        /// Gets or Sets longitud
+        ///
+        [DataMember]
+        public string longitud
+        {
+            get { return _longitud; }
+            set { _longitud = value; }
+        }
+        private string _longitud;
+
+        ///
+
+        /// Gets or Sets auditoriaUC
+        ///
+        [DataMember]
+        public int auditoriaUC
+        {
+            get { return _auditoriaUC; }
+            set { _auditoriaUC = value; }
+        }
+        private int _auditoriaUC;
+
+        ///
+
+        /// Gets or Sets auditoriaUM
+        ///
+        [DataMember]
+        public int auditoriaUM
+        {
+            get { return _auditoriaUM; }
+            set { _auditoriaUM = value; }
+        }
+        private int _auditoriaUM;
+
+        ///
+
+        /// Gets or Sets auditoriaFC
+        ///
+        [DataMember]
+        public DateTime auditoriaFC
+        {
+            get { return _auditoriaFC; }
+            set { _auditoriaFC = value; }
+        }
+        private DateTime _auditoriaFC;
+
+        ///
+
+        /// Gets or Sets auditoriaFM
+        ///
+        [DataMember]
+        public DateTime auditoriaFM
+        {
+            get { return _auditoriaFM; }
+            set { _auditoriaFM = value; }
+        }
+        private DateTime _auditoriaFM;
        
 
     }

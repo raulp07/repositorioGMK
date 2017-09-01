@@ -32,10 +32,10 @@ namespace WCFRest.Persistencia
                             if (dataReader["codMedioComunicacion"] != DBNull.Value) { obj.codMedioComunicacion = (int)dataReader["codMedioComunicacion"]; }
                             if (dataReader["nombreMedioComunicacion"] != DBNull.Value) { obj.nombreMedioComunicacion = (string)dataReader["nombreMedioComunicacion"]; }
                             if (dataReader["costoUnitarioMedioComunicacion"] != DBNull.Value) { obj.costoUnitarioMedioComunicacion = (decimal)dataReader["costoUnitarioMedioComunicacion"]; }
-                            if (dataReader["codLocal"] != DBNull.Value) { obj.codLocal = (int)dataReader["codLocal"]; }
-                            if (dataReader["nombreLocal"] != DBNull.Value) { obj.nombreLocal = (string)dataReader["nombreLocal"]; }
-                            if (dataReader["latitudLocal"] != DBNull.Value) { obj.latitudLocal = (string)dataReader["latitudLocal"]; }
-                            if (dataReader["longitudLocal"] != DBNull.Value) { obj.longitudLocal = (string)dataReader["longitudLocal"]; }
+                            if (dataReader["id"] != DBNull.Value) { obj.id = (int)dataReader["id"]; }
+                            if (dataReader["nombre"] != DBNull.Value) { obj.nombre = (string)dataReader["nombre"]; }
+                            if (dataReader["latitud"] != DBNull.Value) { obj.latitud = (string)dataReader["latitud"]; }
+                            if (dataReader["longitud"] != DBNull.Value) { obj.longitud = (string)dataReader["longitud"]; }
                             lstLocal.Add(obj);
                         }
                         return lstLocal;

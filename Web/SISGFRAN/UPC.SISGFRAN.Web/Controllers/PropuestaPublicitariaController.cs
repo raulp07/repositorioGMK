@@ -9,8 +9,8 @@ namespace UPC.SISGFRAN.Web.Controllers
 {
     public class PropuestaPublicitariaController : Controller
     {
-        //
-        // GET: /PropuestaPublicitaria/
+        private ResultadoEncuestaBL ResultadoEncuesta = new ResultadoEncuestaBL();
+
         public ActionResult Index()
         {
             return View();
@@ -19,28 +19,25 @@ namespace UPC.SISGFRAN.Web.Controllers
         [HttpPost]
         public JsonResult ListaMedios_X_Local() {
             List<LocalEL> listLocal = new List<LocalEL>();
-            listLocal = new ResultadoEncuestaBL().GetAllDatoMedio_X_Local();
-
-
+            listLocal = ResultadoEncuesta.GetAllDatoMedio_X_Local();
             return Json(new { listLocal = listLocal }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
         public JsonResult ListaMediosComunicacion() {
             List<ResultadoEncuestaEL> listResultadoEncuesta = new List<ResultadoEncuestaEL>();
-            listResultadoEncuesta = new ResultadoEncuestaBL().GetAllDatoMedioPublicitario();
+            listResultadoEncuesta = ResultadoEncuesta.GetAllDatoMedioPublicitario();
             return Json(new { listResultadoEncuesta = listResultadoEncuesta }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
         public JsonResult RegistroPropuesta(PropuestaPublicidadEL PropuestaPublicidad, List<DetallePropuestaPublicidadEL> DetallePropuestaPublicidad)
         {
-            ResultadoEncuestaBL obj = new ResultadoEncuestaBL();
-            int codPropuestapublicidad = obj.RegistroPropuesta(PropuestaPublicidad);
+            int codPropuestapublicidad = ResultadoEncuesta.RegistroPropuesta(PropuestaPublicidad);
             foreach (DetallePropuestaPublicidadEL item in DetallePropuestaPublicidad)
             {
                 item.codPropuestapublicidad = codPropuestapublicidad;
-                int resultado = obj.RegistroDetallePropuesta(item);
+                int resultado = ResultadoEncuesta.RegistroDetallePropuesta(item);
             }
             return Json(new { listLocal = "" }, JsonRequestBehavior.AllowGet);
         }

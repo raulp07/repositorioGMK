@@ -51,6 +51,10 @@
     <Compile Include="Helpers\FTPUtil.cs" />
     <Compile Include="Helpers\JsonHelper.cs" />
     <Compile Include="Inherited\AplicacionEL.cs" />
+    <Compile Include="Inherited\CalcularPropuestaxIndicadorEL.cs" />
+    <Compile Include="Inherited\ComboEL.cs" />
+    <Compile Include="Inherited\comboPlanMarketingEL.cs" />
+    <Compile Include="Inherited\ComboProductoEL.cs" />
     <Compile Include="Inherited\DetallePropuestaPublicidadEL.cs" />
     <Compile Include="Inherited\EncuestaEL.cs" />
     <Compile Include="Inherited\EntrevistaEL.cs" />
@@ -59,6 +63,7 @@
     <Compile Include="Inherited\OpcionEL.cs" />
     <Compile Include="Inherited\OpcionXPerfilEL.cs" />
     <Compile Include="Inherited\PerfilEL.cs" />
+    <Compile Include="Inherited\PlanMarketingEL.cs" />
     <Compile Include="Inherited\PropuestaPublicidadEL.cs" />
     <Compile Include="Inherited\ReporteEvaluacionEL.cs" />
     <Compile Include="Inherited\ResultadoEncuestaEL.cs" />

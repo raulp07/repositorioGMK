@@ -10,98 +10,158 @@ namespace UPC.SISGFRAN.EL.Inherited
     {
         ///
 
-        /// Gets or Sets codLocal
+        /// Gets or Sets id
         ///
 
-        public int codLocal
+        public int id
         {
-            get { return _codLocal; }
-            set { _codLocal = value; }
+            get { return _id; }
+            set { _id = value; }
         }
-        private int _codLocal;
+        private int _id;
 
         ///
 
-        /// Gets or Sets nombreLocal
+        /// Gets or Sets franquiciaId
         ///
 
-        public string nombreLocal
+        public int franquiciaId
         {
-            get { return _nombreLocal; }
-            set { _nombreLocal = value; }
+            get { return _franquiciaId; }
+            set { _franquiciaId = value; }
         }
-        private string _nombreLocal;
+        private int _franquiciaId;
 
         ///
 
-        /// Gets or Sets fechaAperturaLocal
+        /// Gets or Sets nombre
         ///
 
-        public DateTime fechaAperturaLocal
+        public string nombre
         {
-            get { return _fechaAperturaLocal; }
-            set { _fechaAperturaLocal = value; }
+            get { return _nombre; }
+            set { _nombre = value; }
         }
-        private DateTime _fechaAperturaLocal;
+        private string _nombre;
 
         ///
 
-        /// Gets or Sets responsableLocal
+        /// Gets or Sets fechaApertura
         ///
 
-        public string responsableLocal
+        public DateTime fechaApertura
         {
-            get { return _responsableLocal; }
-            set { _responsableLocal = value; }
+            get { return _fechaApertura; }
+            set { _fechaApertura = value; }
         }
-        private string _responsableLocal;
+        private DateTime _fechaApertura;
 
         ///
 
-        /// Gets or Sets distritoLocal
+        /// Gets or Sets responsable
         ///
 
-        public string distritoLocal
+        public string responsable
         {
-            get { return _distritoLocal; }
-            set { _distritoLocal = value; }
+            get { return _responsable; }
+            set { _responsable = value; }
         }
-        private string _distritoLocal;
+        private string _responsable;
 
         ///
 
-        /// Gets or Sets direccionLocal
+        /// Gets or Sets distrito
         ///
 
-        public string direccionLocal
+        public string distrito
         {
-            get { return _direccionLocal; }
-            set { _direccionLocal = value; }
+            get { return _distrito; }
+            set { _distrito = value; }
         }
-        private string _direccionLocal;
+        private string _distrito;
 
         ///
 
-        /// Gets or Sets latitudLocal
+        /// Gets or Sets direccion
         ///
 
-        public string latitudLocal
+        public string direccion
         {
-            get { return _latitudLocal; }
-            set { _latitudLocal = value; }
+            get { return _direccion; }
+            set { _direccion = value; }
         }
-        private string _latitudLocal;
+        private string _direccion;
 
         ///
 
-        /// Gets or Sets longitudLocal
+        /// Gets or Sets latitud
         ///
 
-        public string longitudLocal
+        public string latitud
         {
-            get { return _longitudLocal; }
-            set { _longitudLocal = value; }
+            get { return _latitud; }
+            set { _latitud = value; }
         }
-        private string _longitudLocal;
+        private string _latitud;
+
+        ///
+
+        /// Gets or Sets longitud
+        ///
+
+        public string longitud
+        {
+            get { return _longitud; }
+            set { _longitud = value; }
+        }
+        private string _longitud;
+
+        ///
+
+        /// Gets or Sets auditoriaUC
+        ///
+
+        public int auditoriaUC
+        {
+            get { return _auditoriaUC; }
+            set { _auditoriaUC = value; }
+        }
+        private int _auditoriaUC;
+
+        ///
+
+        /// Gets or Sets auditoriaUM
+        ///
+
+        public int auditoriaUM
+        {
+            get { return _auditoriaUM; }
+            set { _auditoriaUM = value; }
+        }
+        private int _auditoriaUM;
+
+        ///
+
+        /// Gets or Sets auditoriaFC
+        ///
+
+        public DateTime auditoriaFC
+        {
+            get { return _auditoriaFC; }
+            set { _auditoriaFC = value; }
+        }
+        private DateTime _auditoriaFC;
+
+        ///
+
+        /// Gets or Sets auditoriaFM
+        ///
+
+        public DateTime auditoriaFM
+        {
+            get { return _auditoriaFM; }
+            set { _auditoriaFM = value; }
+        }
+        private DateTime _auditoriaFM;
     }
 }

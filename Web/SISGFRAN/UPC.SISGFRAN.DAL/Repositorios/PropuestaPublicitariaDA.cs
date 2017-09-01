@@ -36,10 +36,10 @@ namespace UPC.SISGFRAN.DAL.Repositorios
                     local.codMedioComunicacion = Funciones.CheckInt(dr["codMedioComunicacion"]);
                     local.nombreMedioComunicacion = Funciones.CheckStr(dr["nombreMedioComunicacion"]);
                     local.costoUnitarioMedioComunicacion = Funciones.CheckDecimal(dr["costoUnitarioMedioComunicacion"]);
-                    local.codLocal = Funciones.CheckInt(dr["codLocal"]);
-                    local.nombreLocal = Funciones.CheckStr(dr["nombreLocal"]);
-                    local.latitudLocal = Funciones.CheckStr(dr["latitudLocal"]);
-                    local.longitudLocal = Funciones.CheckStr(dr["longitudLocal"]);
+                    local.id = Funciones.CheckInt(dr["id"]);
+                    local.nombre = Funciones.CheckStr(dr["nombre"]);
+                    local.latitud = Funciones.CheckStr(dr["latitud"]);
+                    local.longitud = Funciones.CheckStr(dr["longitud"]);
 
                     lstLocal.Add(local);
                 }

@@ -52,5 +52,35 @@ namespace WCFRest
         {
             return new UsuarioDA().GetUsuarioById(idUsuario);
         }
+
+
+        public List<PlanMarketingEL> GetAllPlanMarketing()
+        {
+            return new PlanMarketingDA().GetAllPlanMarketing();
+        }
+
+
+        public List<ComboProductoEL> GetAllComboProducto()
+        {
+            return new ComboProductoDA().GetAllComboProducto();
+        }
+
+
+        public List<LocalEL> GetAllLocal()
+        {
+            return new LocalDA().GetAllLocal();
+        }
+
+
+        public List<CalcularPropuestaxIndicadorEL> CalcularPropuestaxIndicadores(CalcularPropuestaxIndicadorEL CalcularPropuestaxIndicador)
+        {
+            return new PropuestaxIndicadorDA().CalcularPropuestaxIndicadores(CalcularPropuestaxIndicador);
+        }
+
+
+        public List<ComboEL> GetAllCombo(ComboEL Combo)
+        {
+            return new ComboDA().GetAllCombo(Combo);
+        }
     }
 }

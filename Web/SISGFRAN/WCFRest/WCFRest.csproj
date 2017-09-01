@@ -65,17 +65,27 @@
   <ItemGroup>
     <Compile Include="Dominio\AplicacionEL.cs" />
     <Compile Include="Dominio\BaseEL.cs" />
+    <Compile Include="Dominio\CalcularPropuestaxIndicadorEL.cs" />
+    <Compile Include="Dominio\ComboEL.cs" />
+    <Compile Include="Dominio\comboPlanMarketingEL.cs" />
+    <Compile Include="Dominio\ComboProductoEL.cs" />
     <Compile Include="Dominio\DetallePropuestaPublicidadEL.cs" />
     <Compile Include="Dominio\EncuestaEL.cs" />
     <Compile Include="Dominio\LocalEL.cs" />
     <Compile Include="Dominio\MedioComunicacionEL.cs" />
     <Compile Include="Dominio\ParametroEL.cs" />
     <Compile Include="Dominio\PerfilEL.cs" />
+    <Compile Include="Dominio\PlanMarketingEL.cs" />
     <Compile Include="Dominio\PropuestaPublicidadEL.cs" />
     <Compile Include="Dominio\ResultadoEncuestaEL.cs" />
     <Compile Include="Dominio\UsuarioEL.cs" />
+    <Compile Include="Persistencia\ComboDA.cs" />
+    <Compile Include="Persistencia\ComboProductoDA.cs" />
     <Compile Include="Persistencia\ConexionUtil.cs" />
+    <Compile Include="Persistencia\LocalDA.cs" />
+    <Compile Include="Persistencia\PlanMarketingDA.cs" />
     <Compile Include="Persistencia\PropuestaPublicitariaDA.cs" />
+    <Compile Include="Persistencia\PropuestaxIndicadorDA.cs" />
     <Compile Include="Persistencia\UsuarioDA.cs" />
     <Compile Include="WCFPardos.svc.cs">
       <DependentUpon>WCFPardos.svc</DependentUpon>

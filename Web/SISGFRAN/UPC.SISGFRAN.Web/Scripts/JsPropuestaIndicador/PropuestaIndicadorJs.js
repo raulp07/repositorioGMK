@@ -6,6 +6,8 @@
         listacomboproducto: [],
         listacombo: [],
         listaregistro:[],
+        localseleccionado: 0,
+        listacalcularpropuesta:[],
     },
     methods: {
         ListaPlanMarketing: function () {
@@ -24,7 +26,6 @@
                 var json = { Combo: param }
                 axios.post("/PropuestaIndicador/ListaCombo/", json).then(function (response) {
                     this.listacombo = response.data.Combo;
-                    //this.CargarMapa();
                 }.bind(this)).catch(function (error) {
                     console.log(error);
                 });
@@ -62,30 +63,11 @@
                 alert("Debe seleccionar un Combo");
                 return;
             }
-
-
-            //var arreglomapas = [];
-            //var _d1 = { codLocal: 11, codCombo: 1, cantProyeccionVenta: 30, nombreCaractComboVenta: 'prueba 1', impProyeccionCosto: 40 };
-            //var _d2 = { codLocal: 12, codCombo: 2, cantProyeccionVenta: 40, nombreCaractComboVenta: 'prueba 2', impProyeccionCosto: 30 };
-            //var _d3 = { codLocal: 13, codCombo: 1, cantProyeccionVenta: 50, nombreCaractComboVenta: 'prueba 3', impProyeccionCosto: 20 };
-            //arreglomapas.push(_d1);
-            //arreglomapas.push(_d2);
-            //arreglomapas.push(_d3);
-
-            //var uluru = { lat: -9.563234298135303, lng: -71.63956062343755 };
-            //var map = new google.maps.Map(document.getElementById('googleMap'), {
-            //    zoom: 6,
-            //    center: uluru
-            //});
-            //debugger;
-            var locals = '';
-            $.each(this.locales, function (key, value) {
-
-                locals += value.id + ',';
-            });
-            locals = locals.substring(0, locals.length - 1);
+            var _Local = '';
+            
+            locals = $('#lblcodlocal').val() == "0" ? '' : ','+$('#lblcodlocal').val()+',';
             var param = {
-                listLocal: '',
+                listLocal: locals,
                 codCombo: $('#cboProducto').val(),
                 indConsumo: $('#rangeConsumo_1').val(),
                 indSabor: $('#rangeSabor_2').val(),
@@ -106,6 +88,28 @@
                     coords: [1, 1, 1, 20, 18, 20, 18, 1],
                     type: 'poly'
                 };
+                var _listacalcularpropuesta 
+                if ($('#lblcodlocal').val() == "0") {
+                    _listacalcularpropuesta = response.data.listCalcularPropuestaxIndicador;
+                } else {
+                    var _listacalcularpropuesta=this.listacalcularpropuesta;
+                    $.each(_listacalcularpropuesta, function (key, value) {
+                        $.each(response.data.listCalcularPropuestaxIndicador, function (key2, value2) {
+                            if (value2.codLocal == value.codLocal) {
+                                _listacalcularpropuesta[key].cantProyeccionVenta = value2.cantProyeccionVenta;
+                                _listacalcularpropuesta[key].impProyeccionCosto = value2.impProyeccionCosto;
+                                _listacalcularpropuesta[key].indConsumo = value2.indConsumo;
+                                _listacalcularpropuesta[key].indSabor = value2.indSabor;
+                                _listacalcularpropuesta[key].indCosto = value2.indCosto;
+                            }                            
+                        });
+                    });
+                    _listacalcularpropuesta= _listacalcularpropuesta;
+
+                }
+                
+
+
                 var _ContadorLocales = 0;
                 var _locales = this.locales;
                 var _index = 1;
@@ -115,10 +119,11 @@
                 var promconsumo = 0;
                 var promsabor = 0;
                 var promcosto = 0;
-
+                var promcantproyeccionventa = 0;
+                var promcantproyeccioncosto = 0;
+                var nombreCaractCombo = '';
                 $.each(_locales, function (key, value) {
-                    $.each(response.data.listCalcularPropuestaxIndicador, function (key2, value2) {
-
+                    $.each(_listacalcularpropuesta, function (key2, value2) {
                         if (value[3] == value2.codLocal) {
 
                             window["marker" + value2.codLocal] = new google.maps.Marker({
@@ -138,7 +143,7 @@
                                 var indice = this.zIndex;
                                 $.each(_listaregistro, function (key, value) {
                                     if (value.codLocal == indice) {
-                                        debugger;
+                                        $('#lblcodlocal').val(value.codLocal);
                                         $('#rangeConsumo_1').val(value.indicadorConsumo);
                                         $('#rangeSabor_2').val(value.indicadorSabor);
                                         $('#rangeCosto_3').val(value.indicadorCosto);
@@ -156,6 +161,10 @@
                             promsabor += value2.indSabor;
                             promcosto += value2.indCosto;
 
+                            promcantproyeccionventa += value2.cantProyeccionVenta;
+                            promcantproyeccioncosto += value2.impProyeccionCosto;
+                            nombreCaractCombo += value2.nombreCaractComboVenta;
+
                             var param = {
                                 indicadorConsumo: value2.indConsumo,
                                 indicadorSabor: value2.indSabor,
@@ -169,12 +178,21 @@
                     });
                 });
                 
-                $('#txtConsumo').val(promconsumo/_index);
-                $('#txtSabor').val(promsabor / _index);
-                $('#txtCosto').val(promcosto / _index);
+                
+                var _html2 = '';
+                _html2 += '<br /><br /><br /><p> Para que la proyeccion propuesta logre los objetivos esperados se sugiere :</p><br />';
+                _html2 += '<p>- Las ventas de producto seleccionado deben ser de  ' + (promcantproyeccionventa / _index).toFixed(2) + ' en cada local. </p>';
+                _html2 += '<p>- El producto seleccionado deberia incluir algunas de las siguientes caracteristicas : ' + nombreCaractCombo + '. </p>';
+                _html2 += '<p>- El combo seleccionado debe costar en promedio ' + (promcantproyeccioncosto / _index).toFixed(2) + ' . </p>';
+
+                $('#Comentario').html(_html2);
+
+                $('#txtConsumo').val((promconsumo/_index).toFixed(2));
+                $('#txtSabor').val((promsabor / _index).toFixed(2));
+                $('#txtCosto').val((promcosto / _index).toFixed(2));
                 this.listaregistro = _listaregistro;
-
-
+                $('#lblcodlocal').val("0");
+                this.listacalcularpropuesta = _listacalcularpropuesta;
             }.bind(this)).catch(function (error) {
                 console.log(error);
             });

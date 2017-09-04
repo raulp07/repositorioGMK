@@ -48,3 +48,4 @@ D:\UPC\VlV\TP3\repositorioGMK\Web\SISGFRAN\DAAB\bin\Debug\DAAB.dll
 D:\UPC\VlV\TP3\repositorioGMK\Web\SISGFRAN\DAAB\bin\Debug\DAAB.pdb
 D:\UPC\VlV\TP3\repositorioGMK\Web\SISGFRAN\DAAB\obj\Debug\DAAB.dll
 D:\UPC\VlV\TP3\repositorioGMK\Web\SISGFRAN\DAAB\obj\Debug\DAAB.pdb
+D:\UPC\VlV\TP3\repositorioGMK\Web\SISGFRAN\DAAB\obj\Debug\DAAB.csprojResolveAssemblyReference.cache

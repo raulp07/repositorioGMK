@@ -181,9 +181,16 @@
                 
                 var _html2 = '';
                 _html2 += '<br /><br /><br /><p> Para que la proyeccion propuesta logre los objetivos esperados se sugiere :</p><br />';
-                _html2 += '<p>- Las ventas de producto seleccionado deben ser de  ' + (promcantproyeccionventa / _index).toFixed(2) + ' en cada local. </p>';
-                _html2 += '<p>- El producto seleccionado deberia incluir algunas de las siguientes caracteristicas : ' + nombreCaractCombo + '. </p>';
-                _html2 += '<p>- El combo seleccionado debe costar en promedio ' + (promcantproyeccioncosto / _index).toFixed(2) + ' . </p>';
+                if (promcantproyeccionventa != 0) {
+                    _html2 += '<p>- Las ventas de producto seleccionado deben ser de  ' + (promcantproyeccionventa / _index).toFixed(2) + ' en cada local. </p>';
+                }                
+                if (nombreCaractCombo.length != 0) {
+                    _html2 += '<p>- El producto seleccionado deberia incluir algunas de las siguientes caracteristicas : ' + nombreCaractCombo + '. </p>';
+                }
+                if (promcantproyeccioncosto != 0) {
+                    _html2 += '<p>- El combo seleccionado debe costar en promedio ' + (promcantproyeccioncosto / _index).toFixed(2) + ' . </p>';
+                }
+                
 
                 $('#Comentario').html(_html2);
 

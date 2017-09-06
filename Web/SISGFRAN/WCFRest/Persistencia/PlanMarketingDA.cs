@@ -10,6 +10,17 @@ namespace WCFRest.Persistencia
 {
     public class PlanMarketingDA
     {
+        private static PlanMarketingDA planMarketing;
+        private PlanMarketingDA() { }
+        public static PlanMarketingDA PlanMarketing {
+            get {
+                if (planMarketing == null)
+                {
+                    planMarketing = new PlanMarketingDA();
+                }
+                return planMarketing;
+            }
+        }
         public List<PlanMarketingEL> GetAllPlanMarketing()
         {
             using (SqlConnection con = new SqlConnection(ConexionUtil.Cadena))

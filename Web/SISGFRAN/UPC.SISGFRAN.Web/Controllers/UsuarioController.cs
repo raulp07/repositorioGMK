@@ -15,7 +15,7 @@ namespace UPC.SISGFRAN.Web.Controllers
     {
 
         #region "Variables globales"
-        UsuarioBL usuarioBL = new UsuarioBL();
+        UsuarioBL usuarioBL = UsuarioBL.Usuario;
         #endregion
 
         [AllowAnonymous]
@@ -107,7 +107,7 @@ namespace UPC.SISGFRAN.Web.Controllers
         public static List<OpcionXPerfilEL> SetearMenu(bool padre)
         {
             List<OpcionXPerfilEL> lista = null;
-            OpcionXPerfilBL menuBL = new OpcionXPerfilBL();
+            OpcionXPerfilBL menuBL = OpcionXPerfilBL.OpcionXPerfil;
 
             OpcionXPerfilEL opcionesXPerfil = new OpcionXPerfilEL()
             {

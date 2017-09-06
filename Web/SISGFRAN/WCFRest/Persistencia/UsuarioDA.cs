@@ -10,6 +10,18 @@ namespace WCFRest.Persistencia
 {
     public class UsuarioDA
     {
+        private static UsuarioDA usuario;
+        private UsuarioDA() { }
+        public static UsuarioDA Usuario {
+            get {
+                if (usuario == null)
+                {
+                    usuario = new UsuarioDA();
+                }
+                return usuario;
+            }
+        }
+
         public UsuarioEL Login(UsuarioEL usuario)
         {
             using (SqlConnection con = new SqlConnection(ConexionUtil.Cadena))

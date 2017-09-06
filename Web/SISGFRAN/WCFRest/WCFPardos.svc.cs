@@ -15,8 +15,8 @@ namespace WCFRest
     public class WCFPardos : IWCFPardos
     {
 
-        private PropuestaPublicitariaDA PPDA = new PropuestaPublicitariaDA();
-        private UsuarioDA UDA = new UsuarioDA();
+        private PropuestaPublicitariaDA PPDA = PropuestaPublicitariaDA.PropuestaPublicitaria;
+        private UsuarioDA UDA = UsuarioDA.Usuario;
         public List<LocalEL> GetAllDatoMedio_X_Local()
         {
 
@@ -45,54 +45,54 @@ namespace WCFRest
 
         public List<UsuarioEL> GetUsuarios(UsuarioEL usuario)
         {
-            return new UsuarioDA().GetUsuarios(usuario);
+            return UDA.GetUsuarios(usuario);
         }
 
         public UsuarioEL GetUsuarioById(int? idUsuario)
         {
-            return new UsuarioDA().GetUsuarioById(idUsuario);
+            return UDA.GetUsuarioById(idUsuario);
         }
 
 
         public List<PlanMarketingEL> GetAllPlanMarketing()
         {
-            return new PlanMarketingDA().GetAllPlanMarketing();
+            return PlanMarketingDA.PlanMarketing.GetAllPlanMarketing();
         }
 
 
         public List<ComboProductoEL> GetAllComboProducto()
         {
-            return new ComboProductoDA().GetAllComboProducto();
+            return ComboProductoDA.ComboProducto.GetAllComboProducto();
         }
 
 
         public List<LocalEL> GetAllLocal()
         {
-            return new LocalDA().GetAllLocal();
+            return LocalDA.Local.GetAllLocal();
         }
 
 
         public List<CalcularPropuestaxIndicadorEL> CalcularPropuestaxIndicadores(CalcularPropuestaxIndicadorEL CalcularPropuestaxIndicador)
         {
-            return new PropuestaxIndicadorDA().CalcularPropuestaxIndicadores(CalcularPropuestaxIndicador);
+            return PropuestaxIndicadorDA.PropuestaxIndicador.CalcularPropuestaxIndicadores(CalcularPropuestaxIndicador);
         }
 
 
         public List<ComboEL> GetAllCombo(ComboEL Combo)
         {
-            return new ComboDA().GetAllCombo(Combo);
+            return ComboDA.Combo.GetAllCombo(Combo);
         }
 
 
         public int proyectarPropuestaxIndicadores(proyectarPropuestaIndicadorEL proyectarPropuestaIndicador)
         {
-            return new PropuestaxIndicadorDA().proyectarPropuestaxIndicadores(proyectarPropuestaIndicador);
+            return PropuestaxIndicadorDA.PropuestaxIndicador.proyectarPropuestaxIndicadores(proyectarPropuestaIndicador);
         }
 
 
         public List<OpcionXPerfilEL> ListMenu(OpcionXPerfilEL opcionPerfil)
         {
-            return new OpcionXPerfilDA().ListMenu(opcionPerfil);
+            return OpcionXPerfilDA.OpcionXPerfil.ListMenu(opcionPerfil);
         }
     }
 }

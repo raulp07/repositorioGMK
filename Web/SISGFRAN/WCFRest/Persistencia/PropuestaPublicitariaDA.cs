@@ -9,7 +9,17 @@ namespace WCFRest.Persistencia
 {
     public class PropuestaPublicitariaDA
     {
-
+        private static PropuestaPublicitariaDA propuestaPublicitaria;
+        private PropuestaPublicitariaDA() { }
+        public static PropuestaPublicitariaDA PropuestaPublicitaria {
+            get {
+                if (propuestaPublicitaria == null)
+                {
+                    propuestaPublicitaria = new PropuestaPublicitariaDA();
+                }
+                return propuestaPublicitaria;
+            }
+        }
 
         public List<LocalEL> GetAllDatoMedio_X_Local()
         {

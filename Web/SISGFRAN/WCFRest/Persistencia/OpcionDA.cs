@@ -10,6 +10,18 @@ namespace WCFRest.Persistencia
 {
     public class OpcionDA
     {
+        private static OpcionDA opcion;
+        private OpcionDA (){}
+        public static OpcionDA Opcion{
+            get {
+                if (opcion == null)
+                {
+                    opcion = new OpcionDA();
+                }
+                return opcion;
+            }
+        }
+
         public OpcionEL GetOpcionByID(int? idOpcion) {
 
             using (SqlConnection con = new SqlConnection(ConexionUtil.Cadena))

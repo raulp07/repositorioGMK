@@ -10,6 +10,17 @@ namespace WCFRest.Persistencia
 {
     public class LocalDA
     {
+        private static LocalDA local;
+        private LocalDA() { }
+        public static LocalDA Local {
+            get {
+                if (local == null)
+                {
+                    local = new LocalDA();
+                }
+                return local;
+            }
+        }
         public List<LocalEL> GetAllLocal()
         {
             using (SqlConnection con = new SqlConnection(ConexionUtil.Cadena))

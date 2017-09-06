@@ -10,6 +10,20 @@ namespace WCFRest.Persistencia
 {
     public class ComboProductoDA
     {
+
+        private static ComboProductoDA comboProducto;
+        private ComboProductoDA() { }
+
+        public static ComboProductoDA ComboProducto {
+            get {
+                if (comboProducto ==null)
+                {
+                    comboProducto = new ComboProductoDA();
+                }
+                return comboProducto;
+            }
+        }
+
         public List<ComboProductoEL> GetAllComboProducto()
         {
             using (SqlConnection con = new SqlConnection(ConexionUtil.Cadena))

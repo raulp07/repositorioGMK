@@ -10,6 +10,17 @@ namespace WCFRest.Persistencia
 {
     public class OpcionXPerfilDA
     {
+        private static OpcionXPerfilDA opcionXPerfil;
+        private OpcionXPerfilDA() { }
+        public static OpcionXPerfilDA OpcionXPerfil {
+            get {
+                if (opcionXPerfil ==null)
+                {
+                    opcionXPerfil = new OpcionXPerfilDA();
+                }
+                return opcionXPerfil;
+            }
+        }
         public List<OpcionXPerfilEL> ListMenu(OpcionXPerfilEL opcionPerfil)
         {
 
@@ -31,7 +42,7 @@ namespace WCFRest.Persistencia
                         while (dataReader.Read())
                         {
                             OpcionXPerfilEL item = new OpcionXPerfilEL();
-                            OpcionEL opcion = new OpcionDA().GetOpcionByID((int)dataReader["OpcionId"]);
+                            OpcionEL opcion = OpcionDA.Opcion.GetOpcionByID((int)dataReader["OpcionId"]);
                             item.Opcion = opcion;
 
                             AplicacionEL aplicacion = new AplicacionEL()

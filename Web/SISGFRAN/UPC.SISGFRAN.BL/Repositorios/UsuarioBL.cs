@@ -9,6 +9,20 @@ namespace UPC.SISGFRAN.BL.Repositorios
 {
     public class UsuarioBL
     {
+
+        private static UsuarioBL usuario;
+        private UsuarioBL() { }
+
+        public static UsuarioBL Usuario {
+            get {
+                if (usuario == null)
+                {
+                    usuario = new UsuarioBL();
+                }
+                return usuario;
+            }
+        }
+
         REST conecRest = new REST();
         JavaScriptSerializer js = new JavaScriptSerializer();
         public UsuarioEL Login(UsuarioEL usuario)

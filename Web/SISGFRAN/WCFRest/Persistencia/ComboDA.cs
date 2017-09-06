@@ -10,6 +10,18 @@ namespace WCFRest.Persistencia
 {
     public class ComboDA
     {
+        private static ComboDA combo;
+        private ComboDA() { }
+        public static ComboDA Combo {
+            get {
+                if (combo == null)
+                {
+                    combo = new ComboDA();
+                }
+                return combo;
+            }
+        }
+
         public List<ComboEL> GetAllCombo(ComboEL Combo)
         {
             using (SqlConnection con = new SqlConnection(ConexionUtil.Cadena))

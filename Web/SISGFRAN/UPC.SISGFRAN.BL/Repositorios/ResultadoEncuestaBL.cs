@@ -12,6 +12,20 @@ namespace UPC.SISGFRAN.BL.Repositorios
 {
     public class ResultadoEncuestaBL
     {
+
+        private static ResultadoEncuestaBL resultadoEncuesta;
+
+        private ResultadoEncuestaBL() { }
+        public static ResultadoEncuestaBL ResultadoEncuesta {
+            get {
+                if (resultadoEncuesta == null)
+                {
+                    resultadoEncuesta = new ResultadoEncuestaBL();
+                }
+                return resultadoEncuesta;
+            }
+        }
+
         REST conecRest = new REST();
         JavaScriptSerializer js = new JavaScriptSerializer();
         public List<LocalEL> GetAllDatoMedio_X_Local()

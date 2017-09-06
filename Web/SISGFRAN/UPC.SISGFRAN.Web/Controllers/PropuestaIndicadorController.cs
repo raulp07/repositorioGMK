@@ -11,7 +11,7 @@ namespace UPC.SISGFRAN.Web.Controllers
     public class PropuestaIndicadorController : Controller
     {
 
-        PropuestaIndicadorBL PropuestaIndicador = new PropuestaIndicadorBL();
+        PropuestaIndicadorBL PropuestaIndicador = PropuestaIndicadorBL.PropuestaIndicador;
         //
         // GET: /PropuestaIndicador/
         public ActionResult Index()

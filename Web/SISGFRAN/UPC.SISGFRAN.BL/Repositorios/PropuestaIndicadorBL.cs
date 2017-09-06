@@ -10,9 +10,26 @@ namespace UPC.SISGFRAN.BL.Repositorios
 {
     public class PropuestaIndicadorBL
     {
+
+        private static PropuestaIndicadorBL propuestaIndicador;
+        private PropuestaIndicadorBL() { }
+        public static PropuestaIndicadorBL PropuestaIndicador
+        {
+            get
+            {
+                if (propuestaIndicador == null)
+                {
+                    propuestaIndicador = new PropuestaIndicadorBL();
+                }
+                return propuestaIndicador;
+            }
+        }
+
+
         REST conecRest = new REST();
         JavaScriptSerializer js = new JavaScriptSerializer();
-        public List<PlanMarketingEL> GetAllPlanMarketing() {
+        public List<PlanMarketingEL> GetAllPlanMarketing()
+        {
             List<PlanMarketingEL> PlanMarketing = js.Deserialize<List<PlanMarketingEL>>(conecRest.ConectREST("planmarketing", "GET"));
             return PlanMarketing;
         }

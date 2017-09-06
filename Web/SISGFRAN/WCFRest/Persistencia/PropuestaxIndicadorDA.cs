@@ -10,6 +10,19 @@ namespace WCFRest.Persistencia
 {
     public class PropuestaxIndicadorDA
     {
+        private static PropuestaxIndicadorDA propuestaxIndicador;
+        private PropuestaxIndicadorDA() { }
+
+        public static PropuestaxIndicadorDA PropuestaxIndicador {
+            get {
+                if (propuestaxIndicador == null)
+                {
+                    propuestaxIndicador = new PropuestaxIndicadorDA();
+                }
+                return propuestaxIndicador;
+            }
+        }
+
         public List<CalcularPropuestaxIndicadorEL> CalcularPropuestaxIndicadores(CalcularPropuestaxIndicadorEL CalcularPropuestaxIndicador)
         {
             using (SqlConnection con = new SqlConnection(ConexionUtil.Cadena))

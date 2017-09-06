@@ -9,7 +9,7 @@ namespace UPC.SISGFRAN.Web.Controllers
 {
     public class PropuestaPublicitariaController : Controller
     {
-        private ResultadoEncuestaBL ResultadoEncuesta = new ResultadoEncuestaBL();
+        private ResultadoEncuestaBL ResultadoEncuesta = ResultadoEncuestaBL.ResultadoEncuesta;
 
         public ActionResult Index()
         {

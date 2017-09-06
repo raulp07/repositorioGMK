@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UPC.SISGFRAN.EL.Inherited;
-using UPC.SISGFRAN.DAL.Repositorios;
 using System.Net;
 using System.IO;
 using System.Web.Script.Serialization;

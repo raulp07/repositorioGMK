@@ -88,5 +88,11 @@ namespace WCFRest
         {
             return new PropuestaxIndicadorDA().proyectarPropuestaxIndicadores(proyectarPropuestaIndicador);
         }
+
+
+        public List<OpcionXPerfilEL> ListMenu(OpcionXPerfilEL opcionPerfil)
+        {
+            return new OpcionXPerfilDA().ListMenu(opcionPerfil);
+        }
     }
 }

@@ -88,7 +88,7 @@ namespace UPC.SISGFRAN.DAL.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("DESKTOP-5Q0H4EB")]
+        [global::System.Configuration.DefaultSettingValueAttribute("raul-pc")]
         public string serverName {
             get {
                 return ((string)(this["serverName"]));

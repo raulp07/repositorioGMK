@@ -11,7 +11,7 @@ namespace WCFRest.Persistencia
         {
             get
             {
-                return "Data Source=DESKTOP-5Q0H4EB;Initial Catalog=BDPARDOS;user=sa;password=123;";
+                return "Data Source=raul-pc;Initial Catalog=BDPARDOS;user=sa;password=123;";
             }
         }
     }

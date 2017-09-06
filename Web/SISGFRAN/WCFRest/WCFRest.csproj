@@ -73,6 +73,8 @@
     <Compile Include="Dominio\EncuestaEL.cs" />
     <Compile Include="Dominio\LocalEL.cs" />
     <Compile Include="Dominio\MedioComunicacionEL.cs" />
+    <Compile Include="Dominio\OpcionEL.cs" />
+    <Compile Include="Dominio\OpcionXPerfilEL.cs" />
     <Compile Include="Dominio\ParametroEL.cs" />
     <Compile Include="Dominio\PerfilEL.cs" />
     <Compile Include="Dominio\PlanMarketingEL.cs" />
@@ -84,6 +86,8 @@
     <Compile Include="Persistencia\ComboProductoDA.cs" />
     <Compile Include="Persistencia\ConexionUtil.cs" />
     <Compile Include="Persistencia\LocalDA.cs" />
+    <Compile Include="Persistencia\OpcionDA.cs" />
+    <Compile Include="Persistencia\OpcionXPerfilDA.cs" />
     <Compile Include="Persistencia\PlanMarketingDA.cs" />
     <Compile Include="Persistencia\PropuestaPublicitariaDA.cs" />
     <Compile Include="Persistencia\PropuestaxIndicadorDA.cs" />

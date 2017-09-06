@@ -44,6 +44,10 @@ namespace WCFRest
         UsuarioEL GetUsuarioById(int? idUsuario);
 
         [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "ListaMenu", ResponseFormat = WebMessageFormat.Json)]
+        List<OpcionXPerfilEL> ListMenu(OpcionXPerfilEL opcionPerfil);
+
+        [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "planmarketing", ResponseFormat = WebMessageFormat.Json)]
         List<PlanMarketingEL> GetAllPlanMarketing();
 

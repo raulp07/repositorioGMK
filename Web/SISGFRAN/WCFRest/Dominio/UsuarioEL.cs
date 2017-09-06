@@ -7,7 +7,7 @@ using System.Web;
 namespace WCFRest.Dominio
 {
     [DataContract]
-    public class UsuarioEL
+    public class UsuarioEL : BaseEL
     {
         [DataMember]
         public int Id { get; set; }
@@ -48,7 +48,6 @@ namespace WCFRest.Dominio
         [DataMember]
         public DateTime FechaVencePass { get; set; }
 
-        [DataMember]
         public string NombreCompleto { get { return string.Concat(Apellidos, ", ", Nombres); } }
 
     }

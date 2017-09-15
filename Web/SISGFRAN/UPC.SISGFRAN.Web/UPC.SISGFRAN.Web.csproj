@@ -125,6 +125,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PropuestaIndicadorController.cs" />
     <Compile Include="Controllers\PropuestaPublicitariaController.cs" />
+    <Compile Include="Controllers\SugerirTemporadaPromocionController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -323,6 +324,7 @@
     <Content Include="Views\PropuestaPublicitaria\Index.cshtml" />
     <Content Include="Views\PropuestaPublicitaria\_RegistroPropuesta.cshtml" />
     <Content Include="Views\PropuestaIndicador\Index.cshtml" />
+    <Content Include="Views\SugerirTemporadaPromocion\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UPC.SISGFRAN.BL\UPC.SISGFRAN.BL.csproj">

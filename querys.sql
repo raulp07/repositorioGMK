@@ -160,3 +160,23 @@ select * from tb_medioComunicacion
 
 
 
+USE [BDPARDOS]
+GO
+/****** Object:  StoredProcedure [dbo].[validarusuario]    Script Date: 15/09/2017 18:16:49 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER proc [dbo].[validarusuario]
+(
+@usuario varchar(50),
+@perfil varchar(10),
+@resultado int out
+)
+as
+begin
+
+set @resultado = (select Id from Usuario where CtaUsuario = @usuario and @perfil = @perfil)
+
+end

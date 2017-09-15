@@ -47,7 +47,33 @@ namespace WCFRest.Persistencia
                     usuarioLogueado.Id = id;
                     usuarioLogueado.CodeMessage = result;
                     usuarioLogueado.MessageErr = message;
+                    TokensEL.token_Client = TokensDA._Tokens.Encripta(usuario.CtaUsuario + "|" + usuario.Perfil.Aplicacion.Id);
                     return usuarioLogueado;
+                }
+            }
+        }
+
+        public bool Validarusuario(string Cadena)
+        {
+            if (Cadena == "" || Cadena == null)
+                return false;
+
+            string comprension = TokensDA._Tokens.Desencripta(Cadena);
+
+            if (comprension.Length == 0)
+                return false;
+
+            using (SqlConnection con = new SqlConnection(ConexionUtil.Cadena))
+            {
+                con.Open();
+                using (SqlCommand com = new SqlCommand("validarusuario", con))
+                {
+                    com.CommandType = CommandType.StoredProcedure;
+                    com.Parameters.Add("@usuario", SqlDbType.VarChar).Value = comprension.Split('|')[0];
+                    com.Parameters.Add("@perfil", SqlDbType.VarChar).Value = comprension.Split('|')[1];
+                    com.Parameters.Add("@resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    com.ExecuteNonQuery();
+                    return (Convert.ToInt32(com.Parameters["@resultado"].Value.ToString()) > 0);
                 }
             }
         }

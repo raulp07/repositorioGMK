@@ -6,6 +6,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
+using UPC.SISGFRAN.EL.Inherited;
 
 namespace UPC.SISGFRAN.BL
 {
@@ -21,6 +22,10 @@ namespace UPC.SISGFRAN.BL
             {
                 case "GET":
                     req.Method = method;
+                    if (Tokens.token_Client != "")
+                    {
+                        req.Headers.Add("token-client", Tokens.token_Client);
+                    }
                     res = (HttpWebResponse)req.GetResponse();
                     reader = new StreamReader(res.GetResponseStream());
                     return reader.ReadToEnd();
@@ -29,9 +34,17 @@ namespace UPC.SISGFRAN.BL
                     req.Method = method;
                     req.ContentLength = data.Length;
                     req.ContentType = "application/json";
+                    if (Tokens.token_Client != null)
+                    {
+                        req.Headers.Add("token-client", Tokens.token_Client);
+                    }
                     var reqStream = req.GetRequestStream();
                     reqStream.Write(data, 0, data.Length);
                     res = (HttpWebResponse)req.GetResponse();
+                    if (url == "Login")
+                    {
+                        Tokens.token_Client = res.Headers.GetValues("token-client")[0];
+                    }
                     reader = new StreamReader(res.GetResponseStream());
                     return reader.ReadToEnd();
                 default: return "";

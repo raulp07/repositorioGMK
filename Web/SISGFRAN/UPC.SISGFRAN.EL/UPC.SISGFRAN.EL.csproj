@@ -70,6 +70,7 @@
     <Compile Include="Inherited\ResultadoEncuestaEL.cs" />
     <Compile Include="Inherited\SolicitanteEL.cs" />
     <Compile Include="Inherited\SolicitudEL.cs" />
+    <Compile Include="Inherited\Tokens.cs" />
     <Compile Include="Inherited\UsuarioEL.cs" />
     <Compile Include="NonInherited\ArchivoFtpEN.cs" />
     <Compile Include="NonInherited\ListaPaginada.cs" />

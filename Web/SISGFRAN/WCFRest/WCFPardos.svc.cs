@@ -17,81 +17,122 @@ namespace WCFRest
 
         private PropuestaPublicitariaDA PPDA = PropuestaPublicitariaDA.PropuestaPublicitaria;
         private UsuarioDA UDA = UsuarioDA.Usuario;
+        WebOperationContext ctx = WebOperationContext.Current;
         public List<LocalEL> GetAllDatoMedio_X_Local()
         {
-
+            string request = ctx.IncomingRequest.Headers["token-client"];
+            if (!UDA.Validarusuario(request))
+                return null;
             return PPDA.GetAllDatoMedio_X_Local();
         }
 
         public List<ResultadoEncuestaEL> GetAllDatoMedioPublicitario()
         {
+            string request = ctx.IncomingRequest.Headers["token-client"];
+            if (!UDA.Validarusuario(request))
+                throw new FaultException("No hay tiene autorización");
             return PPDA.GetAllDatoMedioPublicitario();
         }
 
         public int RegistroPropuesta(PropuestaPublicidadEL PropuestaPublicidad)
         {
+            string request = ctx.IncomingRequest.Headers["token-client"];
+            if (!UDA.Validarusuario(request))
+                return 0;
             return PPDA.RegistroPropuesta(PropuestaPublicidad);
         }
         public int RegistroDetallePropuesta(DetallePropuestaPublicidadEL DetallePropuestaPublicidad)
         {
+            string request = ctx.IncomingRequest.Headers["token-client"];
+            if (!UDA.Validarusuario(request))
+                return 0;
             return PPDA.RegistroDetallePropuesta(DetallePropuestaPublicidad);
         }
 
 
         public UsuarioEL Login(UsuarioEL usuario)
         {
-            return UDA.Login(usuario);
+            UsuarioEL usuarioEL = UDA.Login(usuario);
+            ctx.OutgoingResponse.Headers.Add("token-client", TokensEL.token_Client);
+            return usuarioEL;
         }
 
         public List<UsuarioEL> GetUsuarios(UsuarioEL usuario)
         {
+            string request = ctx.IncomingRequest.Headers["token-client"];
+            if (!UDA.Validarusuario(request))
+                return null;
             return UDA.GetUsuarios(usuario);
         }
 
         public UsuarioEL GetUsuarioById(int? idUsuario)
         {
+            string request = ctx.IncomingRequest.Headers["token-client"];
+            if (!UDA.Validarusuario(request))
+                return null;
             return UDA.GetUsuarioById(idUsuario);
         }
 
 
         public List<PlanMarketingEL> GetAllPlanMarketing()
         {
+            string request = ctx.IncomingRequest.Headers["token-client"];
+            if (!UDA.Validarusuario(request))
+                return null;
             return PlanMarketingDA.PlanMarketing.GetAllPlanMarketing();
         }
 
 
         public List<ComboProductoEL> GetAllComboProducto()
         {
+            string request = ctx.IncomingRequest.Headers["token-client"];
+            if (!UDA.Validarusuario(request))
+                return null;
             return ComboProductoDA.ComboProducto.GetAllComboProducto();
         }
 
 
         public List<LocalEL> GetAllLocal()
         {
+            string request = ctx.IncomingRequest.Headers["token-client"];
+            if (!UDA.Validarusuario(request))
+                return null;
             return LocalDA.Local.GetAllLocal();
         }
 
 
         public List<CalcularPropuestaxIndicadorEL> CalcularPropuestaxIndicadores(CalcularPropuestaxIndicadorEL CalcularPropuestaxIndicador)
         {
+            string request = ctx.IncomingRequest.Headers["token-client"];
+            if (!UDA.Validarusuario(request))
+                return null;
             return PropuestaxIndicadorDA.PropuestaxIndicador.CalcularPropuestaxIndicadores(CalcularPropuestaxIndicador);
         }
 
 
         public List<ComboEL> GetAllCombo(ComboEL Combo)
         {
+            string request = ctx.IncomingRequest.Headers["token-client"];
+            if (!UDA.Validarusuario(request))
+                return null;
             return ComboDA.Combo.GetAllCombo(Combo);
         }
 
 
         public int proyectarPropuestaxIndicadores(proyectarPropuestaIndicadorEL proyectarPropuestaIndicador)
         {
+            string request = ctx.IncomingRequest.Headers["token-client"];
+            if (!UDA.Validarusuario(request))
+                return 0;
             return PropuestaxIndicadorDA.PropuestaxIndicador.proyectarPropuestaxIndicadores(proyectarPropuestaIndicador);
         }
 
 
         public List<OpcionXPerfilEL> ListMenu(OpcionXPerfilEL opcionPerfil)
         {
+            string request = ctx.IncomingRequest.Headers["token-client"];
+            if (!UDA.Validarusuario(request))
+                return null;
             return OpcionXPerfilDA.OpcionXPerfil.ListMenu(opcionPerfil);
         }
     }

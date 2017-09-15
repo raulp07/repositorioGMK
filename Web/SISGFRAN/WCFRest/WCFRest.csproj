@@ -81,6 +81,7 @@
     <Compile Include="Dominio\PropuestaPublicidadEL.cs" />
     <Compile Include="Dominio\proyectarPropuestaIndicadorEL.cs" />
     <Compile Include="Dominio\ResultadoEncuestaEL.cs" />
+    <Compile Include="Dominio\TokensEL.cs" />
     <Compile Include="Dominio\UsuarioEL.cs" />
     <Compile Include="Persistencia\ComboDA.cs" />
     <Compile Include="Persistencia\ComboProductoDA.cs" />
@@ -91,6 +92,7 @@
     <Compile Include="Persistencia\PlanMarketingDA.cs" />
     <Compile Include="Persistencia\PropuestaPublicitariaDA.cs" />
     <Compile Include="Persistencia\PropuestaxIndicadorDA.cs" />
+    <Compile Include="Persistencia\TokensDA.cs" />
     <Compile Include="Persistencia\UsuarioDA.cs" />
     <Compile Include="WCFPardos.svc.cs">
       <DependentUpon>WCFPardos.svc</DependentUpon>

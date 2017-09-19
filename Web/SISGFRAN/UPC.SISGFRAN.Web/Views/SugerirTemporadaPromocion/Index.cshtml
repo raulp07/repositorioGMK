@@ -1,4 +1,4 @@
-﻿<div>
+﻿<div id="app">
 
     <div>
         <center><h2>Sugerir Temporada para promocionar producto</h2></center>
@@ -6,31 +6,24 @@
     </div>
     <div>
         <div class="col-sm-5 col-sm-offset-3">
-            <table class="table ">
+            <table class="table table-striped">
                 <thead>
                     <tr>
                         <td>Combo</td>
                         <td>Seleccionar</td>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody v-for="combo in combos">
                     <tr>
-                        <td>combo1</td>
-                        <td><input type="checkbox" /></td>
-                    </tr>
-                    <tr>
-                        <td>combo2</td>
-                        <td><input type="checkbox" /></td>
-                    </tr>
-                    <tr>
-                        <td>combo3</td>
-                        <td><input type="checkbox" /></td>
+                        <td class="col-xs-10">{{ combo.nombre }}</td>
+                        <td class="col-xs-2"><input v-bind:id="combo.codcombo" type="checkbox" /></td>
                     </tr>
                 </tbody>
             </table>
 
         </div>
         <div class="col-sm-5 col-sm-offset-3">
+            
             <div class="col-sm-4">
                 <div class="col-sm-12">
                     <label class="col-sm-6">Periodo Inicio</label>
@@ -54,30 +47,31 @@
             <div class="col-sm-1">
                 <div class="col-sm-4 col-sm-offset-4">
                     <br />
-                    <input type="button" class="btn btn-default" value="Filtrar" />
+                    <input type="button" class="btn btn-default" v-on:click="GenerarReporte" value="Filtrar" />
                 </div>
             </div>
         </div>
         <div class="col-sm-5 col-sm-offset-3">
             <div class="col-sm-6">
-
+                <div class="large-12" id="columnchart_material" style="height: 300px;"></div>
             </div>
             <div class="col-sm-6">
-                <textarea rows="10"></textarea>
+                <br />
+                <textarea rows="10" style="min-width: 100%;"></textarea>
             </div>
         </div>
         <div class="col-sm-5 col-sm-offset-3">
             <label class="col-sm-12">Sugerencia</label>
-            <textarea class="col-sm-12" id="txtsugerencia" rows="10"></textarea>
+            <textarea style="min-width: 100%;" class="col-sm-12" id="txtsugerencia" rows="10"></textarea>
         </div>
         <div class="col-sm-5 col-sm-offset-3">
             <div class="col-sm-6">
                 <label class="col-sm-12">Sugerencia</label>
-                <textarea class="col-sm-12" rows="10"></textarea>
+                <textarea style="min-width: 100%;"  class="col-sm-12" rows="10"></textarea>
             </div>
             <div class="col-sm-6">
                 <div class="col-sm-12">
-                    <input type="button" class="btn btn-default center-block" value="Previsualizar" />
+                    <input type="button" class="btn btn-default center-block" v-on:click="ImprimirPantalla" data-toggle="modal" data-target="#myModal" value="Previsualizar" />
                     <br />
                 </div>
                 <div class="col-sm-12">
@@ -93,3 +87,25 @@
     </div>
 
 </div>
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <div class="large-12" id="columnchart_material1" style="height: 600px;"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="~/Scripts/JsSugerirTemporadaPromocion/SugerirTemporadaPromocionJs.js"></script>

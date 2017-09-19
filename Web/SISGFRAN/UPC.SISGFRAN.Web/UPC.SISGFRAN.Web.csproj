@@ -289,6 +289,7 @@
     <Content Include="Scripts\JsLogin\Login.js" />
     <Content Include="Scripts\JsPropuestaIndicador\PropuestaIndicadorJs.js" />
     <Content Include="Scripts\JsPropuestaPublicitaria\PropuestaPublicitariaJs.js" />
+    <Content Include="Scripts\JsSugerirTemporadaPromocion\SugerirTemporadaPromocionJs.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\moment-with-locales.js" />
     <Content Include="Scripts\moment-with-locales.min.js" />

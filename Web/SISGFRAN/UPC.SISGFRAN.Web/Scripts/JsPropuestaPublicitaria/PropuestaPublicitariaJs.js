@@ -11,10 +11,10 @@ new Vue({
                     ['Maroubra Beach', -33.950198, 151.259302, 5]
         ],
         ListaMedios: [],
-        ListaLocal:[],
-        ListaMediosSeleccionados:[],
+        ListaLocal: [],
+        ListaMediosSeleccionados: [],
         ListadoDetalle: [],
-        ContadorLocales:0,
+        ContadorLocales: 0,
     },
     methods: {
         NuevasCordenadas: function () {
@@ -30,7 +30,6 @@ new Vue({
         },
         CargarMapa: function (eval) {
             axios.post('/PropuestaPublicitaria/ListaMedios_X_Local/').then(function (response) {
-
                 this.ListaLocal = response.data.listLocal;
                 var FiltroMedios = [];
                 var _ListaMedios = this.ListaMedios;
@@ -83,12 +82,23 @@ new Vue({
                     var contador = 0;
                     $.each(response.data.listLocal, function (key, value) {
                         if (value.id == beach[3]) {
-                            $.each(FiltroMedios, function (key2, value2) {
-                                if ((value2[1] == value.codMedioComunicacion) && (value.Porcentaje >= value2[0])) {
+                            var sumpuntajeCaracteristicaCombo = 0;
+                            $.each(response.data.listLocal, function (key2, value2) {
+                                if (value2.id == beach[3]) {
+                                    $.each(FiltroMedios, function (k, v) {
+                                        if ((v[1] == value2.codMedioComunicacion) && (value2.Porcentaje >= v[0])) {
+                                            sumpuntajeCaracteristicaCombo += value2.puntajeCaracteristicaCombo;
+                                        }
+                                    });                                    
+                                }                                
+                            });
+                            $.each(FiltroMedios, function (key3, value3) {
+                                if ((value3[1] == value.codMedioComunicacion) && (value.Porcentaje >= value3[0])) {
                                     tbLocal = value.nombre;
                                     tbcuerpo += '<tr>' +
                                                '<td>' + value.nombreMedioComunicacion + '</td>' +
                                                '<td>' + value.Porcentaje + '%</td>' +
+                                               '<td>' + ((value.puntajeCaracteristicaCombo * 100) / sumpuntajeCaracteristicaCombo).toFixed(2) + '%</td>' +
                                                '</tr>';
                                     contador++;
                                 }
@@ -114,7 +124,8 @@ new Vue({
                           '<thead >' +
                           '<tr>' +
                           '<td>Medio</td>' +
-                          '<td>Porcentaje</td>' +
+                          '<td>% Global</td>' +
+                          '<td>% Local</td>' +
                           '</tr>' +
                           '</thead>' +
                           '<tbody>' +
@@ -128,7 +139,6 @@ new Vue({
                             content: contentString
                         });
                         window["marker" + beach[3]].addListener('click', function () {
-                            debugger;
                             var indice = this.zIndex;
                             window["infowindow" + indice].open(map, window["marker" + indice]);
                         });
@@ -212,7 +222,7 @@ new Vue({
                 alert("Se debe agregar una observación para la propuesta");
                 return;
             }
-            if ($('#Presupuesto').val().trim().length==0 || parseFloat($('#Presupuesto').val())<=0) {
+            if ($('#Presupuesto').val().trim().length == 0 || parseFloat($('#Presupuesto').val()) <= 0) {
                 alert("El presupuesto tiene que ser mayor a 0");
                 return;
             }
@@ -234,11 +244,11 @@ new Vue({
     },
     computed: {},
     created: function () {
-        
+
     },
     mounted: function () {
         this.ListaMediosComunicacion();
-        
+
     },
 });
 

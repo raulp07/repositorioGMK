@@ -133,9 +133,9 @@
                                 title: value2.nombreCaractComboVenta,
                                 zIndex: value2.codLocal
                             });
-                            _html = '<br /><label>- Para el ' + value[0] + ' la cantidad de proyección de venta de ' + $('#cboProducto option:selected').text() + ' es ' + value2.cantProyeccionVenta + '</label>' +
+                            _html = '<br /><label>- Para el ' + value[0] + ' la cantidad de proyección de venta de ' + $('#cboProducto option:selected').text() + ' es S/.' + value2.cantProyeccionVenta + ' </label>' +
                                     '<br />' +
-                                    '<label>- Para el ' + value[0] + ' el importe de proyección en el costo para el ' + $('#cboProducto option:selected').text() + ' es de ' + value2.impProyeccionCosto + '</label>';
+                                    '<label>- Para el ' + value[0] + ' el importe de proyección en el costo para el ' + $('#cboProducto option:selected').text() + ' es de S/.' + value2.impProyeccionCosto + ' </label>';
                             window["infowindow" + value2.codLocal] = new google.maps.InfoWindow({
                                 content: _html
                             });
@@ -182,13 +182,13 @@
                 var _html2 = '';
                 _html2 += '<br /><br /><br /><p> Para que la proyeccion propuesta logre los objetivos esperados se sugiere :</p><br />';
                 if (promcantproyeccionventa != 0) {
-                    _html2 += '<p>- Las ventas de producto seleccionado deben ser de  ' + (promcantproyeccionventa / _index).toFixed(2) + ' en cada local. </p>';
+                    _html2 += '<p>- Las ventas de producto seleccionado deben ser de  S/.' + (promcantproyeccionventa / _index).toFixed(2) + ' en cada local. </p>';
                 }                
                 if (nombreCaractCombo.length != 0) {
                     _html2 += '<p>- El producto seleccionado deberia incluir algunas de las siguientes caracteristicas : ' + nombreCaractCombo + '. </p>';
                 }
                 if (promcantproyeccioncosto != 0) {
-                    _html2 += '<p>- El combo seleccionado debe costar en promedio ' + (promcantproyeccioncosto / _index).toFixed(2) + ' . </p>';
+                    _html2 += '<p>- El combo seleccionado debe costar en promedio S/.' + (promcantproyeccioncosto / _index).toFixed(2) + ' . </p>';
                 }
                 
 

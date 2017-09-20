@@ -20,35 +20,35 @@
         },
         ImprimirPantalla: function () {
 
-            google.charts.setOnLoadCallback(drawChart("columnchart_material1"));
 
-            //var objeto = document.getElementById('columnchart_material'); 
-            //var ventana = window.open('', '_blank');  
-            //ventana.document.write(objeto.innerHTML);
-            //ventana.document.close(); 
-            //ventana.print();  
-            //ventana.close();  
+            var objeto = document.getElementById('columnchart_material');
+            var ventana = window.open('', '_blank');  
+            ventana.document.write(objeto.innerHTML);
+            ventana.document.close(); 
+            ventana.print();  
+            ventana.close();  
         },
     },
     computed: {},
     created: function () { },
     mounted: function () {
+        google.charts.load('current', { 'packages': ['bar'] });
         this.ListaCombo();
     }
 });
 
-google.charts.load('current', { 'packages': ['bar'] });
+
 function drawChart(_data) {
 
     //var fffff = JSON.parse(_data);
+    var dataarray = [];
 
-    var data = google.visualization.arrayToDataTable([
-          ['Year', 'Sales', 'Expenses', 'Profit'],
-          ['2014', 1000, 400, 200],
-          ['2015', 1170, 460, 250],
-          ['2016', 660, 1120, 300],
-          ['2017', 1030, 540, 350]
-    ]);
+    dataarray.push(['Year', 'Sales', 'Expenses', 'Profit']);
+    dataarray.push(['2014', 1000, 400, 200]);
+    dataarray.push(['2015', 1170, 460, 250]);
+    dataarray.push(['2016', 660, 1120, 300]);
+    dataarray.push(['2017', 1030, 540, 350]);
+    var data = google.visualization.arrayToDataTable(dataarray);
 
     var options = {
         chart: {
@@ -57,8 +57,6 @@ function drawChart(_data) {
         }
     };
     var chart = new google.charts.Bar(document.getElementById(_data));
-
     chart.draw(data, google.charts.Bar.convertOptions(options));
-
 
 }

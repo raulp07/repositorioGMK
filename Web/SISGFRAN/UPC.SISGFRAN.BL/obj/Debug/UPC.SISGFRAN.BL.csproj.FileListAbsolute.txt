@@ -72,3 +72,10 @@ D:\UPC\VlV\TP3\repositorioGMK\Web\SISGFRAN\UPC.SISGFRAN.BL\bin\Debug\UPC.SISGFRA
 D:\UPC\VlV\TP3\repositorioGMK\Web\SISGFRAN\UPC.SISGFRAN.BL\obj\Debug\UPC.SISGFRAN.BL.csprojResolveAssemblyReference.cache
 D:\UPC\VlV\TP3\repositorioGMK\Web\SISGFRAN\UPC.SISGFRAN.BL\obj\Debug\UPC.SISGFRAN.BL.dll
 D:\UPC\VlV\TP3\repositorioGMK\Web\SISGFRAN\UPC.SISGFRAN.BL\obj\Debug\UPC.SISGFRAN.BL.pdb
+D:\repositorioGMK\Web\SISGFRAN\UPC.SISGFRAN.BL\bin\Debug\UPC.SISGFRAN.BL.dll
+D:\repositorioGMK\Web\SISGFRAN\UPC.SISGFRAN.BL\bin\Debug\UPC.SISGFRAN.BL.pdb
+D:\repositorioGMK\Web\SISGFRAN\UPC.SISGFRAN.BL\bin\Debug\UPC.SISGFRAN.EL.dll
+D:\repositorioGMK\Web\SISGFRAN\UPC.SISGFRAN.BL\bin\Debug\UPC.SISGFRAN.EL.pdb
+D:\repositorioGMK\Web\SISGFRAN\UPC.SISGFRAN.BL\obj\Debug\UPC.SISGFRAN.BL.csprojResolveAssemblyReference.cache
+D:\repositorioGMK\Web\SISGFRAN\UPC.SISGFRAN.BL\obj\Debug\UPC.SISGFRAN.BL.dll
+D:\repositorioGMK\Web\SISGFRAN\UPC.SISGFRAN.BL\obj\Debug\UPC.SISGFRAN.BL.pdb

@@ -1,11 +1,11 @@
 ﻿<div id="app">
 
-    <div>
+    <div class="col-sm-6 col-sm-offset-3">
         <center><h2>Sugerir Temporada para promocionar producto</h2></center>
 
     </div>
     <div>
-        <div class="col-sm-5 col-sm-offset-3">
+        <div class="col-sm-6 col-sm-offset-3">
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -22,9 +22,9 @@
             </table>
 
         </div>
-        <div class="col-sm-5 col-sm-offset-3">
-            
-            <div class="col-sm-4">
+        <div class="col-sm-6 col-sm-offset-3">
+
+            <div class="col-sm-5">
                 <div class="col-sm-12">
                     <label class="col-sm-6">Periodo Inicio</label>
                     <input class="col-sm-6" type="number" step="1" min="0" max="4" />
@@ -34,7 +34,7 @@
                     <input class="col-sm-6" type="number" step="1" min="0" max="4" />
                 </div>
             </div>
-            <div class="col-sm-7">
+            <div class="col-sm-6">
                 <div class="col-sm-12">
                     <label class="col-sm-8">Año Inicio</label>
                     <input class="col-sm-4" type="number" step="1" min="2000" max="2018" />
@@ -51,27 +51,28 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-5 col-sm-offset-3">
-            <div class="col-sm-6">
+        <div class="col-sm-6 col-sm-offset-3">
+            <div class="col-sm-12">
                 <div class="large-12" id="columnchart_material" style="height: 300px;"></div>
             </div>
-            <div class="col-sm-6">
+
+            <div class="col-sm-12">
                 <br />
-                <textarea rows="10" style="min-width: 100%;"></textarea>
+                <textarea rows="5" style="min-width: 100%;"></textarea>
             </div>
         </div>
-        <div class="col-sm-5 col-sm-offset-3">
+        <div class="col-sm-6 col-sm-offset-3">
             <label class="col-sm-12">Sugerencia</label>
             <textarea style="min-width: 100%;" class="col-sm-12" id="txtsugerencia" rows="10"></textarea>
         </div>
-        <div class="col-sm-5 col-sm-offset-3">
+        <div class="col-sm-6 col-sm-offset-3">
             <div class="col-sm-6">
                 <label class="col-sm-12">Sugerencia</label>
-                <textarea style="min-width: 100%;"  class="col-sm-12" rows="10"></textarea>
+                <textarea style="min-width: 100%;" class="col-sm-12" rows="10"></textarea>
             </div>
             <div class="col-sm-6">
                 <div class="col-sm-12">
-                    <input type="button" class="btn btn-default center-block" v-on:click="ImprimirPantalla" data-toggle="modal" data-target="#myModal" value="Previsualizar" />
+                    <input type="button" class="btn btn-default center-block" v-on:click="ImprimirPantalla" value="Previsualizar" />
                     <br />
                 </div>
                 <div class="col-sm-12">
@@ -86,26 +87,77 @@
         </div>
     </div>
 
-</div>
-<div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog modal-lg">
 
-        
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Modal Header</h4>
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-lg">
+
+
+            <!-- Modal content-->
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-4">.col-md-4</div>
+                            <div class="col-md-4 col-md-offset-4">.col-md-4 .col-md-offset-4</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
+                            <div class="col-md-2 col-md-offset-4">.col-md-2 .col-md-offset-4</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-md-offset-3">.col-md-6 .col-md-offset-3</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-9">
+                                Level 1: .col-sm-9
+                                <div class="row">
+                                    <div class="col-8 col-sm-6">
+                                        Level 2: .col-8 .col-sm-6
+                                    </div>
+                                    <div class="col-4 col-sm-6">
+                                        Level 2: .col-4 .col-sm-6
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
             </div>
-            <div class="modal-body">
-                <div class="large-12" id="columnchart_material1" style="height: 600px;"></div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
+
+            @*<div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Modal Header</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-sm-12">
+                            <label>Reporte</label>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="large-12" id="columnchart_material1" style="height: 500px;"></div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>*@
+
         </div>
-
     </div>
+</div>
+<div id="divpreview" class="col-sm-12">
+    <div class="large-12" id="columnchart_material1" style="height: 600px; display: none"></div>
 </div>
 
 <script src="~/Scripts/JsSugerirTemporadaPromocion/SugerirTemporadaPromocionJs.js"></script>

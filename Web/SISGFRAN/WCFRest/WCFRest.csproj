@@ -73,6 +73,7 @@
     <Compile Include="Dominio\EncuestaEL.cs" />
     <Compile Include="Dominio\LocalEL.cs" />
     <Compile Include="Dominio\MedioComunicacionEL.cs" />
+    <Compile Include="Dominio\ObjetivoEL.cs" />
     <Compile Include="Dominio\OpcionEL.cs" />
     <Compile Include="Dominio\OpcionXPerfilEL.cs" />
     <Compile Include="Dominio\ParametroEL.cs" />
@@ -81,17 +82,20 @@
     <Compile Include="Dominio\PropuestaPublicidadEL.cs" />
     <Compile Include="Dominio\proyectarPropuestaIndicadorEL.cs" />
     <Compile Include="Dominio\ResultadoEncuestaEL.cs" />
+    <Compile Include="Dominio\SugerirTemporadaPromocionEL.cs" />
     <Compile Include="Dominio\TokensEL.cs" />
     <Compile Include="Dominio\UsuarioEL.cs" />
     <Compile Include="Persistencia\ComboDA.cs" />
     <Compile Include="Persistencia\ComboProductoDA.cs" />
     <Compile Include="Persistencia\ConexionUtil.cs" />
     <Compile Include="Persistencia\LocalDA.cs" />
+    <Compile Include="Persistencia\ObjetivoDA.cs" />
     <Compile Include="Persistencia\OpcionDA.cs" />
     <Compile Include="Persistencia\OpcionXPerfilDA.cs" />
     <Compile Include="Persistencia\PlanMarketingDA.cs" />
     <Compile Include="Persistencia\PropuestaPublicitariaDA.cs" />
     <Compile Include="Persistencia\PropuestaxIndicadorDA.cs" />
+    <Compile Include="Persistencia\SugerirTemporadaPromocionDA.cs" />
     <Compile Include="Persistencia\TokensDA.cs" />
     <Compile Include="Persistencia\UsuarioDA.cs" />
     <Compile Include="WCFPardos.svc.cs">
@@ -104,6 +108,7 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\PublishProfiles\SomeeREST.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

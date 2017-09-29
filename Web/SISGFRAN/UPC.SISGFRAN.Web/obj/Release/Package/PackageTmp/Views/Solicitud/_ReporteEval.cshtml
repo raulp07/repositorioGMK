@@ -1,0 +1,93 @@
+﻿@using UPC.SISGFRAN.EL.Inherited
+@model SolicitudEL
+
+<br />
+<img src="@Model.ReporteEvaluacion.ImageUrl" width="64" height="64" />
+
+<div style="text-align:center;"><h1><b><u>Resultados del Reporte</u></b></h1></div>
+<br />
+<br />
+<br />
+<h2><b>Datos del solicitante</b></h2>
+<br />
+<table cellpadding="3" cellspacing="3">
+    <tr border="1">
+        <td width="30%" align="left">
+            <b>N° Solicitud</b>
+        </td>
+        <td width="70%" align="left">
+            @Model.NumSolicitud
+        </td>
+    </tr>
+    <tr border="1">
+        <td width="30%" align="left">
+            <b>Fecha</b>
+        </td>
+        <td width="70%" align="left">
+            @Model.FechaSolicitud
+        </td>
+    </tr>
+    <tr border="1">
+        <td width="30%" align="left">
+            <b>Solicitante</b>
+        </td>
+        <td width="70%" align="left">
+            @Model.Solicitante.NombreCompleto
+        </td>
+    </tr>
+    <tr border="1">
+        <td width="30%" align="left">
+            <b>Monto Capital</b>
+        </td>
+        <td width="70%" align="left">
+            @Model.MontoCapital
+        </td>
+    </tr>
+    <tr border="1">
+        <td width="30%" align="left">
+            <b>Estado de la solicitud</b>
+        </td>
+        <td width="70%" align="left">
+            @Model.Estado.Nombre
+        </td>
+    </tr>
+</table>
+<br />
+<br />
+<br />
+<h2><b>Detalle de resultados</b></h2>
+<br />
+<table cellpadding="3" cellspacing="3">
+    <tr border="1">
+        <td width="30%" align="left">
+            <b>Criterio</b>
+        </td>
+        <td width="70%" align="left">
+            <b>Resultado</b>
+        </td>
+    </tr>
+    <tr border="1">
+        <td width="30%" align="left">
+            Fecha de evaluación
+        </td>
+        <td width="70%" align="left">
+            @Model.ReporteEvaluacion.Fecha
+        </td>
+    </tr>
+    <tr border="1">
+        <td width="30%" align="left">
+            Resultado
+        </td>
+        <td width="70%" align="left">
+            @Model.ReporteEvaluacion.ResultadoEjercicio
+        </td>
+    </tr>
+    <tr border="1">
+        <td width="30%" align="left">
+            Errores encontrados
+        </td>
+        <td width="70%" align="left">
+            @Model.ReporteEvaluacion.ErroresEncontrados
+        </td>
+    </tr>
+</table>

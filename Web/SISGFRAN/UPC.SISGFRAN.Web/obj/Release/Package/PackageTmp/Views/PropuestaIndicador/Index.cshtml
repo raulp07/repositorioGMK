@@ -1,0 +1,88 @@
+﻿
+
+<div id="app">
+    <div class="col-sm-12">
+        <div class="col-sm-7">
+            <div class="col-sm-12">
+                <center><h2>PROYECTAR ESTRATEGIA SEGÚN PLAN DE MARKETING</h2> </center>
+            </div>
+            <div class="col-sm-12">             
+                <label class="col-sm-4">Plan de Marketing:</label>
+
+                <select id="sboPlanMKT" class="col-sm-8 selectpicker" v-on:change="ListaCombo">
+                    <option value="0">SELECCIONAR</option>
+                    <option v-bind:value="lista.codPlanMkt" v-for="lista in listaplanmarketing">{{lista.nombrePlanMkt}}</option>
+                </select>
+            </div>
+            <br />
+            <div class="col-sm-12">
+                <label class="col-sm-4">Combo:</label>
+                <select id="cboProducto" class="col-sm-8 selectpicker" >
+                    <option value="0">SELECCIONAR</option>
+                    <option v-for="lista in listacombo" v-bind:value="lista.codCombo">{{lista.nombre}}</option>
+                </select>
+            </div>
+            <br />
+            <div class="col-sm-12">
+                <label class="col-sm-4">Indicadores</label>
+                <div class="col-sm-8">
+                    <div class="form-group col-sm-4">
+                        <label for="txtConsumo">Consumo</label>
+                        <input id="txtConsumo" type="text" class="form-control" readonly />
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <label for="txtSabor">Sabor</label>
+                        <input id="txtSabor" type="text" class="form-control" readonly />
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <label for="txtCosto">Costo</label>
+                        <input id="txtCosto" type="text" class="form-control" readonly />
+                    </div>
+                </div>
+
+            </div>
+            <br />
+            <div class="col-sm-12">
+                <div class="col-sm-12">
+                    <label class="col-lg-4">Consumo:</label>
+                    <input id="rangeConsumo_1" class="col-lg-6" type="range" name="edad" min="0" max="10" step="1" value="5" v-on:change="VisualizarValor" />
+                    <span id="span_1" class="col-lg-2">5</span>
+                </div>
+                <div class="col-sm-12">
+                    <label class="col-lg-4">Sabor:</label>
+                    <input id="rangeSabor_2" class="col-lg-6" type="range" name="edad" min="0" max="10" step="1" value="5" v-on:change="VisualizarValor" />
+                    <span id="span_2" class="col-lg-2">5</span>
+                </div>
+                <div class="col-sm-12">
+                    <label class="col-lg-4">Costo:</label>
+                    <input id="rangeCosto_3" class="col-lg-6" type="range" name="edad" min="0" max="10" step="1" value="5" v-on:change="VisualizarValor" />
+                    <span id="span_3" class="col-lg-2">5</span>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-sm-offset-3"  >
+                <fieldset style="border:1px" id="Comentario">
+                    
+                </fieldset>
+            </div>
+            <div class="col-sm-12">
+                <div class="col-sm-8 col-sm-offset-4">
+                    <div class="col-sm-12">
+                        <input type="button" value="PROYECTAR" class="btn btn-primary" v-on:click="Proyectar" />
+                    </div>
+                    <div class="col-sm-12">
+                        <a href="/home/index/" class="btn btn-primary">Salir</a>
+                        <input type="button" value="GUARDAR" v-on:click="GuardarProyeccion" class="btn btn-primary" />
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div id="googleMap" style="width: 100%; height: 750px;"></div>
+
+        </div>
+    </div>
+</div>
+@Html.Hidden("lblcodlocal",0)
+<script src="~/Scripts/JsPropuestaIndicador/PropuestaIndicadorJs.js"></script>

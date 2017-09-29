@@ -1,0 +1,74 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="es-pe">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inicio de sesión</title>
+    <link rel="stylesheet" href="~/Content/login.css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery-1.12.4.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/JsLogin/Login.js"></script>
+    <script src="~/Scripts/bootbox.min.js"></script>
+
+    <style type="text/css">
+        h3 {
+            text-align: center;
+        }
+
+        .failed {
+            text-align: center;
+            font-weight: bold;
+            font-family: "Times New Roman";
+            color: white;
+            background-color: rgb(255, 66, 66);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4" style="padding-top:90px;">
+                <div class="bgLogin login-panel panel panel-default">
+                    <header>
+                        <div class="ti">
+                            <h3>Inicio de sesión</h3>
+                        </div>
+                    </header>
+                    <form method="post" enctype="multipart/form-data">
+                        <div class="wallpaper">
+                            <img src="~/Content/Images/logo-pardos.png" alt="Sistema de gestion de Franquicias" title="Sistema de Gestión de franquicias" />
+                        </div>
+                        <div class="lgMargin">
+                            <div class="ti">
+                                <label>Nombre de usuario:</label><br>
+                                <input class="form-control fail" id="NombreUsuario" name="NombreUsuario" placeholder="Nombre de usuario" type="text" style="width:250px;" />
+                            </div>
+                            <div class="ti">
+                                <label>Contraseña:</label><br>
+                                <input class="form-control fail" id="Password" name="Password" placeholder="Ingrese contraseña" type="password" style="width:250px;" />
+                            </div>
+                            <div class="ti" style="text-align: center;">
+                                <input type="submit" name="ingresar" id="ingresar" value="Ingresar" onclick="iniciar(); return false;" />
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div id="mensaje"></div>
+                        </div>
+                    </form>
+                    <div class="ti">
+                        <a href="#"><h5>¿Olvidaste tu contraseña?</h5></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

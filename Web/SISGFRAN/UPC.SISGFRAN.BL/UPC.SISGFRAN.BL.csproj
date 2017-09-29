@@ -46,6 +46,8 @@
     <Compile Include="Repositorios\OpcionXPerfilBL.cs" />
     <Compile Include="Repositorios\PropuestaIndicadorBL.cs" />
     <Compile Include="Repositorios\ResultadoEncuestaBL.cs" />
+    <Compile Include="Repositorios\SeguimientoPlanMarketingBL.cs" />
+    <Compile Include="Repositorios\SugerirTemporadaPromocionBL.cs" />
     <Compile Include="Repositorios\UsuarioBL.cs" />
     <Compile Include="REST.cs" />
   </ItemGroup>

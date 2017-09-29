@@ -3,10 +3,10 @@ D:\UPC\VlV\TP3\repositorioGMK\Web\SISGFRAN\WCFRest\bin\WCFRest.dll
 D:\UPC\VlV\TP3\repositorioGMK\Web\SISGFRAN\WCFRest\bin\WCFRest.pdb
 D:\UPC\VlV\TP3\repositorioGMK\Web\SISGFRAN\WCFRest\obj\Debug\WCFRest.dll
 D:\UPC\VlV\TP3\repositorioGMK\Web\SISGFRAN\WCFRest\obj\Debug\WCFRest.pdb
-D:\UPC\VlV\TP3\repositorioGMK\Web\SISGFRAN\WCFRest\obj\Debug\WCFRest.csprojResolveAssemblyReference.cache
 D:\repositorioGMK\Web\SISGFRAN\WCFRest\bin\WCFRest.dll.config
 D:\repositorioGMK\Web\SISGFRAN\WCFRest\bin\WCFRest.dll
 D:\repositorioGMK\Web\SISGFRAN\WCFRest\bin\WCFRest.pdb
 D:\repositorioGMK\Web\SISGFRAN\WCFRest\obj\Debug\WCFRest.csprojResolveAssemblyReference.cache
 D:\repositorioGMK\Web\SISGFRAN\WCFRest\obj\Debug\WCFRest.dll
 D:\repositorioGMK\Web\SISGFRAN\WCFRest\obj\Debug\WCFRest.pdb
+D:\UPC\VlV\TP3\repositorioGMK\Web\SISGFRAN\WCFRest\obj\Debug\WCFRest.csprojResolveAssemblyReference.cache

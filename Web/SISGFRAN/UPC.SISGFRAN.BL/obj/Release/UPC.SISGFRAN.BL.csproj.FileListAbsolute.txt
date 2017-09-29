@@ -1,0 +1,7 @@
+D:\UPC\VlV\TP3\repositorioGMK\Web\SISGFRAN\UPC.SISGFRAN.BL\bin\Release\UPC.SISGFRAN.BL.dll
+D:\UPC\VlV\TP3\repositorioGMK\Web\SISGFRAN\UPC.SISGFRAN.BL\bin\Release\UPC.SISGFRAN.BL.pdb
+D:\UPC\VlV\TP3\repositorioGMK\Web\SISGFRAN\UPC.SISGFRAN.BL\bin\Release\UPC.SISGFRAN.EL.dll
+D:\UPC\VlV\TP3\repositorioGMK\Web\SISGFRAN\UPC.SISGFRAN.BL\bin\Release\UPC.SISGFRAN.EL.pdb
+D:\UPC\VlV\TP3\repositorioGMK\Web\SISGFRAN\UPC.SISGFRAN.BL\obj\Release\UPC.SISGFRAN.BL.csprojResolveAssemblyReference.cache
+D:\UPC\VlV\TP3\repositorioGMK\Web\SISGFRAN\UPC.SISGFRAN.BL\obj\Release\UPC.SISGFRAN.BL.dll
+D:\UPC\VlV\TP3\repositorioGMK\Web\SISGFRAN\UPC.SISGFRAN.BL\obj\Release\UPC.SISGFRAN.BL.pdb

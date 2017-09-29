@@ -52,6 +52,11 @@ namespace WCFRest
         List<PlanMarketingEL> GetAllPlanMarketing();
 
         [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "objetivo", ResponseFormat = WebMessageFormat.Json)]
+        List<ObjetivoEL> GetAllObjetivo(ObjetivoEL DE);
+
+
+        [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "comboproducto", ResponseFormat = WebMessageFormat.Json)]
         List<ComboProductoEL> GetAllComboProducto();
 
@@ -70,6 +75,10 @@ namespace WCFRest
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "ProyectarPropuestaIndicador", ResponseFormat = WebMessageFormat.Json)]
         int proyectarPropuestaxIndicadores(proyectarPropuestaIndicadorEL proyectarPropuestaIndicador);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "CalcularPorcentajexPeriodo", ResponseFormat = WebMessageFormat.Json)]
+        List<SugerirTemporadaPromocionEL> GetCalcularPorcentajexPeriodo(SugerirTemporadaPromocionEL DE);
     }
 
 }

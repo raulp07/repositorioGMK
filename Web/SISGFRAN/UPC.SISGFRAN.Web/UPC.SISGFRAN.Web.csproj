@@ -125,6 +125,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PropuestaIndicadorController.cs" />
     <Compile Include="Controllers\PropuestaPublicitariaController.cs" />
+    <Compile Include="Controllers\SeguimientoPlanMarketingController.cs" />
     <Compile Include="Controllers\SugerirTemporadaPromocionController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
@@ -275,6 +276,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <None Include="Properties\PublishProfiles\SomeeWeb.pubxml" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\DateTimePicker\css\bootstrap-datetimepicker.min.css" />
     <Content Include="Scripts\DateTimePicker\js\bootstrap-datetimepicker.es.js" />
@@ -289,6 +291,7 @@
     <Content Include="Scripts\JsLogin\Login.js" />
     <Content Include="Scripts\JsPropuestaIndicador\PropuestaIndicadorJs.js" />
     <Content Include="Scripts\JsPropuestaPublicitaria\PropuestaPublicitariaJs.js" />
+    <Content Include="Scripts\JsSeguimientoPlanMarketing\SeguimientoPlanMarketingJs.js" />
     <Content Include="Scripts\JsSugerirTemporadaPromocion\SugerirTemporadaPromocionJs.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\moment-with-locales.js" />
@@ -326,6 +329,7 @@
     <Content Include="Views\PropuestaPublicitaria\_RegistroPropuesta.cshtml" />
     <Content Include="Views\PropuestaIndicador\Index.cshtml" />
     <Content Include="Views\SugerirTemporadaPromocion\Index.cshtml" />
+    <Content Include="Views\SeguimientoPlanMarketing\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UPC.SISGFRAN.BL\UPC.SISGFRAN.BL.csproj">

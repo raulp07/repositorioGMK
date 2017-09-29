@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+@Scripts.Render("~/Content/js/jquery.flexslider.js")
+
+    <link href="~/Content/css/flexslider.css" rel="stylesheet" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    
+    <script type="text/javascript" charset="utf-8">
+        $(window).load(function () {
+            $('.flexslider').flexslider({
+                touch: true,
+                pauseOnAction: false,
+                pauseOnHover: false,
+            });
+        });
+    </script>
+
+    <div class="flexslider">
+        <ul class="slides">
+            <li>
+                <img src="~/Content/Images/imagen1.jpg" alt="">
+          
+            </li>
+            <li>
+                <img src="~/Content/Images/imagen2.jpg" alt="">
+                
+            </li>
+            <li>
+                <img src="~/Content/Images/imagen3.jpg" alt="">
+                
+            </li>
+            <li>
+                <img src="~/Content/Images/imagen4.jpg" alt="">
+                
+            </li>
+        </ul>
+    </div>

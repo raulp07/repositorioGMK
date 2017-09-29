@@ -1,0 +1,101 @@
+﻿*{
+    padding:0px;
+	margin:0px;
+}
+body{
+	background:radial-gradient(circle,#fff 5%,#ccc 200%)no-repeat fixed center;
+    background-image:url('/Content/Images/FondoInicio.jpg');
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position:center center;
+    background-attachment: fixed;
+    background-color: #464646;
+}
+section{
+	width:30%;
+	height:auto;
+	margin:6% auto;
+}
+.contenedor{
+	width:85%;
+	margin:0 auto;
+	padding:4px;
+	height:auto;
+	box-shadow:inset 0 5px 5px rgba(0,0,0,.075),0 0 10px #555;
+}
+header{
+	width:100%;
+	height:auto;
+	background:#153656;
+	color:#fff;
+}
+.ti{
+	padding:8px;
+}
+.ti label{
+	font-size:20px;
+}
+header .ti  h3{
+	font-size:20px;
+	font-weight:bold;
+}
+#usuario,#contra{
+	width:100%;
+	border-radius:3px;
+	border:1px solid #ccc;
+	transition:400ms;
+	height:32px;
+	font-size:16px;
+	text-align:center;
+}
+#ingresar{
+	padding:8px;
+	border:0px;
+	border-radius:3px;
+	background:hsla(122, 50%, 49%, 0.84);
+	color:#fff;
+	width:40%;
+	font-size:16px;
+	transition:400ms;
+}
+.wallpaper{
+	width:75%;
+	margin:auto;
+}
+.wallpaper img{
+	margin:4% 30%;
+	border-radius:50%;
+	width:40%;
+}
+#ingresar:hover{
+	opacity:0.8;
+	cursor:pointer;
+}
+.error{
+	border: 1px solid red!important;
+}
+.ti a{
+	text-align:center;
+	text-decoration:none;
+	color:#fff;
+}
+.ti a h3{
+	border-bottom:1px solid #ccc!important;
+	width:85%;
+	margin:0 auto;
+	padding:2px;
+}
+.ti a:hover{
+	color:#6ad4ff;
+}
+
+.bgLogin {
+    background-color: #153656 !important;
+    color: #fff !important;
+}
+
+.lgMargin {
+    margin-right: 20px;
+    margin-left: 20px;
+    padding:0px 20px 0px 20px;
+}

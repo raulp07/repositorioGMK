@@ -1,0 +1,226 @@
+﻿@using UPC.SISGFRAN.EL.Inherited
+@model SolicitudEL
+
+<br />
+<img src="@Model.ReporteEvaluacion.ImageUrl" width="64" height="64" />
+
+<div style="text-align:center;"><h1><b><u>Resultados del Reporte</u></b></h1></div>
+<br />
+<br />
+<br />
+<h2><b>Datos del solicitante</b></h2>
+<br />
+<table cellpadding="3" cellspacing="3">
+    <tr border="1">
+        <td width="30%" align="left">
+            <b>N° Solicitud</b>
+        </td>
+        <td width="70%" align="left">
+            @Model.NumSolicitud
+        </td>
+    </tr>
+    <tr border="1">
+        <td width="30%" align="left">
+            <b>Fecha</b>
+        </td>
+        <td width="70%" align="left">
+            @Model.FechaSolicitud
+        </td>
+    </tr>
+    <tr border="1">
+        <td width="30%" align="left">
+            <b>Solicitante</b>
+        </td>
+        <td width="70%" align="left">
+            @Model.Solicitante.NombreCompleto
+        </td>
+    </tr>
+    <tr border="1">
+        <td width="30%" align="left">
+            <b>Monto Capital</b>
+        </td>
+        <td width="70%" align="left">
+            @Model.MontoCapital
+        </td>
+    </tr>
+    <tr border="1">
+        <td width="30%" align="left">
+            <b>Estado de la solicitud</b>
+        </td>
+        <td width="70%" align="left">
+            @Model.Estado.Nombre
+        </td>
+    </tr>
+</table>
+<br />
+<br />
+<br />
+<h2><b>Detalle de resultados</b></h2>
+<br />
+<table cellpadding="3" cellspacing="3">
+    <tr border="1">
+        <td width="30%" align="left">
+            <b>Criterio</b>
+        </td>
+        <td width="70%" align="left">
+            <b>Resultado</b>
+        </td>
+    </tr>
+    <tr border="1">
+        <td width="30%" align="left">
+            Fecha de evaluación
+        </td>
+        <td width="70%" align="left">
+            @Model.ReporteEvaluacion.Fecha
+        </td>
+    </tr>
+    <tr border="1">
+        <td width="30%" align="left">
+            Resultado
+        </td>
+        <td width="70%" align="left">
+            @Model.ReporteEvaluacion.ResultadoEjercicio
+        </td>
+    </tr>
+    <tr border="1">
+        <td width="30%" align="left">
+            Errores encontrados
+        </td>
+        <td width="70%" align="left">
+            @Model.ReporteEvaluacion.ErroresEncontrados
+        </td>
+    </tr>
+</table>
+
+<br />
+
+<table id="m_5087253164448016235m_-3277567988465978915TABLE12" class="m_5087253164448016235m_-3277567988465978915Table" style="margin-right:auto;width:100%">
+    <tbody>
+        <tr class="m_5087253164448016235m_-3277567988465978915Table">
+            <td class="m_5087253164448016235m_-3277567988465978915Table" bgcolor="#4D4D4D" style="text-align:-khtml-center;text-align:-moz-center;text-align:-webkit-center;height:30px">
+                <span class="m_5087253164448016235m_-3277567988465978915TextBlock" style="font-family:'Microsoft Sans Serif';font-size:9.0pt;font-weight:bold;font-style:normal;color:#ffffff" id="m_5087253164448016235m_-3277567988465978915TEXTBLOCK1">Actual</span>                
+            </td>
+            <td class="m_5087253164448016235m_-3277567988465978915Table">
+                <table id="m_5087253164448016235m_-3277567988465978915TABLE6" class="m_5087253164448016235m_-3277567988465978915Table" style="margin-right:auto;width:610px">
+                    <tbody>
+                        <tr class="m_5087253164448016235m_-3277567988465978915Table" bgcolor="#4D4D4D">
+                            <td class="m_5087253164448016235m_-3277567988465978915Table" style="text-align:-khtml-center;text-align:-moz-center;text-align:-webkit-center;height:30px;width:137px">
+                                <span id="m_5087253164448016235m_-3277567988465978915TEXTBLOCK2" style="font-family:'Microsoft Sans Serif';font-size:9.0pt;font-weight:bold;font-style:normal;color:#ffffff">Documento</span>
+                            </td>
+                            <td class="m_5087253164448016235m_-3277567988465978915Table" style="text-align:-khtml-center;text-align:-moz-center;text-align:-webkit-center;height:30px;width:83px">
+                                <span class="m_5087253164448016235m_-3277567988465978915TextBlock" style="font-family:'Microsoft Sans Serif';font-size:9.0pt;font-weight:bold;font-style:normal;color:#ffffff" id="m_5087253164448016235m_-3277567988465978915TEXTBLOCK9">Fecha de Nacimiento</span>
+                            </td>
+                            <td class="m_5087253164448016235m_-3277567988465978915Table" style="text-align:-khtml-center;text-align:-moz-center;text-align:-webkit-center;height:30px;width:53px">
+                                <span class="m_5087253164448016235m_-3277567988465978915TextBlock" id="m_5087253164448016235m_-3277567988465978915TEXTBLOCK4" style="font-family:'Microsoft Sans Serif';font-size:9.0pt;font-weight:bold;font-style:normal;color:#ffffff">Score</span>
+                            </td>
+                            <td class="m_5087253164448016235m_-3277567988465978915Table" style="text-align:-khtml-center;text-align:-moz-center;text-align:-webkit-center;height:30px;width:105px">
+                                <span class="m_5087253164448016235m_-3277567988465978915TextBlock" style="color:#ffffff;font-family:'Microsoft Sans Serif';font-size:9.0pt;font-weight:bold;font-style:normal" id="m_5087253164448016235m_-3277567988465978915TEXTBLOCK555">Deuda Total (S/.)</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr class="m_5087253164448016235m_-3277567988465978915Table">
+            <td class="m_5087253164448016235m_-3277567988465978915Table" style="text-align:-khtml-center;text-align:-moz-center;text-align:-webkit-center">
+                <img src="https://ci5.googleusercontent.com/proxy/9tZ5bLbRj9534qvT762l9RMe3YfIw0Cy48X9fn8gwPRoFtetrZ912zwwMkf3eFRP0yybSaxdxFBuWJBfZ0u8M2bChieBsZbnvRmcvH3omXlHRWGitthPw5VN6tzU=s0-d-e1-ft#http://misentinel.sentinelperu.com/misentinel/Resources/s_gris_over.png" id="m_5087253164448016235m_-3277567988465978915IMAGE2" alt="Semáforo Gris:
+No registra información de deudas." title="Semáforo Gris:
+No registra información de deudas." class="m_5087253164448016235m_-3277567988465978915Image CToWUd">
+            </td>
+            <td class="m_5087253164448016235m_-3277567988465978915Table">
+                <div id="m_5087253164448016235m_-3277567988465978915Grid1ContainerDivS">
+                    <table id="m_5087253164448016235m_-3277567988465978915GRID1" class="m_5087253164448016235m_-3277567988465978915FreeStyleGrid" style="height:30;width:610px">
+                        <tbody>
+                            <tr class="m_5087253164448016235m_-3277567988465978915FreeStyleGridOdd">
+                                <td style="text-align:-khtml-center;text-align:-moz-center;text-align:-webkit-center;width:100%">
+                                    <table id="m_5087253164448016235m_-3277567988465978915TABLE2_0001" style="background-color:#ececec;width:100%">
+                                        <tbody>
+                                            <tr>
+                                                <td style="text-align:-khtml-left;text-align:-moz-left;text-align:-webkit-left;width:137px">
+                                                    <span class="m_5087253164448016235m_-3277567988465978915ReadonlyAttribute" style="height:1row" id="m_5087253164448016235m_-3277567988465978915span_vCNHCPTTDOCTXT_0001">DNI: 45792116</span>
+                                                </td>
+                                                <td style="text-align:-khtml-center;text-align:-moz-center;text-align:-webkit-center;width:83px">
+                                                    <span class="m_5087253164448016235m_-3277567988465978915ReadonlyAttribute" style="height:1row" id="m_5087253164448016235m_-3277567988465978915span_vCNFCHNAC_0001">30/06/1989</span>
+                                                </td>
+                                                <td style="text-align:-khtml-center;text-align:-moz-center;text-align:-webkit-center;width:53px">
+                                                    <span class="m_5087253164448016235m_-3277567988465978915ReadonlyAttribute" style="height:1row" id="m_5087253164448016235m_-3277567988465978915span_vCNHSCORE_0001">0.000</span>
+                                                </td>
+                                                <td style="text-align:-khtml-right;text-align:-moz-right;text-align:-webkit-right;width:105px">
+                                                    <span class="m_5087253164448016235m_-3277567988465978915ReadonlyAttribute" style="height:1row" id="m_5087253164448016235m_-3277567988465978915span_vCNHDEUTOTSBSTXT_0001">S/. 0,00</span>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr class="m_5087253164448016235m_-3277567988465978915FreeStyleGridOdd">
+                                <td style="text-align:-khtml-center;text-align:-moz-center;text-align:-webkit-center;width:100%">
+                                    <table id="m_5087253164448016235m_-3277567988465978915TABLE2_0002" style="background-color:#ffffff;width:100%">
+                                        <tbody>
+                                            <tr>
+                                                <td style="text-align:-khtml-left;text-align:-moz-left;text-align:-webkit-left;width:137px">
+                                                    <span class="m_5087253164448016235m_-3277567988465978915ReadonlyAttribute" style="height:1row" id="m_5087253164448016235m_-3277567988465978915span_vCNHCPTTDOCTXT_0002">RUC: 10457921166</span>
+                                                </td>
+                                                <td style="text-align:-khtml-center;text-align:-moz-center;text-align:-webkit-center;width:83px">
+                                                    <span class="m_5087253164448016235m_-3277567988465978915ReadonlyAttribute" style="height:1row" id="m_5087253164448016235m_-3277567988465978915span_vCNFCHNAC_0002">30/06/1989</span>
+                                                </td>
+                                                <td style="text-align:-khtml-center;text-align:-moz-center;text-align:-webkit-center;width:53px">
+                                                    <span class="m_5087253164448016235m_-3277567988465978915ReadonlyAttribute" style="height:1row" id="m_5087253164448016235m_-3277567988465978915span_vCNHSCORE_0002">0.000</span>
+                                                </td>
+                                                <td style="text-align:-khtml-right;text-align:-moz-right;text-align:-webkit-right;width:105px">
+                                                    <span class="m_5087253164448016235m_-3277567988465978915ReadonlyAttribute" style="height:1row" id="m_5087253164448016235m_-3277567988465978915span_vCNHDEUTOTSBSTXT_0002">S/. 0,00</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<br />
+<table cellpadding="3" cellspacing="3">
+    <tbody>
+        <tr>
+            <td bgcolor="#A9A9A9" style="height:22px;width:50%">
+                <span class="m_5087253164448016235m_-3277567988465978915TextBlock" style="font-family:'Microsoft Sans Serif';font-size:9.0pt;font-weight:bold;font-style:normal;color:#ffffff" id="m_5087253164448016235m_-3277567988465978915W012
+ 3TEXTBLOCK2">Semaforización</span>
+            </td>
+            <td bgcolor="#A9A9A9" style="width:50%"><span class="m_5087253164448016235m_-3277567988465978915TextBlock" style="font-family:'Microsoft Sans Serif';font-size:9.0pt;font-weight:bold;font-style:normal;color:#ffffff" id="m_5087253164448016235m_-3277567988465978915W0123TEXTBLOCK1">Calificación SBS</span></td>
+        </tr>
+        <tr>
+            <td class="m_5087253164448016235m_-3277567988465978915Table" bgcolor="#F5F5F5" style="text-align:-khtml-center;text-align:-moz-center;text-align:-webkit-center;vertical-align:top"><table id="m_5087253164448016235m_-3277567988465978915W0123TABLA96" class="m_5087253164448016235m_-3277567988465978915Table" style="margin-right:auto;width:100%"><tbody><tr class="m_5087253164448016235m_-3277567988465978915Table"><td class="m_5087253164448016235m_-3277567988465978915Table" rowspan="2" style="text-align:-khtml-center;text-align:-moz-center;text-align:-webkit-center;width:10%"><img src="https://ci5.googleusercontent.com/proxy/2hk0tYqH8u-LO54p6Uru3zRark9bKA6SJuCVNkJhRJPf3IYS23jm6hbvo03YegoTnh5N2cdBjUq5pukkOHsQ9cOJden3c8jrSooP5HSeJrfSqVXVZdY=s0-d-e1-ft#http://misentinel.sentinelperu.com/misentinel/resources/gris.png" id="m_5087253164448016235m_-3277567988465978915W0123IMAGEGRIS" alt=" " class="m_5087253164448016235m_-3277567988465978915Image CToWUd"><div class="m_5087253164448016235m_-3277567988465978915Section"></div></td><td class="m_5087253164448016235m_-3277567988465978915Table"><span class="m_5087253164448016235m_-3277567988465978915m_-8003757597905739793m_-7461884151259345772TextBlock" id="m_5087253164448016235m_-32775679884659789151">Bajo riesgo</span></td></tr><tr class="m_5087253164448016235m_-3277567988465978915Table"><td class="m_5087253164448016235m_-3277567988465978915Table"><span style="FONT-STYLE:normal;FONT-FAMILY:'Arial';FONT-SIZE:8pt;FONT-WEIGHT:normal" class="m_5087253164448016235m_-3277567988465978915m_-8003757597905739793m_-7461884151259345772TextBlock" id="m_5087253164448016235m_-32775679884659789152">No reporta información de deudas</span></td></tr><tr class="m_5087253164448016235m_-3277567988465978915Table"><td class="m_5087253164448016235m_-3277567988465978915Table" rowspan="2" style="text-align:-khtml-center;text-align:-moz-center;text-align:-webkit-center;height:32px"><img src="https://ci5.googleusercontent.com/proxy/2p6tDNwJn8A3A7NfwU1Ox-L1tAYXoOhRK7cV3GEKsQ6Z7ACUQV1wgHDOoDSHrcAkgFd_dWB3URasy_2UXHqHbg3_1A2BcjyPhNmNJLnn71yzRlK-QYsN=s0-d-e1-ft#http://misentinel.sentinelperu.com/misentinel/resources/verde.png" id="m_5087253164448016235m_-3277567988465978915W0123IMAGEVERDE" alt=" " class="m_5087253164448016235m_-3277567988465978915Image CToWUd"><div class="m_5087253164448016235m_-3277567988465978915Section"></div></td><td class="m_5087253164448016235m_-3277567988465978915Table"><span style="FONT-STYLE:normal;FONT-FAMILY:'Arial';FONT-SIZE:8pt;FONT-WEIGHT:bold" class="m_5087253164448016235m_-3277567988465978915m_-8003757597905739793m_-7461884151259345772TextBlock" id="m_5087253164448016235m_-32775679884659789153">Mínimo Riesgo</span></td></tr><tr class="m_5087253164448016235m_-3277567988465978915Table"><td class="m_5087253164448016235m_-3277567988465978915Table"><span class="m_5087253164448016235m_-3277567988465978915m_-8003757597905739793m_-7461884151259345772TextBlock" id="m_5087253164448016235m_-32775679884659789154">Sin deudas vencidas</span></td></tr><tr class="m_5087253164448016235m_-3277567988465978915Table"><td class="m_5087253164448016235m_-3277567988465978915Table" rowspan="2" style="text-align:-khtml-center;text-align:-moz-center;text-align:-webkit-center;height:30px"><img src="https://ci4.googleusercontent.com/proxy/EAdDod2TVSfAqF8R9NxI_80CRiv93V4pXImq8cLI9z2lu8ZZA3cX2GQq5-Mig9lw_wzT3N3pOE3w7R7CJ_4D3rPsHaK24Jr2BZh2vuHV3pVA1_u5aSNR3dQm=s0-d-e1-ft#http://misentinel.sentinelperu.com/misentinel/resources/amarillo.png" id="m_5087253164448016235m_-3277567988465978915W0123IMAGEAMARILLO" alt=" " class="m_5087253164448016235m_-3277567988465978915Image CToWUd"><div class="m_5087253164448016235m_-3277567988465978915Section"></div></td><td class="m_5087253164448016235m_-3277567988465978915Table"><span style="FONT-STYLE:normal;FONT-FAMILY:'Arial';FONT-SIZE:8pt;FONT-WEIGHT:bold" class="m_5087253164448016235m_-3277567988465978915m_-8003757597905739793m_-7461884151259345772TextBlock" id="m_5087253164448016235m_-32775679884659789155">Mediano Riesgo</span></td></tr><tr class="m_5087253164448016235m_-3277567988465978915Table"><td class="m_5087253164448016235m_-3277567988465978915Table"><span style="FONT-STYLE:normal;FONT-FAMILY:'Arial';FONT-SIZE:8pt;FONT-WEIGHT:normal" class="m_5087253164448016235m_-3277567988465978915m_-8003757597905739793m_-7461884151259345772TextBlock" id="m_5087253164448016235m_-32775679884659789156">Deudas con poco atraso</span></td></tr><tr class="m_5087253164448016235m_-3277567988465978915Table"><td class="m_5087253164448016235m_-3277567988465978915Table" rowspan="2" style="text-align:-khtml-center;text-align:-moz-center;text-align:-webkit-center"><img src="https://ci5.googleusercontent.com/proxy/2gdaf92XB5qCXCvTdpNc-smkhbTMuc7he0uxzAqW1tuOa77FDl6T_6KR3gvk8fL9jbir7iRFfRPWZKHOP6dm-RG-quu4M7sbWk5BqaMM7Tm8xfv7JFg=s0-d-e1-ft#http://misentinel.sentinelperu.com/misentinel/resources/rojo.png" id="m_5087253164448016235m_-3277567988465978915W0123IMAGEROJO" alt=" " class="m_5087253164448016235m_-3277567988465978915Image CToWUd"><div class="m_5087253164448016235m_-3277567988465978915Section"></div></td><td class="m_5087253164448016235m_-3277567988465978915Table"><span style="FONT-STYLE:normal;FONT-FAMILY:'Arial';FONT-SIZE:8pt;FONT-WEIGHT:bold" class="m_5087253164448016235m_-3277567988465978915m_-8003757597905739793m_-7461884151259345772TextBlock" id="m_5087253164448016235m_-32775679884659789157">Alto Riesgo</span></td></tr><tr class="m_5087253164448016235m_-3277567988465978915Table"><td class="m_5087253164448016235m_-3277567988465978915Table"><span style="FONT-STYLE:normal;FONT-FAMILY:'Arial';FONT-SIZE:8pt;FONT-WEIGHT:normal" class="m_5087253164448016235m_-3277567988465978915m_-8003757597905739793m_-7461884151259345772TextBlock" id="m_5087253164448016235m_-32775679884659789158">Deudas con atraso significativo</span></td></tr></tbody></table></td>
+            <td bgcolor="#F5F5F5" rowspan="2" style="text-align:-khtml-center;text-align:-moz-center;text-align:-webkit-center;vertical-align:top">
+                <table id="m_5087253164448016235m_-3277567988465978915W0123TABLA19" class="m_5087253164448016235m_-3277567988465978915Table" style="margin-right:auto;width:100%">
+                    <tbody><tr class="m_5087253164448016235m_-3277567988465978915Table"><td class="m_5087253164448016235m_-3277567988465978915Table" bgcolor="#2BB673" style="text-align:-khtml-center;text-align:-moz-center;text-align:-webkit-center;height:20px;width:10%"><span style="FONT-STYLE:normal;FONT-FAMILY:'Arial';COLOR:#ffffff;FONT-SIZE:8pt;FONT-WEIGHT:bold" class="m_5087253164448016235m_-3277567988465978915m_-8003757597905739793m_-7461884151259345772TextBlock" id="m_5087253164448016235m_-327756798846597891520">NOR</span></td><td class="m_5087253164448016235m_-3277567988465978915Table" style="width:80%"><span style="FONT-STYLE:normal;FONT-FAMILY:'Arial';FONT-SIZE:8pt;FONT-WEIGHT:bold" class="m_5087253164448016235m_-3277567988465978915m_-8003757597905739793m_-7461884151259345772TextBlock" id="m_5087253164448016235m_-327756798846597891521">Normal</span></td></tr><tr class="m_5087253164448016235m_-3277567988465978915Table"><td class="m_5087253164448016235m_-3277567988465978915Table" bgcolor="#FFC60B" style="text-align:-khtml-center;text-align:-moz-center;text-align:-webkit-center;height:20px"><span style="FONT-STYLE:normal;FONT-FAMILY:'Arial';COLOR:#404040;FONT-SIZE:8pt;FONT-WEIGHT:bold" class="m_5087253164448016235m_-3277567988465978915m_-8003757597905739793m_-7461884151259345772TextBlock" id="m_5087253164448016235m_-327756798846597891522">CPP</span></td><td class="m_5087253164448016235m_-3277567988465978915Table"><span class="m_5087253164448016235m_-3277567988465978915m_-8003757597905739793m_-7461884151259345772TextBlock" id="m_5087253164448016235m_-327756798846597891523">Con problemas potenciales</span></td></tr><tr class="m_5087253164448016235m_-3277567988465978915Table"><td class="m_5087253164448016235m_-3277567988465978915Table" bgcolor="#F47C20" style="text-align:-khtml-center;text-align:-moz-center;text-align:-webkit-center;height:20px"><span style="FONT-STYLE:normal;FONT-FAMILY:'Arial';COLOR:#ffffff;FONT-SIZE:8pt;FONT-WEIGHT:bold" class="m_5087253164448016235m_-3277567988465978915m_-8003757597905739793m_-7461884151259345772TextBlock" id="m_5087253164448016235m_-327756798846597891524">DEF</span></td><td class="m_5087253164448016235m_-3277567988465978915Table"><span style="FONT-STYLE:normal;FONT-FAMILY:'Arial';FONT-SIZE:8pt;FONT-WEIGHT:bold" class="m_5087253164448016235m_-3277567988465978915m_-8003757597905739793m_-7461884151259345772TextBlock" id="m_5087253164448016235m_-327756798846597891525">Deficiente</span></td></tr><tr class="m_5087253164448016235m_-3277567988465978915Table"><td class="m_5087253164448016235m_-3277567988465978915Table" bgcolor="#CD3546" style="text-align:-khtml-center;text-align:-moz-center;text-align:-webkit-center;height:20px"><span class="m_5087253164448016235m_-3277567988465978915m_-8003757597905739793m_-7461884151259345772TextBlock" id="m_5087253164448016235m_-327756798846597891526">DUD</span></td><td class="m_5087253164448016235m_-3277567988465978915Table"><span style="FONT-STYLE:normal;FONT-FAMILY:'Arial';FONT-SIZE:8pt;FONT-WEIGHT:bold" class="m_5087253164448016235m_-3277567988465978915m_-8003757597905739793m_-7461884151259345772TextBlock" id="m_5087253164448016235m_-327756798846597891527">Dudoso</span></td></tr><tr class="m_5087253164448016235m_-3277567988465978915Table"><td class="m_5087253164448016235m_-3277567988465978915Table" bgcolor="#404042" style="text-align:-khtml-center;text-align:-moz-center;text-align:-webkit-center;height:20px"><span style="FONT-STYLE:normal;FONT-FAMILY:'Arial';COLOR:#ffffff;FONT-SIZE:8pt;FONT-WEIGHT:bold" class="m_5087253164448016235m_-3277567988465978915m_-8003757597905739793m_-7461884151259345772TextBlock" id="m_5087253164448016235m_-327756798846597891528">PER</span></td><td class="m_5087253164448016235m_-3277567988465978915Table"><span style="FONT-STYLE:normal;FONT-FAMILY:'Arial';FONT-SIZE:8pt;FONT-WEIGHT:bold" class="m_5087253164448016235m_-3277567988465978915m_-8003757597905739793m_-7461884151259345772TextBlock" id="m_5087253164448016235m_-327756798846597891529">Perdida</span></td></tr><tr class="m_5087253164448016235m_-3277567988465978915Table"><td class="m_5087253164448016235m_-3277567988465978915Table" bgcolor="#808285"><span style="FONT-STYLE:normal;FONT-FAMILY:'Arial';COLOR:#ffffff;FONT-SIZE:8pt;FONT-WEIGHT:bold" class="m_5087253164448016235m_-3277567988465978915m_-8003757597905739793m_-7461884151259345772TextBlock" id="m_5087253164448016235m_-327756798846597891530">SCAL</span></td><td class="m_5087253164448016235m_-3277567988465978915Table"><span style="FONT-STYLE:normal;FONT-FAMILY:'Arial';FONT-SIZE:8pt;FONT-WEIGHT:bold" class="m_5087253164448016235m_-3277567988465978915m_-8003757597905739793m_-7461884151259345772TextBlock" id="m_5087253164448016235m_-327756798846597891531">Sin calificación</span></td></tr></tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#F5F5F5">
+                <table id="m_5087253164448016235m_-3277567988465978915W0123TABLA91" class="m_5087253164448016235m_-3277567988465978915Table" style="margin-right:auto;width:100%">
+                    <tbody>
+                        <tr class="m_5087253164448016235m_-3277567988465978915Table">
+                            <td class="m_5087253164448016235m_-3277567988465978915Table" bgcolor="#6D6E71" style="text-align:-khtml-center;text-align:-moz-center;text-align:-webkit-center;width:25%">
+                                <span style="FONT-STYLE:normal;FONT-FAMILY:'Arial';COLOR:#ffffff;FONT-SIZE:8pt;FONT-WEIGHT:bold" class="m_5087253164448016235m_-3277567988465978915m_-8003757597905739793m_-7461884151259345772TextBlock" id="m_5087253164448016235m_-32775679884659789159">
+                                    Semáfo
+                                    ro
+                                </span>
+                            </td>
+                            <td class="m_5087253164448016235m_-3277567988465978915Table" bgcolor="#44A748" style="text-align:-khtml-center;text-align:-moz-center;text-align:-webkit-center;width:25%"><span style="FONT-STYLE:normal;FONT-FAMILY:'Arial';COLOR:#ffffff;FONT-SIZE:8pt;FONT-WEIGHT:bold" class="m_5087253164448016235m_-3277567988465978915m_-8003757597905739793m_-7461884151259345772TextBlock" id="m_5087253164448016235m_-327756798846597891510">Verde</span></td>
+                            <td class="m_5087253164448016235m_-3277567988465978915Table" bgcolor="#FDB913" style="text-align:-khtml-center;text-align:-moz-center;text-align:-webkit-center;width:25%"><span style="FONT-STYLE:normal;FONT-FAMILY:'Arial';COLOR:#404040;FONT-SIZE:8pt;FONT-WEIGHT:bold" class="m_5087253164448016235m_-3277567988465978915m_-8003757597905739793m_-7461884151259345772TextBlock" id="m_5087253164448016235m_-327756798846597891511">Amarillo</span></td>
+                            <td class="m_5087253164448016235m_-3277567988465978915Table" bgcolor="#ED2C3F" style="text-align:-khtml-center;text-align:-moz-center;text-align:-webkit-center"><span style="FONT-STYLE:normal;FONT-FAMILY:'Arial';COLOR:#ffffff;FONT-SIZE:8pt;FONT-WEIGHT:bold" class="m_5087253164448016235m_-3277567988465978915m_-8003757597905739793m_-7461884151259345772 m_5087253164448016235m_-3277567988465978915TextBlock" id="m_5087253164448016235m_-327756798846597891512">Rojo</span></td>
+                        </tr>
+                        <tr class="m_5087253164448016235m_-3277567988465978915Table"><td class="m_5087253164448016235m_-3277567988465978915Table" bgcolor="#6D6E71" style="text-align:-khtml-center;text-align:-moz-center;text-align:-webkit-center"><span style="FONT-STYLE:normal;FONT-FAMILY:'Arial';COLOR:#ffffff;FONT-SIZE:8pt;FONT-WEIGHT:bold" class="m_5087253164448016235m_-3277567988465978915m_-8003757597905739793m_-7461884151259345772TextBlock" id="m_5087253164448016235m_-327756798846597891513">Score</span></td><td class="m_5087253164448016235m_-3277567988465978915Table" bgcolor="#E0E0E0" style="text-align:-khtml-center;text-align:-moz-center;text-align:-webkit-center"><span style="FONT-STYLE:normal;FONT-FAMILY:'Arial';COLOR:#404040;FONT-SIZE:8pt;FONT-WEIGHT:normal" class="m_5087253164448016235m_-3277567988465978915m_-8003757597905739793m_-7461884151259345772TextBlock" id="m_5087253164448016235m_-327756798846597891514">[0 - 0.001&gt;</span></td><td class="m_5087253164448016235m_-3277567988465978915Table" bgcolor="#E0E0E0" style="text-align:-khtml-center;text-align:-moz-center;text-align:-webkit-center"><span style="FONT-STYLE:normal;FONT-FAMILY:'Arial';COLOR:#404040;FONT-SIZE:8pt;FONT-WEIGHT:normal" class="m_5087253164448016235m_-3277567988465978915m_-800375759 m_5087253164448016235m_-32775679884659789157905739793m_-7461884151259345772TextBlock" id="m_5087253164448016235m_-327756798846597891515">[0.001 - 2] </span></td><td class="m_5087253164448016235m_-3277567988465978915Table" bgcolor="#E0E0E0" style="text-align:-khtml-center;text-align:-moz-center;text-align:-webkit-center"><span style="FONT-STYLE:normal;FONT-FAMILY:'Arial';COLOR:#404040;FONT-SIZE:8pt;FONT-WEIGHT:normal" class="m_5087253164448016235m_-3277567988465978915m_-8003757597905739793m_-7461884151259345772TextBlock" id="m_5087253164448016235m_-327756798846597891516">&lt;2 - 6]</span></td></tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+
+</table>

@@ -1,0 +1,6 @@
+D:\UPC\VlV\TP3\repositorioGMK\Web\SISGFRAN\WCFRest\bin\WCFRest.dll.config
+D:\UPC\VlV\TP3\repositorioGMK\Web\SISGFRAN\WCFRest\bin\WCFRest.dll
+D:\UPC\VlV\TP3\repositorioGMK\Web\SISGFRAN\WCFRest\bin\WCFRest.pdb
+D:\UPC\VlV\TP3\repositorioGMK\Web\SISGFRAN\WCFRest\obj\Release\WCFRest.csprojResolveAssemblyReference.cache
+D:\UPC\VlV\TP3\repositorioGMK\Web\SISGFRAN\WCFRest\obj\Release\WCFRest.dll
+D:\UPC\VlV\TP3\repositorioGMK\Web\SISGFRAN\WCFRest\obj\Release\WCFRest.pdb

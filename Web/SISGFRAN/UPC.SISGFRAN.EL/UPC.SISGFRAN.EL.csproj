@@ -60,6 +60,7 @@
     <Compile Include="Inherited\EntrevistaEL.cs" />
     <Compile Include="Inherited\LocalEL.cs" />
     <Compile Include="Inherited\MedioComunicacionEL.cs" />
+    <Compile Include="Inherited\ObjetivoEL.cs" />
     <Compile Include="Inherited\OpcionEL.cs" />
     <Compile Include="Inherited\OpcionXPerfilEL.cs" />
     <Compile Include="Inherited\PerfilEL.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Inherited\ResultadoEncuestaEL.cs" />
     <Compile Include="Inherited\SolicitanteEL.cs" />
     <Compile Include="Inherited\SolicitudEL.cs" />
+    <Compile Include="Inherited\SugerirTemporadaPromocionEL.cs" />
     <Compile Include="Inherited\Tokens.cs" />
     <Compile Include="Inherited\UsuarioEL.cs" />
     <Compile Include="NonInherited\ArchivoFtpEN.cs" />

@@ -26,5 +26,13 @@ namespace UPC.SISGFRAN.Web.Controllers
             _Combo = PropuestaIndicador.GetAllCombo(Combo);
             return Json(new { Combo = _Combo }, JsonRequestBehavior.AllowGet);
         }
+
+        [HttpPost]
+        public JsonResult CalcularPorcentajexPeriodo(SugerirTemporadaPromocionEL DE)
+        {
+            List<SugerirTemporadaPromocionEL> _Lista = new List<SugerirTemporadaPromocionEL>();
+            _Lista = SugerirTemporadaPromocionBL.SugerirTemporadaPromocion.CalcularPorcentajexPeriodo(DE);
+            return Json(new { _Lista = _Lista }, JsonRequestBehavior.AllowGet);
+        }
 	}
 }

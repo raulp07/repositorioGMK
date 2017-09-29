@@ -1,0 +1,87 @@
+﻿<div id="app">
+    <div class="row" id="Pag1">
+        <div class="row">
+            <center><h1> Plan de Marketing</h1></center>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <table class="table ">
+                    <thead>
+                        <tr>
+                            <td>Plan de Marketing</td>
+                            <td>Seleccionar</td>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyid">
+                        <tr v-for="lista in listaplanmarketing">
+                            <td>{{ lista.nombrePlanMkt }}</td>
+                            <td><input type="radio" name="PMKT" v-bind:data-pmkt="lista.codPlanMkt" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div class="col-sm-6">
+                    <input type="button" value="Dar Seguimiento" class="btn btn-default" v-on:click="DarSeguimiento" />
+                </div>
+                <div class="col-sm-6">
+                    <a href="/Home/Index" class="btn btn-default">Salir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="Pag2" style="display:none">
+        <div class="row">
+            <center><h1><label id="titulo"></label> </h1></center>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div id="tabmaster" class="container">
+                    <ul class="nav nav-tabs">
+                        <li ><a data-toggle="tab" href="#Objetivos">Objetivos</a></li>
+                        <li class ="active"><a data-toggle="tab" href="#Analisis">Analisis</a></li>
+                        <li><a data-toggle="tab" href="#Implementacion">Implementación</a></li>
+                        <li><a data-toggle="tab" href="#produccion">Puesta en producción</a></li>
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <div id="Objetivos" class="tab-pane fade">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <td>Nombre Objetivo</td>
+                                    <td>Estado</td>
+                                </tr>
+                            </thead>
+                            <tbody v-for="lista in ListaObjetivos">
+                                <tr>
+                                    <td>{{ lista.nombreObjetivo }}</td>
+                                    <td>{{ lista.estadoObjetivo }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="Analisis" class="tab-pane fade"></div>
+                    <div id="Implementacion" class="tab-pane fade"></div>
+                    <div id="produccion" class="tab-pane fade"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div class="col-sm-6">
+                    <input type="button" value="Regresar" class="btn btn-default" v-on:click="Retr" />
+                </div>
+                <div class="col-sm-6">
+                    <input type="button" value="Guardar" class="btn btn-default" v-on:click="SaveSegui" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/JsSeguimientoPlanMarketing/SeguimientoPlanMarketingJs.js"></script>

@@ -34,6 +34,18 @@ namespace UPC.SISGFRAN.BL.Repositorios
             return Objetivo;
         }
 
+        public List<EstrategiaEL> GetAllEstrategia(EstrategiaEL DE)
+        {
+            string postdata = js.Serialize(DE);
+            List<EstrategiaEL> List = js.Deserialize<List<EstrategiaEL>>(conecRest.ConectREST("Estrategia", "POST", postdata));
+            return List;
+        }
 
+        public List<AccionEL> GetAllAccion(AccionEL DE)
+        {
+            string postdata = js.Serialize(DE);
+            List<AccionEL> List = js.Deserialize<List<AccionEL>>(conecRest.ConectREST("Accion", "POST", postdata));
+            return List;
+        }
     }
 }

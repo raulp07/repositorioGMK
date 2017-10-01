@@ -35,48 +35,45 @@
             axios.post("/SugerirTemporadaPromocion/CalcularPorcentajexPeriodo/", json).then(function (response) {
 
                 var CountCabezera = 0;
-                var cabezera = '["Periodo",';
-                var cuerpo = '';
+                var _dataarray = [];
+                var cabezera = ["Periodo"];
+                var cuerpo = [];
                 var nombreTemporal = "";
                 $.each(response.data._Lista, function (k, v) {
                     if (v.codCombo != nombreTemporal) {
-                        cabezera += '"' + v.NombreCombo + '",';
+                        cabezera.push(v.NombreCombo);
                         CountCabezera++;
                     }
                     nombreTemporal = v.codCombo;
-
-
                 });
-                cabezera = cabezera.substring(0, cabezera.length - 1) + ']';
+                _dataarray.push(cabezera);
                 $.each(response.data._Lista, function (k, v) {
-                    cuerpo += '["' + v.periodo + '(' + v.anioVenta + ')"';
+                    cuerpo = [];
+                    cuerpo.push(v.periodo + '(' + v.anioVenta + ')');
                     for (var i = 0; i < CountCabezera; i++) {
-                        if (JSON.parse(cabezera)[i + 1] == v.NombreCombo) {
-                            cuerpo += ',' + v.porVentaxPeridoxAnio;
+                        if (cabezera[i + 1] == v.NombreCombo) {
+                            cuerpo.push(v.porVentaxPeridoxAnio);
                         } else {
-                            cuerpo += ',' + 0;
+                            cuerpo.push(0);
                         }
                     }
-                    cuerpo += '],';
+                    _dataarray.push(cuerpo);
                 });
-
-                cuerpo = cuerpo.substring(0, cuerpo.length - 1);
-                var _DATA = JSON.parse('[' + cabezera + ',' + cuerpo + ']');
-
+                this.dataarray = _dataarray;
                 var _htmltexto = '';
                 var _htmltexto = '';
-                for (var i = 1; i <= _DATA.length-1; i++) {
-                    for (var j = 1; j < _DATA[i].length; j++) {
-                        _htmltexto += 'el ' + _DATA[0][j] + ' genero un promedio de S/.' + _DATA[i][j] + ', '
+                for (var i = 1; i <= _dataarray.length - 1; i++) {
+                    for (var j = 1; j < _dataarray[i].length; j++) {
+                        _htmltexto += 'el ' + _dataarray[0][j] + ' genero un promedio de S/.' + _dataarray[i][j] + ', '
                     }
                     _htmltexto = _htmltexto.substring(0, _htmltexto.length - 1);
-                    _htmltexto += ' en el periodo ' + _DATA[i][0] +' - ';
+                    _htmltexto += ' en el periodo ' + _dataarray[i][0] + ' - ';
                 }
                 $('#textDescripciongrafico').text(_htmltexto);
 
 
 
-                google.charts.setOnLoadCallback(drawChart(_DATA));
+                google.charts.setOnLoadCallback(drawChart(_dataarray));
 
             }.bind(this)).catch(function (error) {
                 console.log(error);

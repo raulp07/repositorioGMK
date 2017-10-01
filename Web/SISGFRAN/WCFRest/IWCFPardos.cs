@@ -79,6 +79,14 @@ namespace WCFRest
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "CalcularPorcentajexPeriodo", ResponseFormat = WebMessageFormat.Json)]
         List<SugerirTemporadaPromocionEL> GetCalcularPorcentajexPeriodo(SugerirTemporadaPromocionEL DE);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "Estrategia", ResponseFormat = WebMessageFormat.Json)]
+        List<EstrategiaEL> GetAllEstrategia(EstrategiaEL DE);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "Accion", ResponseFormat = WebMessageFormat.Json)]
+        List<AccionEL> GetAllAccion(AccionEL DE);
     }
 
 }

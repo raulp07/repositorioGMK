@@ -3,6 +3,8 @@
     data: {
         listaplanmarketing: [],
         ListaObjetivos: [],
+        ListaEstrategia: [],
+        ListaAccion:[],
     },
     methods: {
         ListaPlanMarketing: function () {
@@ -38,6 +40,31 @@
             $('#Pag2').hide(500);
         },
         SaveSegui: function () {
+        },
+        CargaEstrategia: function (val) {            
+            var param = {
+                codObjetivo:val,
+            };
+            var Json = { DE: param };
+            axios.post("/SeguimientoPlanMarketing/ListaEstrategia/", Json).then(function (response) {
+                this.ListaEstrategia = response.data.ListEstrategia;
+                $('.nav-tabs a[href="#Estrategia"]').tab('show');
+            }.bind(this)).catch(function (error) {
+                console.log(error);
+            });
+
+        },
+        CargaAccion: function (val) {
+            var param = {
+                codEstrategia: val,
+            };
+            var Json = { DE: param };
+            axios.post("/SeguimientoPlanMarketing/ListaAccion/", Json).then(function (response) {
+                this.ListaAccion = response.data.ListAccion;
+                $('.nav-tabs a[href="#Acciones"]').tab('show');
+            }.bind(this)).catch(function (error) {
+                console.log(error);
+            });
         },
     },
     computed: {},

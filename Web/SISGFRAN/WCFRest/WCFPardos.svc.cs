@@ -149,5 +149,21 @@ namespace WCFRest
                 return null;
             return SugerirTemporadaPromocionDA.SugerirTemporadaPromocion.GetCalcularPorcentajexPeriodo(DE);
         }
+
+        public List<EstrategiaEL> GetAllEstrategia(EstrategiaEL DE)
+        {
+            string request = ctx.IncomingRequest.Headers["token-client"];
+            if (!UDA.Validarusuario(request))
+                return null;
+            return EstrategiaDA.Estrategia.GetAllEstrategia(DE);
+        }
+        public List<AccionEL> GetAllAccion(AccionEL DE)
+        {
+            string request = ctx.IncomingRequest.Headers["token-client"];
+            if (!UDA.Validarusuario(request))
+                return null;
+            return AccionDA.Accion.GetAllAccion(DE);
+        }
+
     }
 }

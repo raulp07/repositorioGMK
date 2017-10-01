@@ -63,6 +63,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dominio\AccionEL.cs" />
     <Compile Include="Dominio\AplicacionEL.cs" />
     <Compile Include="Dominio\BaseEL.cs" />
     <Compile Include="Dominio\CalcularPropuestaxIndicadorEL.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="Dominio\ComboProductoEL.cs" />
     <Compile Include="Dominio\DetallePropuestaPublicidadEL.cs" />
     <Compile Include="Dominio\EncuestaEL.cs" />
+    <Compile Include="Dominio\EstrategiaEL.cs" />
     <Compile Include="Dominio\LocalEL.cs" />
     <Compile Include="Dominio\MedioComunicacionEL.cs" />
     <Compile Include="Dominio\ObjetivoEL.cs" />
@@ -85,9 +87,11 @@
     <Compile Include="Dominio\SugerirTemporadaPromocionEL.cs" />
     <Compile Include="Dominio\TokensEL.cs" />
     <Compile Include="Dominio\UsuarioEL.cs" />
+    <Compile Include="Persistencia\AccionDA.cs" />
     <Compile Include="Persistencia\ComboDA.cs" />
     <Compile Include="Persistencia\ComboProductoDA.cs" />
     <Compile Include="Persistencia\ConexionUtil.cs" />
+    <Compile Include="Persistencia\EstrategiaDA.cs" />
     <Compile Include="Persistencia\LocalDA.cs" />
     <Compile Include="Persistencia\ObjetivoDA.cs" />
     <Compile Include="Persistencia\OpcionDA.cs" />

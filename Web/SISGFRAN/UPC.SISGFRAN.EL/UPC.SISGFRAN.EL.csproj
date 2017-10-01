@@ -50,6 +50,7 @@
     <Compile Include="Comunes\Funciones.cs" />
     <Compile Include="Helpers\FTPUtil.cs" />
     <Compile Include="Helpers\JsonHelper.cs" />
+    <Compile Include="Inherited\AccionEL.cs" />
     <Compile Include="Inherited\AplicacionEL.cs" />
     <Compile Include="Inherited\CalcularPropuestaxIndicadorEL.cs" />
     <Compile Include="Inherited\ComboEL.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="Inherited\DetallePropuestaPublicidadEL.cs" />
     <Compile Include="Inherited\EncuestaEL.cs" />
     <Compile Include="Inherited\EntrevistaEL.cs" />
+    <Compile Include="Inherited\EstrategiaEL.cs" />
     <Compile Include="Inherited\LocalEL.cs" />
     <Compile Include="Inherited\MedioComunicacionEL.cs" />
     <Compile Include="Inherited\ObjetivoEL.cs" />

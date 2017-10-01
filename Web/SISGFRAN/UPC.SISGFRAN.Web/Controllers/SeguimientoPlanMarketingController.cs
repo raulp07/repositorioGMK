@@ -25,5 +25,21 @@ namespace UPC.SISGFRAN.Web.Controllers
             return Json(new { ListObjetivo = ListObjetivo }, JsonRequestBehavior.AllowGet);
         }
 
+        [HttpPost]
+        public JsonResult ListaEstrategia(EstrategiaEL DE)
+        {
+            List<EstrategiaEL> ListEstrategia = new List<EstrategiaEL>();
+            ListEstrategia = SeguimientoPlanMarketingBL.SeguimientoPlanMarketing.GetAllEstrategia(DE);
+            return Json(new { ListEstrategia = ListEstrategia }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public JsonResult ListaAccion(AccionEL DE)
+        {
+            List<AccionEL> ListAccion = new List<AccionEL>();
+            ListAccion = SeguimientoPlanMarketingBL.SeguimientoPlanMarketing.GetAllAccion(DE);
+            return Json(new { ListAccion = ListAccion }, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

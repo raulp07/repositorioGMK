@@ -43,7 +43,7 @@ namespace WCFRest.Persistencia
                             if (dataReader["nombreObjetivo"] != DBNull.Value) { obj.nombreObjetivo = (string)dataReader["nombreObjetivo"]; }
                             if (dataReader["estadoObjetivo"] != DBNull.Value) { obj.estadoObjetivo = (string)dataReader["estadoObjetivo"]; }
                             if (dataReader["idPlanMkt"] != DBNull.Value) { obj.idPlanMkt = (int)dataReader["idPlanMkt"]; }
-
+                            if (dataReader["porcentajeavance"] != DBNull.Value) { obj.porcentajeavance = (int)dataReader["porcentajeavance"]; }
                             lst.Add(obj);
                         }
                         return lst;

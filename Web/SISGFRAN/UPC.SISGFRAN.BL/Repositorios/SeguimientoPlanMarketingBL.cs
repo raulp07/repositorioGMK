@@ -47,5 +47,12 @@ namespace UPC.SISGFRAN.BL.Repositorios
             List<AccionEL> List = js.Deserialize<List<AccionEL>>(conecRest.ConectREST("Accion", "POST", postdata));
             return List;
         }
+
+        public int ActualizacionAccion(AccionEL DE)
+        {
+            string postdata = js.Serialize(DE);
+            int List = js.Deserialize<int>(conecRest.ConectREST("UPDAccion", "POST", postdata));
+            return List;
+        }
     }
 }

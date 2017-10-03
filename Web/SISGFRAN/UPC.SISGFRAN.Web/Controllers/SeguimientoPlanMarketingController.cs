@@ -41,5 +41,17 @@ namespace UPC.SISGFRAN.Web.Controllers
             return Json(new { ListAccion = ListAccion }, JsonRequestBehavior.AllowGet);
         }
 
+        [HttpPost]
+        public JsonResult ActualizarAccion(AccionEL DE)
+        {
+            List<AccionEL> ListAccion = new List<AccionEL>();
+            if (SeguimientoPlanMarketingBL.SeguimientoPlanMarketing.ActualizacionAccion(DE) > 0)
+            {
+                DE.codAccion = 0;
+                ListAccion = SeguimientoPlanMarketingBL.SeguimientoPlanMarketing.GetAllAccion(DE);
+            }
+            return Json(new { ListAccion = ListAccion }, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

@@ -10,12 +10,20 @@
                         <tr>
                             <td>Plan de Marketing</td>
                             <td>Seleccionar</td>
+                            <td>Porcentaje Avance</td>
                         </tr>
                     </thead>
                     <tbody id="tbodyid">
                         <tr v-for="lista in listaplanmarketing">
                             <td>{{ lista.nombrePlanMkt }}</td>
                             <td><input type="radio" name="PMKT" v-bind:data-pmkt="lista.codPlanMkt" /></td>
+                            <td>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" v-bind:aria-valuenow="lista.porcentajeavance" aria-valuemin="0" aria-valuemax="100" v-bind:style="{width:lista.porcentajeavance+'%'}">
+                                        {{lista.porcentajeavance}}% Completado
+                                    </div>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -43,9 +51,8 @@
                 <div id="tabmaster" class="container">
                     <ul class="nav nav-tabs">
                         <li ><a data-toggle="tab" href="#Objetivos">Objetivos</a></li>
-                        <li class ="active"><a data-toggle="tab" href="#Analisis">Analisis</a></li>
-                        <li><a data-toggle="tab" href="#Implementacion">Implementación</a></li>
-                        <li><a data-toggle="tab" href="#produccion">Puesta en producción</a></li>
+                        <li class ="active"><a data-toggle="tab" href="#Estrategia">Estrategia</a></li>
+                        <li><a data-toggle="tab" href="#Acciones">Acciones</a></li>
                     </ul>
                 </div>
                 <div class="tab-content">
@@ -55,19 +62,150 @@
                                 <tr>
                                     <td>Nombre Objetivo</td>
                                     <td>Estado</td>
+                                    <td>Porcentaje Avance</td>
+                                    <td></td>
                                 </tr>
                             </thead>
                             <tbody v-for="lista in ListaObjetivos">
                                 <tr>
                                     <td>{{ lista.nombreObjetivo }}</td>
-                                    <td>{{ lista.estadoObjetivo }}</td>
+                                    <td>
+                                        <h5 v-if="lista.estadoObjetivo == 0"><span class="label label-danger">Faltante</span></h5>
+                                        <h5 v-else-if="lista.estadoObjetivo == 1"><span class="label label-success">Concluido</span></h5>
+                                        <h5 v-else-if="lista.estadoObjetivo == 2"><span class="label label-warning">Parcial</span></h5>
+                                    </td>
+                                    <td>
+                                        <div class="progress">
+                                            <div class="progress-bar progress-bar-success" role="progressbar" v-bind:aria-valuenow="lista.porcentajeavance" aria-valuemin="0" aria-valuemax="100" v-bind:style="{width:lista.porcentajeavance+'%'}">
+                                                {{lista.porcentajeavance}}% Completado 
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><input type="button" class="btn btn-success" v-on:click="CargaEstrategia(lista.codObjetivo)" value="Ver" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                    </div>
+                    <div id="Estrategia" class="tab-pane fade">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <td>Nombre Estrategia</td>
+                                    <td>Estado</td>
+                                    <td>Porcentaje Avance</td>
+                                    <td></td>
+                                </tr>
+                            </thead>
+                            <tbody v-for="lista in ListaEstrategia">
+                                <tr>
+                                    <td>{{ lista.descripcionEstrategia }}</td>
+                                    <td>
+                                        <h5 v-if="lista.estadoEstrategia == 0"><span class="label label-danger">Faltante</span></h5>
+                                        <h5 v-else-if="lista.estadoEstrategia == 1"><span class="label label-success">Concluido</span></h5>
+                                        <h5 v-else-if="lista.estadoEstrategia == 2"><span class="label label-warning">Parcial</span></h5>
+                                    </td>
+                                    <td>
+                                        <div class="progress">
+                                            <div class="progress-bar progress-bar-success" role="progressbar" v-bind:aria-valuenow="lista.porcentajeavance" aria-valuemin="0" aria-valuemax="100" v-bind:style="{width:lista.porcentajeavance+'%'}">
+                                                {{lista.porcentajeavance}}% Completado
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><input type="button" class="btn btn-success" v-on:click="CargaAccion(lista.codEstrategia)" value="Ver" /></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                    <div id="Analisis" class="tab-pane fade"></div>
-                    <div id="Implementacion" class="tab-pane fade"></div>
-                    <div id="produccion" class="tab-pane fade"></div>
+                    <div id="Acciones" class="tab-pane fade">
+                        <div class="row">
+                            <div class="col-sm-7">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <td>Nombre Acción</td>
+                                            <td>Estado</td>
+                                            <td></td>
+                                        </tr>
+                                    </thead>
+                                    <tbody v-for="lista in ListaAccion">
+                                        <tr>
+                                            <td>{{ lista.nombreAccion }}</td>
+                                            <td>
+                                                <h5 v-if="lista.estadoAccion == 0"><span class="label label-danger">Faltante</span></h5>
+                                                <h5 v-else-if="lista.estadoAccion == 1"><span class="label label-success">Concluido</span></h5>
+                                                <h5 v-else-if="lista.estadoAccion == 2"><span class="label label-warning">Parcial</span></h5>
+                                            </td>
+                                            <td><input type="button" class="btn btn-success" v-on:click="VerDetallerAccion(lista.codAccion)" value="Ver" /></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-sm-5">
+                                <div class="row">
+                                    <h3><label>Actualización de Acción</label></h3>
+                                    <div class="form-group">
+                                        <label for="txtdescipcion">Descripción</label>
+                                        <input type="text" id="txtdescipcion" class="form-control" readonly />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="ddlestado">Estado</label>
+                                        <select id="ddlestado" class="form-control">
+                                            <option value="0">:Seleccione:</option>
+                                            <option value="1">Concluido</option>
+                                            <option value="2">Parcial</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="txtobservacion">Observaciones</label>
+                                        <textarea id="txtobservacion" class="form-control" rows="5"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="txtcostoAccion">Costo</label>
+                                        <input type="text" id="txtcostoAccion" class="form-control" onkeypress="return soloNumeros(event)" />
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6 col-sm-offset-6">
+                                            <input type="button" value="Guardar" class="btn btn-default" v-on:click="ActualizarAccion" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>          
+                        @*<div class="row">
+                            <div class="col-sm-6 col-sm-offset-6">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <label for="txtdescipcion">Descripción</label>
+                                        <input type="text" id="txtdescipcion" class="form-control"  readonly/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="ddlestado">Estado</label>
+                                        <select id="ddlestado" class="form-control">
+                                            <option value="0">:Seleccione:</option>
+                                            <option value="1">Concluido</option>
+                                            <option value="2">Parcial</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="txtobservacion">Observaciones</label>
+                                        <textarea id="txtobservacion" class="form-control" rows="5" ></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="txtcostoAccion">Costo</label>
+                                        <input type="text" id="txtcostoAccion" class="form-control" />
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6 col-sm-offset-6">
+                                            <input type="button" value="Guardar" class="btn btn-default" v-on:click="ActualizarAccion" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>*@             
+                        
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -76,9 +214,6 @@
             <div class="col-sm-6 col-sm-offset-3">
                 <div class="col-sm-6">
                     <input type="button" value="Regresar" class="btn btn-default" v-on:click="Retr" />
-                </div>
-                <div class="col-sm-6">
-                    <input type="button" value="Guardar" class="btn btn-default" v-on:click="SaveSegui" />
                 </div>
             </div>
         </div>

@@ -68,5 +68,8 @@ namespace WCFRest.Dominio
             set { _codObjetivo = value; }
         }
         private int _codObjetivo;
+
+        [DataMember]
+        public int porcentajeavance { get; set; }
     }
 }

@@ -117,5 +117,8 @@ namespace WCFRest.Dominio
         }
         private string _estadoPlanMkt;
 
+        [DataMember]
+        public int porcentajeavance { get; set; }
+
     }
 }

@@ -117,5 +117,7 @@ namespace UPC.SISGFRAN.EL.Inherited
         }
         private string _estadoPlanMkt;
 
+
+        public int porcentajeavance { get; set; }
     }
 }

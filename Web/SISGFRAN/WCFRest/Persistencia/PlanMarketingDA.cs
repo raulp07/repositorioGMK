@@ -44,7 +44,8 @@ namespace WCFRest.Persistencia
                             if (dataReader["fechaInicioReal"] != DBNull.Value) { obj.fechaInicioReal = (DateTime)dataReader["fechaInicioReal"]; }
                             if (dataReader["fechaFinReal"] != DBNull.Value) { obj.fechaFinReal = (DateTime)dataReader["fechaFinReal"]; }
                             if (dataReader["estadoPlanMkt"] != DBNull.Value) { obj.estadoPlanMkt = (string)dataReader["estadoPlanMkt"]; }
-
+                            if (dataReader["porcentajeavance"] != DBNull.Value) { obj.porcentajeavance = (int)dataReader["porcentajeavance"]; }
+                            
                             lstPlanMarketing.Add(obj);
                         }
                         return lstPlanMarketing;

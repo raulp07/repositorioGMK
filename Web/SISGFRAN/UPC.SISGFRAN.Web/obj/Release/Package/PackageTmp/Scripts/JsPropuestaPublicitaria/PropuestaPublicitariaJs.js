@@ -265,3 +265,21 @@ $('#datetimepicker1').datetimepicker({
     format: 'YYYY-MM-DD',
     minDate: fechamini
 });
+
+
+function soloNumeros(e) {
+    var key = window.Event ? e.which : e.keyCode
+    if (key >= 48 && key <= 57) {
+        return true;
+        //var _ID = $('#' + e.currentTarget.id).val() + e.key;
+        //if (parseInt(_ID) <= 10 && parseInt(_ID) >= 0) {
+        //    return true
+        //} else {
+        //    $('#' + e.currentTarget.id).val('');
+        //    return true;
+        //}
+    } else {
+        return false;
+    }
+
+}

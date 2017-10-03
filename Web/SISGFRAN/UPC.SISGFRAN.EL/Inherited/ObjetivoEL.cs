@@ -56,5 +56,7 @@ namespace UPC.SISGFRAN.EL.Inherited
             set { _idPlanMkt = value; }
         }
         private int _idPlanMkt;
+
+        public int porcentajeavance { get; set; }
     }
 }

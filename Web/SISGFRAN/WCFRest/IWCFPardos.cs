@@ -87,6 +87,10 @@ namespace WCFRest
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "Accion", ResponseFormat = WebMessageFormat.Json)]
         List<AccionEL> GetAllAccion(AccionEL DE);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "UPDAccion", ResponseFormat = WebMessageFormat.Json)]
+        int ActualizacionAccion(AccionEL DE);
     }
 
 }

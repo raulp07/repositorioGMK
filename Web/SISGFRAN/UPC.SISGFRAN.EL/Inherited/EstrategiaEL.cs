@@ -67,5 +67,7 @@ namespace UPC.SISGFRAN.EL.Inherited
             set { _codObjetivo = value; }
         }
         private int _codObjetivo;
+
+        public int porcentajeavance { get; set; }
     }
 }

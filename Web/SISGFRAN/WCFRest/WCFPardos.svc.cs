@@ -165,5 +165,13 @@ namespace WCFRest
             return AccionDA.Accion.GetAllAccion(DE);
         }
 
+        public int ActualizacionAccion(AccionEL DE)
+        {
+            string request = ctx.IncomingRequest.Headers["token-client"];
+            if (!UDA.Validarusuario(request))
+                return 0;
+            return AccionDA.Accion.ActualizacionAccion(DE);
+        }
+
     }
 }

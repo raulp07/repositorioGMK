@@ -59,5 +59,31 @@ namespace WCFRest.Persistencia
                 }
             }
         }
+
+        public int ActualizacionAccion(AccionEL DE)
+        {
+            using (SqlConnection con = new SqlConnection(ConexionUtil.Cadena))
+            {
+                con.Open();
+                using (SqlCommand com = new SqlCommand("spUpdatetb_accion", con))
+                {
+                    com.CommandType = CommandType.StoredProcedure;
+                    com.Parameters.Add("@codAccion", SqlDbType.Int).Value = DE.codAccion;
+                    com.Parameters.Add("@nombreAccion", SqlDbType.VarChar).Value = DE.nombreAccion;
+                    com.Parameters.Add("@descripcionAccion", SqlDbType.VarChar).Value = DE.descripcionAccion;
+                    //com.Parameters.Add("@fechaRegistroAccion", SqlDbType.DateTime).Value = (DE.fechaRegistroAccion == DateTime.MinValue ? DateTime.Now : DE.fechaRegistroAccion);
+                    com.Parameters.Add("@costoAccion", SqlDbType.Decimal).Value = DE.costoAccion;
+                    //com.Parameters.Add("@fechaInicioAccion", SqlDbType.DateTime).Value = (DE.fechaInicioAccion== DateTime.MinValue ? DateTime.Now : DE.fechaInicioAccion);
+                    com.Parameters.Add("@codEstrategia", SqlDbType.Int).Value = DE.codEstrategia;
+                    //com.Parameters.Add("@fechaFinAccion", SqlDbType.DateTime).Value = (DE.fechaFinAccion == DateTime.MinValue ? DateTime.Now : DE.fechaFinAccion);
+                    //com.Parameters.Add("@fechaInicioRealAccion", SqlDbType.DateTime).Value = (DE.fechaInicioRealAccion == DateTime.MinValue ? DateTime.Now : DE.fechaInicioRealAccion);
+                    //com.Parameters.Add("@fechaFinRealAccion", SqlDbType.DateTime).Value = (DE.fechaFinRealAccion == DateTime.MinValue ? DateTime.Now : DE.fechaFinRealAccion);
+                    com.Parameters.Add("@estadoAccion", SqlDbType.Int).Value = DE.estadoAccion;
+
+                    return com.ExecuteNonQuery();
+
+                }
+            }
+        }
     }
 }

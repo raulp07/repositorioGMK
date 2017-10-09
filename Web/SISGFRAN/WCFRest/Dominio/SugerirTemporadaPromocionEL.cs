@@ -12,6 +12,8 @@ namespace WCFRest.Dominio
         [DataMember]
         public int codLocal { get; set; }
         [DataMember]
+        public string NombreLocal { get; set; }
+        [DataMember]
         public int codCombo { get; set; }
         [DataMember]
         public string NombreCombo { get; set; }

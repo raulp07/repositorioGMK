@@ -78,9 +78,9 @@
             var json = { CalcularPropuestaxIndicador: param };
             axios.post("/PropuestaIndicador/CalcularPropuestaxIndicadores/", json).then(function (response) {
 
-                var uluru = { lat: -9.563234298135303, lng: -71.63956062343755 };
+                var uluru = { lat: -12.04418919671956, lng: -77.0514965057373 };
                 var map = new google.maps.Map(document.getElementById('googleMap'), {
-                    zoom: 6,
+                    zoom: 13,
                     center: uluru
                 });
 

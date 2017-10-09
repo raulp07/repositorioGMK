@@ -34,5 +34,14 @@ namespace UPC.SISGFRAN.Web.Controllers
             _Lista = SugerirTemporadaPromocionBL.SugerirTemporadaPromocion.CalcularPorcentajexPeriodo(DE);
             return Json(new { _Lista = _Lista }, JsonRequestBehavior.AllowGet);
         }
-	}
+
+        [HttpPost]
+        public JsonResult INS_SugerirTemporadaPromocion(SugerirTemporadaPromocionEL DE)
+        {
+            int rest = SugerirTemporadaPromocionBL.SugerirTemporadaPromocion.INS_SugerirTemporadaPromocion(DE);
+            return Json(new { rest = rest }, JsonRequestBehavior.AllowGet);
+        }
+
+
+    }
 }

@@ -173,5 +173,13 @@ namespace WCFRest
             return AccionDA.Accion.ActualizacionAccion(DE);
         }
 
+        public int InsertSeguerirTemporadaPromocion(SugerirTemporadaPromocionEL DE)
+        {
+            string request = ctx.IncomingRequest.Headers["token-client"];
+            if (!UDA.Validarusuario(request))
+                return 0;
+            return SugerirTemporadaPromocionDA.SugerirTemporadaPromocion.InsertSeguerirTemporadaPromocion(DE);
+        }
+
     }
 }

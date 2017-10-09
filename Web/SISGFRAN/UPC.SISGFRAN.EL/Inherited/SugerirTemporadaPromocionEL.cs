@@ -9,7 +9,7 @@ namespace UPC.SISGFRAN.EL.Inherited
     public class SugerirTemporadaPromocionEL
     {
         public int codLocal { get; set; }
-
+        public string NombreLocal { get; set; }
         public int codCombo { get; set; }
         public string NombreCombo { get; set; }
         public int periodo { get; set; }

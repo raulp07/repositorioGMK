@@ -17,7 +17,7 @@ namespace UPC.SISGFRAN.BL.Repositorios
         {
             get
             {
-                if (sugerirTemporadaPromocion== null)
+                if (sugerirTemporadaPromocion == null)
                 {
                     sugerirTemporadaPromocion = new SugerirTemporadaPromocionBL();
                 }
@@ -31,5 +31,13 @@ namespace UPC.SISGFRAN.BL.Repositorios
             string postdata = js.Serialize(DE);
             return js.Deserialize<List<SugerirTemporadaPromocionEL>>(conecRest.ConectREST("CalcularPorcentajexPeriodo", "POST", postdata));
         }
+
+        public int INS_SugerirTemporadaPromocion(SugerirTemporadaPromocionEL DE)
+        {
+            string postdata = js.Serialize(DE);
+            return js.Deserialize<int>(conecRest.ConectREST("INSSugerir", "POST", postdata));
+        }
+
+
     }
 }

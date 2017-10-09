@@ -91,6 +91,10 @@ namespace WCFRest
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "UPDAccion", ResponseFormat = WebMessageFormat.Json)]
         int ActualizacionAccion(AccionEL DE);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "INSSugerir", ResponseFormat = WebMessageFormat.Json)]
+        int InsertSeguerirTemporadaPromocion(SugerirTemporadaPromocionEL DE);
     }
 
 }

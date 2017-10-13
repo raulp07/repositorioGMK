@@ -45,15 +45,15 @@
                     <select id="anioini" class="form-control">
                         <option value="0">Seleccione</option>
                         @*<option>	2000	</option>
-                        <option>	2001	</option>
-                        <option>	2002	</option>
-                        <option>	2003	</option>
-                        <option>	2004	</option>
-                        <option>	2005	</option>
-                        <option>	2006	</option>
-                        <option>	2007	</option>
-                        <option>	2008	</option>
-                        <option>	2009	</option>*@
+                            <option>	2001	</option>
+                            <option>	2002	</option>
+                            <option>	2003	</option>
+                            <option>	2004	</option>
+                            <option>	2005	</option>
+                            <option>	2006	</option>
+                            <option>	2007	</option>
+                            <option>	2008	</option>
+                            <option>	2009	</option>*@
                         <option>	2010	</option>
                         <option>	2011	</option>
                         <option>	2012	</option>
@@ -71,15 +71,15 @@
                     <select id="aniofin" class="form-control">
                         <option value="0">Seleccione</option>
                         @*<option>	2000	</option>
-                        <option>	2001	</option>
-                        <option>	2002	</option>
-                        <option>	2003	</option>
-                        <option>	2004	</option>
-                        <option>	2005	</option>
-                        <option>	2006	</option>
-                        <option>	2007	</option>
-                        <option>	2008	</option>
-                        <option>	2009	</option>*@
+                            <option>	2001	</option>
+                            <option>	2002	</option>
+                            <option>	2003	</option>
+                            <option>	2004	</option>
+                            <option>	2005	</option>
+                            <option>	2006	</option>
+                            <option>	2007	</option>
+                            <option>	2008	</option>
+                            <option>	2009	</option>*@
                         <option>	2010	</option>
                         <option>	2011	</option>
                         <option>	2012	</option>
@@ -102,7 +102,13 @@
         </div>
         <div class="col-sm-6 col-sm-offset-3">
             <div class="col-sm-12">
-                <div class="large-12" id="columnchart_material" style="height: 300px;"></div>
+                <div v-show="flag" class="large-12" id="columnchart_material" style="height: 300px;"></div>
+                <div v-show="!flag">
+                    <center>
+                            <h2>No se encontro información disponible</h2>
+                        <img src="~/Scripts/Imagenes/Jackie-Chan-WTF.jpg" />
+                    </center>
+                </div>
             </div>
 
             <div class="col-sm-12">
@@ -134,7 +140,7 @@
 
                         <br />
                     </div>
-                    
+
                 </div>
             </div>
         </div>

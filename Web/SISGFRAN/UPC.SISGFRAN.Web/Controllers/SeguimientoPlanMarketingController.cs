@@ -20,37 +20,74 @@ namespace UPC.SISGFRAN.Web.Controllers
         [HttpPost]
         public JsonResult ListaObjetivo(ObjetivoEL DE)
         {
-            List<ObjetivoEL> ListObjetivo = new List<ObjetivoEL>();
-            ListObjetivo = SeguimientoPlanMarketingBL.SeguimientoPlanMarketing.GetAllObjetivo(DE);
-            return Json(new { ListObjetivo = ListObjetivo }, JsonRequestBehavior.AllowGet);
+            try
+            {
+                List<ObjetivoEL> ListObjetivo = new List<ObjetivoEL>();
+                ListObjetivo = SeguimientoPlanMarketingBL.SeguimientoPlanMarketing.GetAllObjetivo(DE);
+                return Json(new { ListObjetivo = ListObjetivo }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception e)
+            {
+                Herramienta.Herramientas.Log(e.Message);
+                return Json(new { ListObjetivo = "" }, JsonRequestBehavior.AllowGet);
+            }
+            
         }
 
         [HttpPost]
         public JsonResult ListaEstrategia(EstrategiaEL DE)
         {
-            List<EstrategiaEL> ListEstrategia = new List<EstrategiaEL>();
-            ListEstrategia = SeguimientoPlanMarketingBL.SeguimientoPlanMarketing.GetAllEstrategia(DE);
-            return Json(new { ListEstrategia = ListEstrategia }, JsonRequestBehavior.AllowGet);
+            try
+            {
+                List<EstrategiaEL> ListEstrategia = new List<EstrategiaEL>();
+                ListEstrategia = SeguimientoPlanMarketingBL.SeguimientoPlanMarketing.GetAllEstrategia(DE);
+                return Json(new { ListEstrategia = ListEstrategia }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception e)
+            {
+                Herramienta.Herramientas.Log(e.Message);
+                return Json(new { ListEstrategia = "" }, JsonRequestBehavior.AllowGet);
+            }
+            
         }
 
         [HttpPost]
         public JsonResult ListaAccion(AccionEL DE)
         {
-            List<AccionEL> ListAccion = new List<AccionEL>();
-            ListAccion = SeguimientoPlanMarketingBL.SeguimientoPlanMarketing.GetAllAccion(DE);
-            return Json(new { ListAccion = ListAccion }, JsonRequestBehavior.AllowGet);
+            try
+            {
+                List<AccionEL> ListAccion = new List<AccionEL>();
+                ListAccion = SeguimientoPlanMarketingBL.SeguimientoPlanMarketing.GetAllAccion(DE);
+                return Json(new { ListAccion = ListAccion }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception e)
+            {
+                Herramienta.Herramientas.Log(e.Message);
+                return Json(new { ListAccion = "" }, JsonRequestBehavior.AllowGet);
+            }
+            
         }
 
         [HttpPost]
         public JsonResult ActualizarAccion(AccionEL DE)
         {
-            List<AccionEL> ListAccion = new List<AccionEL>();
-            if (SeguimientoPlanMarketingBL.SeguimientoPlanMarketing.ActualizacionAccion(DE) > 0)
+            try
             {
-                DE.codAccion = 0;
-                ListAccion = SeguimientoPlanMarketingBL.SeguimientoPlanMarketing.GetAllAccion(DE);
+                List<AccionEL> ListAccion = new List<AccionEL>();
+                if (SeguimientoPlanMarketingBL.SeguimientoPlanMarketing.ActualizacionAccion(DE) > 0)
+                {
+                    DE.codAccion = 0;
+                    ListAccion = SeguimientoPlanMarketingBL.SeguimientoPlanMarketing.GetAllAccion(DE);
+                }
+                Herramienta.Herramientas.LogTransaccion("Se completo el registro de la Acción");
+                return Json(new { ListAccion = ListAccion }, JsonRequestBehavior.AllowGet);
             }
-            return Json(new { ListAccion = ListAccion }, JsonRequestBehavior.AllowGet);
+            catch (Exception e)
+            {
+                Herramienta.Herramientas.Log(e.Message);
+                return Json(new { ListAccion = "" }, JsonRequestBehavior.AllowGet);
+            }
+            
         }
 
     }

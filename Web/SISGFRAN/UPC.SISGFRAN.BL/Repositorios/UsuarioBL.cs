@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
@@ -27,6 +28,7 @@ namespace UPC.SISGFRAN.BL.Repositorios
         JavaScriptSerializer js = new JavaScriptSerializer();
         public UsuarioEL Login(UsuarioEL usuario)
         {
+            
             string postdata = js.Serialize(usuario);
             return js.Deserialize<UsuarioEL>(conecRest.ConectREST("Login", "POST", postdata));
             

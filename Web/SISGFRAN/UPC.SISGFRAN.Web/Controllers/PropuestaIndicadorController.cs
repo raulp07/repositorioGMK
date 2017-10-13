@@ -22,52 +22,106 @@ namespace UPC.SISGFRAN.Web.Controllers
         [HttpPost]
         public JsonResult ListaPlanMarketing()
         {
-            List<PlanMarketingEL> PlanMarketing = new List<PlanMarketingEL>();
-            PlanMarketing = PropuestaIndicador.GetAllPlanMarketing();
-            return Json(new { PlanMarketing = PlanMarketing }, JsonRequestBehavior.AllowGet);
+            try
+            {
+                List<PlanMarketingEL> PlanMarketing = new List<PlanMarketingEL>();
+                PlanMarketing = PropuestaIndicador.GetAllPlanMarketing();
+                return Json(new { PlanMarketing = PlanMarketing }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception e)
+            {
+                Herramienta.Herramientas.Log(e.Message);
+                return Json(new { PlanMarketing = "" }, JsonRequestBehavior.AllowGet);
+            }
         }
 
         [HttpPost]
         public JsonResult ListaComboProducto()
         {
-            List<ComboProductoEL> ComboProducto = new List<ComboProductoEL>();
-            ComboProducto = PropuestaIndicador.GetAllComboProducto();
-            return Json(new { ComboProducto = ComboProducto }, JsonRequestBehavior.AllowGet);
+            try
+            {
+                List<ComboProductoEL> ComboProducto = new List<ComboProductoEL>();
+                ComboProducto = PropuestaIndicador.GetAllComboProducto();
+                return Json(new { ComboProducto = ComboProducto }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception e)
+            {
+                Herramienta.Herramientas.Log(e.Message);
+                return Json(new { ComboProducto = "" }, JsonRequestBehavior.AllowGet);
+            }
+            
         }
 
         [HttpPost]
         public JsonResult ListaCombo(ComboEL Combo)
         {
-            List<ComboEL> _Combo = new List<ComboEL>();
-            _Combo = PropuestaIndicador.GetAllCombo(Combo);
-            return Json(new { Combo = _Combo }, JsonRequestBehavior.AllowGet);
+            try
+            {
+                List<ComboEL> _Combo = new List<ComboEL>();
+                _Combo = PropuestaIndicador.GetAllCombo(Combo);
+                return Json(new { Combo = _Combo }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception e)
+            {
+                Herramienta.Herramientas.Log(e.Message);
+                return Json(new { Combo = "" }, JsonRequestBehavior.AllowGet);
+            }
+            
         }
 
         [HttpPost]
         public JsonResult ListaLocales()
         {
-            List<LocalEL> Local = new List<LocalEL>();
-            Local = PropuestaIndicador.ListaLocales();
-            return Json(new { Local = Local }, JsonRequestBehavior.AllowGet);
+            try
+            {
+                List<LocalEL> Local = new List<LocalEL>();
+                Local = PropuestaIndicador.ListaLocales();
+                return Json(new { Local = Local }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception e)
+            {
+                Herramienta.Herramientas.Log(e.Message);
+                return Json(new { Local = "" }, JsonRequestBehavior.AllowGet);
+            }
+            
         }
 
         [HttpPost]
         public JsonResult CalcularPropuestaxIndicadores(CalcularPropuestaxIndicadorEL CalcularPropuestaxIndicador)
         {
-            List<CalcularPropuestaxIndicadorEL> listCalcularPropuestaxIndicador = new List<CalcularPropuestaxIndicadorEL>();
-            listCalcularPropuestaxIndicador = PropuestaIndicador.CalcularPropuestaxIndicadores(CalcularPropuestaxIndicador);
-            return Json(new { listCalcularPropuestaxIndicador = listCalcularPropuestaxIndicador }, JsonRequestBehavior.AllowGet);
+            try
+            {
+                List<CalcularPropuestaxIndicadorEL> listCalcularPropuestaxIndicador = new List<CalcularPropuestaxIndicadorEL>();
+                listCalcularPropuestaxIndicador = PropuestaIndicador.CalcularPropuestaxIndicadores(CalcularPropuestaxIndicador);
+                return Json(new { listCalcularPropuestaxIndicador = listCalcularPropuestaxIndicador }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception e)
+            {
+                Herramienta.Herramientas.Log(e.Message);
+                return Json(new { Local = "" }, JsonRequestBehavior.AllowGet);
+            }
+            
         }
 
         [HttpPost]
         public JsonResult proyectarPropuestaxIndicadores(List<proyectarPropuestaIndicadorEL> proyectarPropuestaIndicador)
         {
-            int resultado = 0;
-            foreach (proyectarPropuestaIndicadorEL item in proyectarPropuestaIndicador)
+            try
             {
-                resultado = PropuestaIndicador.proyectarPropuestaxIndicadores(item);
+                int resultado = 0;
+                foreach (proyectarPropuestaIndicadorEL item in proyectarPropuestaIndicador)
+                {
+                    resultado = PropuestaIndicador.proyectarPropuestaxIndicadores(item);
+                }
+                Herramienta.Herramientas.LogTransaccion("Se completo la transaccion de la propuesta por indicador");
+                return Json(new { resultado = resultado }, JsonRequestBehavior.AllowGet);
             }
-            return Json(new { resultado = resultado }, JsonRequestBehavior.AllowGet);
+            catch (Exception e)
+            {
+                Herramienta.Herramientas.Log(e.Message);
+                return Json(new { Local = "" }, JsonRequestBehavior.AllowGet);
+            }
+            
         }
         
 

@@ -32,38 +32,80 @@ namespace UPC.SISGFRAN.BL.Repositorios
         {
             List<PlanMarketingEL> PlanMarketing = js.Deserialize<List<PlanMarketingEL>>(conecRest.ConectREST("planmarketing", "GET"));
             return PlanMarketing;
+
+
         }
 
         public List<ComboProductoEL> GetAllComboProducto()
         {
-            List<ComboProductoEL> ComboProducto = js.Deserialize<List<ComboProductoEL>>(conecRest.ConectREST("comboproducto", "GET"));
-            return ComboProducto;
+            try
+            {
+                List<ComboProductoEL> ComboProducto = js.Deserialize<List<ComboProductoEL>>(conecRest.ConectREST("comboproducto", "GET"));
+                return ComboProducto;
+            }
+            catch (Exception e)
+            {
+                throw new ArgumentException(e.Message);
+            }
+
         }
         public List<LocalEL> ListaLocales()
         {
-            List<LocalEL> Local = js.Deserialize<List<LocalEL>>(conecRest.ConectREST("locales", "GET"));
-            return Local;
+            try
+            {
+                List<LocalEL> Local = js.Deserialize<List<LocalEL>>(conecRest.ConectREST("locales", "GET"));
+                return Local;
+            }
+            catch (Exception e)
+            {
+                throw new ArgumentException(e.Message);
+            }
+
         }
 
         public List<CalcularPropuestaxIndicadorEL> CalcularPropuestaxIndicadores(CalcularPropuestaxIndicadorEL CalcularPropuestaxIndicador)
         {
-            string postdata = js.Serialize(CalcularPropuestaxIndicador);
-            List<CalcularPropuestaxIndicadorEL> listCalcularPropuestaxIndicador = js.Deserialize<List<CalcularPropuestaxIndicadorEL>>(conecRest.ConectREST("PropuestaxIndicadores", "POST", postdata));
-            return listCalcularPropuestaxIndicador;
+            try
+            {
+                string postdata = js.Serialize(CalcularPropuestaxIndicador);
+                List<CalcularPropuestaxIndicadorEL> listCalcularPropuestaxIndicador = js.Deserialize<List<CalcularPropuestaxIndicadorEL>>(conecRest.ConectREST("PropuestaxIndicadores", "POST", postdata));
+                return listCalcularPropuestaxIndicador;
+            }
+            catch (Exception e)
+            {
+                throw new ArgumentException(e.Message);
+            }
+
         }
 
         public List<ComboEL> GetAllCombo(ComboEL Combo)
         {
-            string postdata = js.Serialize(Combo);
-            List<ComboEL> _Combo = js.Deserialize<List<ComboEL>>(conecRest.ConectREST("Combo", "POST", postdata));
-            return _Combo;
+            try
+            {
+                string postdata = js.Serialize(Combo);
+                List<ComboEL> _Combo = js.Deserialize<List<ComboEL>>(conecRest.ConectREST("Combo", "POST", postdata));
+                return _Combo;
+            }
+            catch (Exception e)
+            {
+                throw new ArgumentException(e.Message);
+            }
+
         }
 
         public int proyectarPropuestaxIndicadores(proyectarPropuestaIndicadorEL proyectarPropuestaIndicador)
         {
-            string postdata = js.Serialize(proyectarPropuestaIndicador);
-            int respuesta = js.Deserialize<int>(conecRest.ConectREST("ProyectarPropuestaIndicador", "POST", postdata));
-            return respuesta;
+            try
+            {
+                string postdata = js.Serialize(proyectarPropuestaIndicador);
+                int respuesta = js.Deserialize<int>(conecRest.ConectREST("ProyectarPropuestaIndicador", "POST", postdata));
+                return respuesta;
+            }
+            catch (Exception e)
+            {
+                throw new ArgumentException(e.Message);
+            }
         }
+
     }
 }

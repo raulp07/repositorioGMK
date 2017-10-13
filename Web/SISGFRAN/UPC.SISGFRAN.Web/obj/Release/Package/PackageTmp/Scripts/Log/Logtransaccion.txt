@@ -1,0 +1,12 @@
+12/10/2017 23:59:06 ==> Se registro la sugerencia correctamente
+13/10/2017 00:04:50 ==> Se registro la sugerencia correctamente
+13/10/2017 00:05:01 ==> Se registro la sugerencia correctamente
+13/10/2017 01:22:44 ==> El valor no puede ser nulo.
+Nombre del parámetro: Error en el servidor remoto: (400) Solicitud incorrecta.
+13/10/2017 01:40:06 ==> El valor no puede ser nulo.
+Nombre del parámetro: Error en el servidor remoto: (400) Solicitud incorrecta.
+10/12/2017 11:47:16 PM ==> Value cannot be null.
+Parameter name: The remote server returned an error: (400) Bad Request.
+10/12/2017 11:48:25 PM ==> Value cannot be null.
+Parameter name: The remote server returned an error: (400) Bad Request.
+13/10/2017 11:49:41 ==> Se completo la transaccion de la propuesta por indicador

@@ -7,7 +7,8 @@
         listacombo: [],
         listaregistro:[],
         localseleccionado: 0,
-        listacalcularpropuesta:[],
+        listacalcularpropuesta: [],
+        
     },
     methods: {
         ListaPlanMarketing: function () {

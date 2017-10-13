@@ -22,24 +22,53 @@ namespace UPC.SISGFRAN.Web.Controllers
         [HttpPost]
         public JsonResult ListaCombo(ComboEL Combo)
         {
-            List<ComboEL> _Combo = new List<ComboEL>();
-            _Combo = PropuestaIndicador.GetAllCombo(Combo);
-            return Json(new { Combo = _Combo }, JsonRequestBehavior.AllowGet);
+            try
+            {
+                List<ComboEL> _Combo = new List<ComboEL>();
+                _Combo = PropuestaIndicador.GetAllCombo(Combo);
+                return Json(new { Combo = _Combo }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception e)
+            {
+
+                Herramienta.Herramientas.Log(e.Message);
+                return Json(new { Combo = "" }, JsonRequestBehavior.AllowGet);
+            }
+            
         }
 
         [HttpPost]
         public JsonResult CalcularPorcentajexPeriodo(SugerirTemporadaPromocionEL DE)
         {
-            List<SugerirTemporadaPromocionEL> _Lista = new List<SugerirTemporadaPromocionEL>();
-            _Lista = SugerirTemporadaPromocionBL.SugerirTemporadaPromocion.CalcularPorcentajexPeriodo(DE);
-            return Json(new { _Lista = _Lista }, JsonRequestBehavior.AllowGet);
+            try
+            {
+                List<SugerirTemporadaPromocionEL> _Lista = new List<SugerirTemporadaPromocionEL>();
+                _Lista = SugerirTemporadaPromocionBL.SugerirTemporadaPromocion.CalcularPorcentajexPeriodo(DE);
+                return Json(new { _Lista = _Lista }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception e)
+            {
+                Herramienta.Herramientas.Log(e.Message);
+                return Json(new { Combo = "" }, JsonRequestBehavior.AllowGet);
+            }
+            
         }
 
         [HttpPost]
         public JsonResult INS_SugerirTemporadaPromocion(SugerirTemporadaPromocionEL DE)
         {
-            int rest = SugerirTemporadaPromocionBL.SugerirTemporadaPromocion.INS_SugerirTemporadaPromocion(DE);
-            return Json(new { rest = rest }, JsonRequestBehavior.AllowGet);
+            try
+            {
+                int rest = SugerirTemporadaPromocionBL.SugerirTemporadaPromocion.INS_SugerirTemporadaPromocion(DE);
+                Herramienta.Herramientas.LogTransaccion("Se completo el registro de la Sugerencia por promoción");
+                return Json(new { rest = rest }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception e)
+            {
+                Herramienta.Herramientas.Log(e.Message);
+                return Json(new { Combo = "" }, JsonRequestBehavior.AllowGet);
+            }
+            
         }
 
 

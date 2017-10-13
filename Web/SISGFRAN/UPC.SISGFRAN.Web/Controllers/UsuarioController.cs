@@ -28,36 +28,46 @@ namespace UPC.SISGFRAN.Web.Controllers
         [AllowAnonymous]
         public ActionResult Login(UsuarioEL usuario)
         {
-            string mensaje = "";
-            if (IsValid(usuario.CtaUsuario, usuario.Password))
+            try
             {
-                int codApp;
-                Int32.TryParse(Constantes.CodigoAplicacion, out codApp);
-                AplicacionEL oAplicacion = new AplicacionEL() { Id = codApp };
-                PerfilEL oPerfil = new PerfilEL (){ Aplicacion = oAplicacion};
-                usuario.Perfil = oPerfil;
-                UsuarioEL usuarioLogeado = usuarioBL.Login(usuario);
-                if (usuarioLogeado.CodeMessage == 0)
+                string mensaje = "";
+                if (IsValid(usuario.CtaUsuario, usuario.Password))
                 {
-                    mensaje = "Exito";
-                    UsuarioEL resultado = null;
-                    resultado = usuarioBL.GetUsuarioById(usuarioLogeado.Id);
-                    FormsAuthentication.SetAuthCookie(usuario.CtaUsuario, true);
-                    SesionUsuario.Usuario = resultado;
-                    SesionUsuario.Aplicacion = new AplicacionEL() { Id = codApp };
-                    SesionUsuario.MenuRoot = UsuarioController.SetearMenu(false);
+                    int codApp;
+                    Int32.TryParse(Constantes.CodigoAplicacion, out codApp);
+                    AplicacionEL oAplicacion = new AplicacionEL() { Id = codApp };
+                    PerfilEL oPerfil = new PerfilEL() { Aplicacion = oAplicacion };
+                    usuario.Perfil = oPerfil;
+                    UsuarioEL usuarioLogeado = usuarioBL.Login(usuario);
+                    if (usuarioLogeado.CodeMessage == 0)
+                    {
+                        mensaje = "Exito";
+                        UsuarioEL resultado = null;
+                        resultado = usuarioBL.GetUsuarioById(usuarioLogeado.Id);
+                        FormsAuthentication.SetAuthCookie(usuario.CtaUsuario, true);
+                        SesionUsuario.Usuario = resultado;
+                        SesionUsuario.Aplicacion = new AplicacionEL() { Id = codApp };
+                        SesionUsuario.MenuRoot = UsuarioController.SetearMenu(false);
+                    }
+                    else
+                    {
+                        mensaje = usuarioLogeado.MessageErr;
+                    }
                 }
                 else
                 {
-                    mensaje = usuarioLogeado.MessageErr;
+                    mensaje = "Ingrese los campos requeridos";
                 }
+
+                return Json(mensaje, JsonRequestBehavior.AllowGet);
             }
-            else
+            catch (Exception e)
             {
-                mensaje = "Ingrese los campos requeridos";
+                Herramienta.Herramientas.Log(e.Message);
+                return Json("", JsonRequestBehavior.AllowGet);
             }
 
-            return Json(mensaje, JsonRequestBehavior.AllowGet);
+            
         }
 
         [HttpPost]
@@ -106,33 +116,42 @@ namespace UPC.SISGFRAN.Web.Controllers
 
         public static List<OpcionXPerfilEL> SetearMenu(bool padre)
         {
-            List<OpcionXPerfilEL> lista = null;
-            OpcionXPerfilBL menuBL = OpcionXPerfilBL.OpcionXPerfil;
-
-            OpcionXPerfilEL opcionesXPerfil = new OpcionXPerfilEL()
+            try
             {
-                Aplicacion = SesionUsuario.Aplicacion,
-                Perfil = SesionUsuario.Usuario.Perfil
-            };
+                List<OpcionXPerfilEL> lista = null;
+                OpcionXPerfilBL menuBL = OpcionXPerfilBL.OpcionXPerfil;
 
-            lista = menuBL.ListMenu(opcionesXPerfil);
+                OpcionXPerfilEL opcionesXPerfil = new OpcionXPerfilEL()
+                {
+                    Aplicacion = SesionUsuario.Aplicacion,
+                    Perfil = SesionUsuario.Usuario.Perfil
+                };
 
-            List<OpcionXPerfilEL> menuArbol = new List<OpcionXPerfilEL>();
-            //primero seteamos los padres
-            foreach (OpcionXPerfilEL m in lista.Where(x => x.Opcion.PadreId == 0))
-            {
-                AsignarMenu(menuArbol, m);
-            }
-            //seteamos los hijos
-            if (!padre)
-            {
-                foreach (OpcionXPerfilEL m in lista.Where(x => x.Opcion.PadreId != 0))
+                lista = menuBL.ListMenu(opcionesXPerfil);
+
+                List<OpcionXPerfilEL> menuArbol = new List<OpcionXPerfilEL>();
+                //primero seteamos los padres
+                foreach (OpcionXPerfilEL m in lista.Where(x => x.Opcion.PadreId == 0))
                 {
                     AsignarMenu(menuArbol, m);
                 }
-            }
+                //seteamos los hijos
+                if (!padre)
+                {
+                    foreach (OpcionXPerfilEL m in lista.Where(x => x.Opcion.PadreId != 0))
+                    {
+                        AsignarMenu(menuArbol, m);
+                    }
+                }
 
-            return menuArbol;
+                return menuArbol;
+            }
+            catch (Exception e)
+            {
+                Herramienta.Herramientas.Log(e.Message);
+                return null;
+            }
+            
         }
 
         // Arma el arbol de menus del usuario.

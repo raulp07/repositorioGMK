@@ -7,7 +7,8 @@
         listacombo: [],
         listaregistro:[],
         localseleccionado: 0,
-        listacalcularpropuesta:[],
+        listacalcularpropuesta: [],
+        
     },
     methods: {
         ListaPlanMarketing: function () {
@@ -74,7 +75,7 @@
                 indCosto: $('#rangeCosto_3').val(),
                 cantPuntuacionMax: ''
             }
-
+            debugger;
             var json = { CalcularPropuestaxIndicador: param };
             axios.post("/PropuestaIndicador/CalcularPropuestaxIndicadores/", json).then(function (response) {
 

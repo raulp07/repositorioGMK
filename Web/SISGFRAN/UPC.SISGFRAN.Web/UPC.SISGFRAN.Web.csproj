@@ -122,6 +122,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\Herramienta.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PropuestaIndicadorController.cs" />
     <Compile Include="Controllers\PropuestaPublicitariaController.cs" />
@@ -282,6 +283,7 @@
     <Content Include="Scripts\DateTimePicker\js\bootstrap-datetimepicker.es.js" />
     <Content Include="Scripts\DateTimePicker\js\bootstrap-datetimepicker.min.js" />
     <Content Include="Scripts\DateTimePicker\js\moment.min.js" />
+    <Content Include="Scripts\Imagenes\Jackie-Chan-WTF.jpg" />
     <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-1.12.4.min.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.js" />
@@ -293,6 +295,8 @@
     <Content Include="Scripts\JsPropuestaPublicitaria\PropuestaPublicitariaJs.js" />
     <Content Include="Scripts\JsSeguimientoPlanMarketing\SeguimientoPlanMarketingJs.js" />
     <Content Include="Scripts\JsSugerirTemporadaPromocion\SugerirTemporadaPromocionJs.js" />
+    <Content Include="Scripts\Log\LogError.txt" />
+    <Content Include="Scripts\Log\Logtransaccion.txt" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\moment-with-locales.js" />
     <Content Include="Scripts\moment-with-locales.min.js" />
